@@ -1,0 +1,13 @@
+import { Header } from "./components/Header";
+import { Contact } from "./components/contact";
+import { Footer } from "./components/Footer";
+
+export default function ContactUs() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      <Contact/>
+      <Footer />
+    </div>
+  );
+}

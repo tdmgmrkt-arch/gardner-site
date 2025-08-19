@@ -1,0 +1,292 @@
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader } from "./ui/card";
+import { Star, Quote, ThumbsUp, FileText, Users, CheckCircle } from "lucide-react";
+
+export function Reviews() {
+  const reviews = [
+    {
+      text: "Great installer and great work. Super easy to work with. Up front and honest through the whole process. Definitely recommend!",
+      name: "Christopher M.",
+      location: "Temecula",
+      rating: 5,
+      service: "Water Heater Installation"
+    },
+    {
+      text: "Jerome was extremely helpful. Clear and concise in everything he did, patient, and a pleasure to work with.",
+      name: "Marshall M.",
+      location: "Murrieta", 
+      rating: 5,
+      service: "Emergency Plumbing"
+    },
+    {
+      text: "Quick booking, fair pricing, and the tech was professional, courteous and informative. Would definitely hire again!",
+      name: "Aletha N.",
+      location: "Temecula",
+      rating: 5,
+      service: "Drain Cleaning"
+    },
+    {
+      text: "Outstanding service! They arrived on time, diagnosed the problem quickly, and had everything fixed within an hour. Highly recommended!",
+      name: "David R.",
+      location: "Murrieta",
+      rating: 5,
+      service: "Leak Repair"
+    }
+  ];
+
+  return (
+    <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0"
+          style={{ 
+            background: `
+              radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
+              linear-gradient(135deg, #374151 0%, #1f2937 50%, #111827 100%)
+            `
+          }}
+        />
+        
+        {/* Premium texture overlay */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(220, 38, 38, 0.1) 0%, transparent 50%)
+            `
+          }}
+        />
+      </div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Enhanced Section Header */}
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-yellow-600/20 to-yellow-500/20 rounded-full border border-yellow-500/30 backdrop-blur-sm">
+            <Star className="h-5 w-5 text-yellow-400" />
+            <span className="text-yellow-400 font-semibold text-sm uppercase tracking-wider">Customer Reviews</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
+            What Our Customers Say About <span className="text-gradient bg-gradient-to-r from-yellow-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing</span>
+          </h2>
+          <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
+            Don't take our word for it - hear from satisfied customers who trust Gardner Plumbing Co. for all their plumbing needs.
+          </p>
+        </div>
+
+        {/* Enhanced Customer Reviews Section */}
+        <div className="mb-16 sm:mb-20 animate-slide-up">
+          <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
+            {/* Premium Red Banner Header with Rating */}
+            <div className="relative overflow-hidden px-6 sm:px-8 py-8 sm:py-10" style={{ 
+              background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
+              boxShadow: `
+                inset 0 2px 0 rgba(255, 255, 255, 0.2),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.2),
+                0 8px 32px rgba(139, 0, 0, 0.4)
+              `
+            }}>
+              <div 
+                className="absolute inset-0 opacity-30"
+                style={{
+                  background: `linear-gradient(135deg, 
+                    transparent 0%, 
+                    rgba(255, 255, 255, 0.1) 25%, 
+                    rgba(255, 255, 255, 0.2) 50%, 
+                    rgba(255, 255, 255, 0.1) 75%, 
+                    transparent 100%
+                  )`
+                }}
+              />
+              <div className="relative flex items-center justify-center gap-8">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
+                    <Quote className="h-6 w-6 sm:h-7 sm:w-7 text-white drop-shadow-sm" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">Customer Reviews</h3>
+                </div>
+                
+                {/* Inline Rating Display */}
+                <div className="flex items-center gap-3">
+                  {/* Stars */}
+                  <div className="flex items-center gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="relative">
+                        <Star className="h-5 w-5 text-yellow-300 fill-current drop-shadow-sm" />
+                        <div className="absolute inset-0 bg-yellow-300/15 rounded-full blur-sm"></div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Rating text */}
+                  <div className="flex items-center gap-2">
+                    <div className="text-xl font-bold text-white drop-shadow-sm tracking-tight">4.9/5</div>
+                    <div className="text-yellow-300 font-medium text-sm tracking-wide drop-shadow-sm">Excellence Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Enhanced Review Cards Section */}
+            <div className="p-6 sm:p-8 lg:p-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                {reviews.map((review, index) => (
+                  <Card key={index} className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500 animate-scale-in h-full flex flex-col" style={{ 
+                    backgroundColor: '#202020',
+                    backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)',
+                    animationDelay: `${index * 100}ms`
+                  }}>
+                    {/* Gradient Border Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
+                    <div className="absolute inset-[1px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg"></div>
+                    
+                    <div className="relative z-10 flex flex-col h-full">
+                      <CardHeader className="text-center pb-4 pt-8 flex-shrink-0">
+                        <div className="relative mb-6">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600/30 to-blue-500/30 rounded-2xl flex items-center justify-center mx-auto group-hover:from-blue-600 group-hover:to-blue-500 transition-all duration-500 shadow-lg backdrop-blur-sm border border-blue-500/20">
+                            <Quote className="h-8 w-8 sm:h-10 sm:w-10 text-blue-400 group-hover:text-white transition-all duration-500 group-hover:scale-110" />
+                          </div>
+                          <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-500"></div>
+                        </div>
+                        <div className="flex items-center justify-center gap-1 mb-3">
+                          {[...Array(review.rating)].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-400 fill-current drop-shadow-sm" />
+                          ))}
+                        </div>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-blue-100 transition-colors duration-300">{review.name}</h4>
+                        <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">{review.location}</p>
+                      </CardHeader>
+                      <CardContent className="px-6 pb-8 flex flex-col flex-grow">
+                        <p className="text-gray-300 mb-6 leading-relaxed flex-grow group-hover:text-gray-200 transition-colors duration-300 text-center italic">"{review.text}"</p>
+                        <div className="space-y-3 mb-6 flex-shrink-0">
+                          <div className="flex items-center justify-center gap-3 text-sm">
+                            <div className="w-5 h-5 bg-green-500/20 rounded-full flex items-center justify-center">
+                              <CheckCircle className="h-3 w-3 text-green-400" />
+                            </div>
+                            <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{review.service}</span>
+                          </div>
+                          <div className="flex items-center justify-center gap-3 text-sm">
+                            <div className="w-5 h-5 bg-blue-500/20 rounded-full flex items-center justify-center">
+                              <CheckCircle className="h-3 w-3 text-blue-400" />
+                            </div>
+                            <span className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">Verified Customer</span>
+                          </div>
+                        </div>
+                        <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white border-none shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl py-3 group/btn flex-shrink-0">
+                          <span className="flex items-center justify-center gap-2">
+                            Read Full Review
+                            <Quote className="h-4 w-4 group-hover/btn:scale-110 transition-transform duration-300" />
+                          </span>
+                        </Button>
+                      </CardContent>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+              
+              {/* Premium Review Platform Badges */}
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <div className="flex flex-wrap items-center justify-center gap-8">
+                  {/* Verified Platforms Label */}
+                  <div className="text-center">
+                    <div className="text-sm font-semibold text-white mb-1">Verified On</div>
+                    <div className="text-xs text-gray-400">Review Platforms</div>
+                  </div>
+                  
+                  {/* Google Reviews Badge */}
+                  <div className="group relative">
+                    <div className="relative overflow-hidden rounded-xl border border-white/20 backdrop-blur-sm hover-lift transition-all duration-300" style={{
+                      background: `linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)`,
+                      boxShadow: `0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)`
+                    }}>
+                      <div className="relative px-4 py-3 flex items-center gap-3">
+                        {/* Google Icon */}
+                        <div className="w-8 h-8 bg-white rounded-md flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <div className="w-6 h-6 bg-gradient-to-br from-blue-500 via-green-500 to-red-500 rounded-sm flex items-center justify-center">
+                            <span className="text-white font-bold text-xs">G</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-3 w-3 text-yellow-400 fill-current" />
+                            ))}
+                          </div>
+                          <span className="text-sm font-bold text-white">4.9</span>
+                          <div className="text-xs text-gray-300 font-medium">Google</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Yelp Reviews Badge */}
+                  <div className="group relative">
+                    <div className="relative overflow-hidden rounded-xl border border-white/20 backdrop-blur-sm hover-lift transition-all duration-300" style={{
+                      background: `linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)`,
+                      boxShadow: `0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)`
+                    }}>
+                      <div className="relative px-4 py-3 flex items-center gap-3">
+                        {/* Yelp Icon */}
+                        <div className="w-8 h-8 bg-red-600 rounded-md flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                          <span className="text-white font-bold text-sm">Y</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-0.5">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-3 w-3 text-yellow-400 fill-current" />
+                            ))}
+                          </div>
+                          <span className="text-sm font-bold text-white">4.8</span>
+                          <div className="text-xs text-gray-300 font-medium">Yelp</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Additional Platforms Indicator */}
+                  <div className="text-center">
+                    <div className="text-xs text-gray-400 font-medium">500+ Reviews</div>
+                    <div className="text-xs text-gray-500">Live Ratings</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Enhanced CTA Section */}
+        <div className="glassmorphism-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 shadow-luxury hover-lift animate-fade-in">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center shadow-glow">
+                <Users className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">Ready to Experience Our Service?</h3>
+            </div>
+            <p className="text-gray-300 mb-8 text-base leading-relaxed max-w-2xl mx-auto">
+              Join hundreds of satisfied customers in Temecula, Murrieta, Perris, Menifee, Canyon Lake, Lake Elsinore, Corona, Moreno Valley, Riverside, and surrounding areas who trust Gardner Plumbing Co. for exceptional service.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
+                <span className="flex items-center justify-center gap-3">
+                  <ThumbsUp className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
+                  Get Your Free Quote
+                </span>
+              </Button>
+              <Button className="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white border border-gray-500/30 hover:border-gray-400/50 px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg group">
+                <span className="flex items-center justify-center gap-3">
+                  <FileText className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
+                  Read More Reviews
+                </span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

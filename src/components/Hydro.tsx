@@ -29,6 +29,21 @@ const IntroImage = "leakdetectionserviceintro.png";
 const beforeafterImage = "leakdetectionbeforeandafter.png";
 const hjgp2 = "leakdetectionestimate.png";
 
+const cityLinks: Record<string, string> = {
+  Temecula: "https://temeculaca.gov",
+  Murrieta: "https://murrietaca.gov",
+  Perris: "https://www.cityofperris.org",
+  Menifee: "https://cityofmenifee.us",
+  "Canyon Lake": "https://www.canyonlakeca.gov",
+  "Lake Elsinore": "https://www.lake-elsinore.org",
+  Corona: "https://www.coronaca.gov",
+  "Moreno Valley": "https://moval.org",
+  Riverside: "https://riversideca.gov",
+  Hemet: "https://www.hemetca.gov",
+  "San Jacinto": "https://www.sanjacintoca.gov",
+  Wildomar: "https://cityofwildomar.org",
+};
+
 export function Hydro() {
 const emergencyReasons = [
      "Complete sewer blockage",
@@ -455,52 +470,77 @@ const emergencyReasons = [
 
       {/* Service Areas */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0"
-            style={{ 
-              background: `
-                radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
-                linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
-              `
-            }}
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-              <MapPin className="h-5 w-5 text-blue-400" />
-              <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Service Areas</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
-              Serving All of <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Riverside County</span>
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Professional hydro-jetting services available throughout Riverside County with fast response times to your location.
-            </p>
-          </div>
-          <div className="grid gap-4 mb-12" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
-            {serviceAreas.map((area, index) => (
-              <div key={index} className="glassmorphism-dark rounded-xl p-4 border border-white/10 text-center hover:border-blue-500/30 transition-all duration-300 hover-lift">
-                <MapPin className="h-6 w-6 text-blue-400 mx-auto mb-2" />
-                <span className="text-white font-medium">{area}</span>
-              </div>
-            ))}
-          </div>
-          <div className="text-center">
-            <div className="glassmorphism-dark rounded-2xl p-8 border border-white/10 shadow-luxury inline-block">
-              <h3 className="text-2xl font-bold text-white mb-4">Don't See Your Area?</h3>
-              <p className="text-gray-300 mb-6">We serve additional areas throughout Riverside County. Call to confirm service availability.</p>
-              <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5" />
-                  Check Service Area
-                </span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="absolute inset-0">
+    <div
+      className="absolute inset-0"
+      style={{
+        background: `
+          radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
+          linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
+        `,
+      }}
+    />
+  </div>
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
+        <MapPin className="h-5 w-5 text-blue-400" />
+        <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">
+          Service Areas
+        </span>
+      </div>
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
+        Serving All of{" "}
+        <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">
+          Riverside County
+        </span>
+      </h2>
+      <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Professional drain cleaning and repair services available throughout
+        Riverside County with fast response times to your location.
+      </p>
+    </div>
+
+    {/* Grid of cities */}
+    <div
+      className="grid gap-4 mb-12"
+      style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
+    >
+      {serviceAreas.map((area, index) => (
+        <a
+          key={index}
+          href={cityLinks[area] ?? "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit the official website for ${area}`}
+          className="glassmorphism-dark rounded-xl p-4 border border-white/10 text-center hover:border-blue-500/30 transition-all duration-300 hover-lift block"
+        >
+          <MapPin className="h-6 w-6 text-blue-400 mx-auto mb-2" />
+          <span className="text-white font-medium">{area}</span>
+        </a>
+      ))}
+    </div>
+
+    {/* Call to action */}
+    <div className="text-center">
+      <div className="glassmorphism-dark rounded-2xl p-8 border border-white/10 shadow-luxury inline-block">
+        <h3 className="text-2xl font-bold text-white mb-4">
+          Don't See Your Area?
+        </h3>
+        <p className="text-gray-300 mb-6">
+          We serve additional areas throughout Riverside County. Call to
+          confirm service availability.
+        </p>
+        <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
+          <span className="flex items-center justify-center gap-3">
+            <Phone className="h-5 w-5" />
+            Check Service Area
+          </span>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* FAQ Section */}
       <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">

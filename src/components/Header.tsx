@@ -1,6 +1,7 @@
 import { Button } from "./ui/button";
 import { Phone, Mail, Menu, MapPin, ChevronDown, Clock, Star } from "lucide-react";
 import { useState, useCallback, useRef, useEffect } from "react";
+
 const logo = "/gplogo.svg";
 
 export function Header() {
@@ -9,6 +10,35 @@ export function Header() {
 
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // ---------- Link maps ----------
+  const residentialLinks: Record<string, string> = {
+    "Drain Cleaning": "/services/drain-cleaning",
+    "Leak Detection": "/services/leak-detection",
+    "Water Heaters": "/services/water-heater-service",
+    "Toilet Repair": "/services/toilet-repair",
+    "Pipe Installation": "/services/pipe-installation",
+    "Fixtures": "/services/fixtures",
+  };
+
+  const commercialLinks: Record<string, string> = {
+    "Commercial Plumbing": "/services/commercial-services/commercial-plumbing",
+    "Hydro Jetting": "/services/hydro-jetting",
+    "Sewer Lines": "/services/sewer-lines",
+    "Maintenance Plans": "/services/maintenance-plans",
+    "Emergency Service": "/services/emergency-service",
+    "System Inspections": "/services/system-inspections",
+  };
+
+  const emergencyLinks: Record<string, string> = {
+    "24/7 Service": "/services/emergency-plumbing",
+    "Burst Pipes": "/services/burst-pipes",
+    "Water Damage": "/services/water-damage",
+    "Gas Lines": "/services/gas-lines",
+    "Backups": "/services/backups",
+    "No Heat/Hot Water": "/services/no-heat-hot-water",
+  };
+  // --------------------------------
 
   const handleMouseEnter = useCallback(() => {
     if (timeoutRef.current) {
@@ -142,7 +172,7 @@ export function Header() {
 
                 {/* Services */}
                 <div
-                  className="group" /* NOTE: no 'relative' so we don't create a narrow containing block */
+                  className="group"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -163,7 +193,7 @@ export function Header() {
                         onMouseLeave={handleMouseLeave}
                       />
 
-                      {/* Full-width dropdown, red border on top */}
+                      {/* Full-width dropdown */}
                       <div
                         ref={dropdownRef}
                         className="absolute inset-x-0 top-full w-full shadow-luxury border-t-4 border-red-600 z-50 animate-fade-in"
@@ -258,7 +288,7 @@ export function Header() {
                                 <div className="grid grid-cols-3 gap-8">
                                   {/* Residential */}
                                   <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
-                                    <a href="/services/residential-services">
+                                    <a href="/services">
                                       <h4 className="text-lg font-bold text-white mb-4 pb-3 border-b-2 border-red-600 drop-shadow-sm hover:text-red-400 transition-colors duration-300">
                                         Residential
                                       </h4>
@@ -266,7 +296,7 @@ export function Header() {
                                     <ul className="space-y-3">
                                       {[
                                         { name: "Drain Cleaning", desc: "Professional clearing" },
-                                        { name: "Leak Repair", desc: "Quick detection & fix" },
+                                        { name: "Leak Detection", desc: "Quick detection & fix" },
                                         { name: "Water Heaters", desc: "Install & service" },
                                         { name: "Toilet Repair", desc: "Complete solutions" },
                                         { name: "Pipe Installation", desc: "New & replacement" },
@@ -274,7 +304,7 @@ export function Header() {
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={service.name === "Drain Cleaning" ? "/services/residential-services/drain-cleaning" : "/placeholder"}
+                                            href={residentialLinks[service.name] ?? "/placeholder"}
                                             className="group block p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name font-medium transition-colors duration-300 drop-shadow-sm">
@@ -290,7 +320,7 @@ export function Header() {
                                   </div>
 
                                   {/* Commercial */}
-                                   <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
+                                  <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
                                     <a href="/services/commercial-services">
                                       <h4 className="text-lg font-bold text-white mb-4 pb-3 border-b-2 border-red-600 drop-shadow-sm hover:text-red-400 transition-colors duration-300">
                                         Commercial
@@ -307,7 +337,7 @@ export function Header() {
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={service.name === "Commercial Plumbing" ? "/services/commercial-services/commercial-plumbing" : "/placeholder"}
+                                            href={commercialLinks[service.name] ?? "/placeholder"}
                                             className="group block p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name font-medium transition-colors duration-300 drop-shadow-sm">
@@ -340,7 +370,7 @@ export function Header() {
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={service.name === "24/7 Service" ? "/services/emergency-plumbing" : "/placeholder"}
+                                            href={emergencyLinks[service.name] ?? "/placeholder"}
                                             className="group block p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name font-medium transition-colors duration-300 drop-shadow-sm">
@@ -438,13 +468,13 @@ export function Header() {
                     {[
                       ["/", "Home"],
                       ["/aboutus", "About Us"],
-                      ["/placeholder", "Services"],
+                      ["/services", "Services"], // updated from /placeholder
                       ["/reviews", "Reviews"],
                       ["/contactus", "Contact"],
                     ].map(([href, label]) => (
                       <a
-                        key={href}
-                        href={href}
+                        key={href as string}
+                        href={href as string}
                         className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift text-base sm:text-lg py-2 px-3 rounded-lg hover:bg-white/5 drop-shadow-sm"
                       >
                         {label}

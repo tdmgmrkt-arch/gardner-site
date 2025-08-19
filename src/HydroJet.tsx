@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Hydro } from "./components/hydro";
+import { Hydro } from "./components/Hydro";
 import { Footer } from "./components/Footer";
 
 export default function HydroJet() {

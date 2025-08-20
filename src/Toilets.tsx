@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { Toilet }  from "./components/toilet";
+import { Toilet }  from "./components/Toilet";
 import { Footer } from "./components/Footer";
 
 export default function Toilets() {

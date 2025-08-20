@@ -38,9 +38,9 @@ export default function ServiceAreas() {
           {/* Left Column - Text Content */}
           <div className="text-left">
             <div className="mb-6">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-600/20 to-orange-500/20 rounded-full border border-orange-500/30 backdrop-blur-sm">
-                <MapPin className="h-5 w-5 text-orange-400" />
-                <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">
+                <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
+                    <MapPin className="h-5 w-5 text-blue-400" />
+                    <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">
                   Service Area
                 </span>
               </div>
@@ -48,7 +48,7 @@ export default function ServiceAreas() {
 
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
               Proudly Serving{" "}
-              <span className="text-gradient bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent">
+              <span className="text-gradient bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">
                 Riverside County
               </span>
             </h2>
@@ -79,9 +79,9 @@ export default function ServiceAreas() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit the official website for ${city}`}
-                  className="flex items-center gap-3 p-3 glassmorphism-dark rounded-lg border border-white/10 hover:border-orange-500/30 transition-all duration-300"
+                  className="flex items-center gap-3 p-3 glassmorphism-dark rounded-lg border border-white/10 hover:border-blue-500/30 transition-all duration-300"
                 >
-                  <CheckCircle className="h-5 w-5 text-orange-400" />
+                  <CheckCircle className="h-5 w-5 text-blue-400" />
                   <span className="text-white font-medium">{city}</span>
                 </a>
               ))}
@@ -89,7 +89,7 @@ export default function ServiceAreas() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:9512464337">
-                <Button className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
@@ -120,7 +120,7 @@ export default function ServiceAreas() {
               {/* Floating badge */}
               <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
                     <MapPin className="h-4 w-4 text-white" />
                   </div>
                   <div>

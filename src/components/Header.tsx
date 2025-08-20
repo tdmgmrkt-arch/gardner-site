@@ -16,13 +16,13 @@ export function Header() {
     "Drain Cleaning": "/services/drain-cleaning",
     "Leak Detection": "/services/leak-detection",
     "Water Heaters": "/services/water-heater-service",
-    "Toilet Repair": "/services/toilet-repair",
-    "Pipe Installation": "/services/pipe-installation",
+    "Toilet Repair": "/services/toilet-installation-and-repair",
+    "Piping & Repiping": "/services/piping-and-repiping",
     "Fixtures": "/services/fixtures",
   };
 
   const commercialLinks: Record<string, string> = {
-    "Commercial Plumbing": "/services/commercial-services/commercial-plumbing",
+    "Commercial Plumbing": "/services/commercial-plumbing",
     "Hydro Jetting": "/services/hydro-jetting",
     "Sewer Lines": "/services/sewer-lines",
     "Maintenance Plans": "/services/maintenance-plans",
@@ -31,7 +31,7 @@ export function Header() {
   };
 
   const emergencyLinks: Record<string, string> = {
-    "24/7 Service": "/services/emergency-plumbing",
+    "24/7 Service": "/services/emergency-service",
     "Burst Pipes": "/services/burst-pipes",
     "Water Damage": "/services/water-damage",
     "Gas Lines": "/services/gas-lines",
@@ -105,11 +105,11 @@ export function Header() {
             </div>
             <div className="flex items-center gap-2 sm:gap-4">
               <div className="hidden sm:flex items-center gap-2">
-                <a href="/placeholder" aria-label="Service Area">
+                <a href="/reviews" aria-label="Service Area">
                   <MapPin className="h-4 w-4" />
                 </a>
-                <a href="/placeholder" className="hidden md:inline">Serving Greater Metro Area</a>
-                <a href="/placeholder" className="md:hidden">Local Service</a>
+                <a href="/service-areas" className="hidden md:inline">Serving Greater Riverside Area</a>
+                <a href="/service-areas" className="md:hidden">Local Service</a>
               </div>
               <div className="flex items-center gap-1 sm:gap-2 font-medium">
                 <a href="tel:9512464337" aria-label="Call (951) 246-4337">
@@ -142,7 +142,7 @@ export function Header() {
         />
 
         <nav
-          className="relative z-10 py-2 sm:py-4 m-0 backdrop-blur-sm"
+          className="relative z-50 py-2 sm:py-4 m-0 backdrop-blur-sm"
           style={{
             borderBottom: "1px solid rgba(255, 255, 255, 0.03)",
             boxShadow: `
@@ -166,7 +166,7 @@ export function Header() {
                 <a href="/" className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm">
                   Home
                 </a>
-                <a href="/aboutus" className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm">
+                <a href="/about-us" className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm">
                   About Us
                 </a>
 
@@ -260,7 +260,7 @@ export function Header() {
                                       </div>
                                       <span className="text-gray-300 text-sm font-medium drop-shadow-sm">24/7 Emergency Service</span>
                                     </a>
-                                    <a href="/placeholder" className="flex items-center gap-3 group hover-lift">
+                                    <a href="/emergency-service" className="flex items-center gap-3 group hover-lift">
                                       <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-lg">
                                         <Phone className="h-4 w-4 text-white drop-shadow-sm" />
                                       </div>
@@ -299,12 +299,12 @@ export function Header() {
                                         { name: "Leak Detection", desc: "Quick detection & fix" },
                                         { name: "Water Heaters", desc: "Install & service" },
                                         { name: "Toilet Repair", desc: "Complete solutions" },
-                                        { name: "Pipe Installation", desc: "New & replacement" },
+                                        { name: "Piping & Repiping", desc: "New & replacement" },
                                         { name: "Fixtures", desc: "Faucets & sinks" },
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={residentialLinks[service.name] ?? "/placeholder"}
+                                            href={residentialLinks[service.name] ?? "/services"}
                                             className="group block p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name font-medium transition-colors duration-300 drop-shadow-sm">
@@ -337,7 +337,7 @@ export function Header() {
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={commercialLinks[service.name] ?? "/placeholder"}
+                                            href={commercialLinks[service.name] ?? "/services#commercial"}
                                             className="group block p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name font-medium transition-colors duration-300 drop-shadow-sm">
@@ -354,7 +354,7 @@ export function Header() {
 
                                   {/* Emergency */}
                                   <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
-                                    <a href="/services/emergency-services">
+                                    <a href="/services/emergency-service">
                                       <h4 className="text-lg font-bold text-white mb-4 pb-3 border-b-2 border-red-600 drop-shadow-sm hover:text-red-400 transition-colors duration-300">
                                         Emergency
                                       </h4>
@@ -437,7 +437,7 @@ export function Header() {
                 <a href="/reviews" className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm">
                   Reviews
                 </a>
-                <a href="/contactus" className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm">
+                <a href="/contact-us" className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm">
                   Contact
                 </a>
               </div>
@@ -467,10 +467,10 @@ export function Header() {
                   <div className="flex flex-col space-y-3 sm:space-y-4">
                     {[
                       ["/", "Home"],
-                      ["/aboutus", "About Us"],
+                      ["/about-us", "About Us"],
                       ["/services", "Services"], // updated from /placeholder
                       ["/reviews", "Reviews"],
-                      ["/contactus", "Contact"],
+                      ["/contact-us", "Contact"],
                     ].map(([href, label]) => (
                       <a
                         key={href as string}

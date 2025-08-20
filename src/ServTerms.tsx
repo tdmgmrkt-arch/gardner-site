@@ -1,12 +1,12 @@
 import { Header } from "./components/Header";
-import { Drain } from "./components/Drain";
+import { TermsServ }  from "./components/TermsServ";
 import { Footer } from "./components/Footer";
 
-export default function DrainClean() {
+export default function Policyprivacy() {
   return (
     <div className="min-h-screen m-0 p-0" style={{ backgroundColor: 'transparent' }}>
       <Header />
-      <Drain />
+      <TermsServ />
       <Footer />
     </div>
   );

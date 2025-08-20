@@ -1,12 +1,12 @@
 import { Header } from "./components/Header";
-import { MaintenanceAgreement }  from "./components/MaintenanceAgreement";
+import { TermsServ }  from "./components/TermsServ";
 import { Footer } from "./components/Footer";
 
-export default function MntAgree() {
+export default function ServiceTerms() {
   return (
     <div className="min-h-screen m-0 p-0" style={{ backgroundColor: 'transparent' }}>
       <Header />
-      <MaintenanceAgreement />
+      <TermsServ />
       <Footer />
     </div>
   );

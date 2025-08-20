@@ -129,8 +129,8 @@ export function Footer() {
                   <h4 className="text-lg text-white mb-6 pb-3 border-b-2 border-red-600 drop-shadow-sm">About Us</h4>
                   <ul className="space-y-4">
                     {[
-                      { name: "Gardner Plumbing", desc: "Our story & team", link: "/aboutus" },
-                      { name: "Contact Us", desc: "Get in touch today", link: "/contact" },
+                      { name: "Gardner Plumbing", desc: "Our story & team", link: "/about-us" },
+                      { name: "Contact Us", desc: "Get in touch today", link: "/contact-us" },
                       { name: "Customer Reviews", desc: "See what clients say", link: "/reviews" },
                       { name: "Service Areas", desc: "Where we work", link: "/service-areas" },
                       { name: "Testimonials", desc: "Success stories", link: "/testimonials" },
@@ -159,7 +159,7 @@ export function Footer() {
                   <ul className="space-y-4">
                     {[
                       { name: "Request Service", desc: "Schedule appointment", link: "/request-service" },
-                      { name: "Emergency Service", desc: "24/7 urgent help", link: "/emergency-service" },
+                      { name: "Emergency Service", desc: "24/7 urgent help", link: "/services/emergency-service" },
                       { name: "FAQ", desc: "Common questions", link: "/faq" },
                       { name: "Blog", desc: "Tips & insights", link: "/blog" },
                       { name: "Financing", desc: "Payment options", link: "/financing" },

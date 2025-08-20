@@ -1,12 +1,12 @@
 import { Header } from "./components/Header";
-import { Drain } from "./components/Drain";
+import { PipingRepiping}  from "./components/PipingRepiping";
 import { Footer } from "./components/Footer";
 
-export default function DrainClean() {
+export default function PipeRepipe() {
   return (
     <div className="min-h-screen m-0 p-0" style={{ backgroundColor: 'transparent' }}>
       <Header />
-      <Drain />
+      <PipingRepiping />
       <Footer />
     </div>
   );

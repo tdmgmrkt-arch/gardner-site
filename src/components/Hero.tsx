@@ -330,7 +330,7 @@ export function Hero() {
 
           {/* Licensed & Insured */}
           <a
-            href="/aboutus"
+            href="/about-us"
             className="relative overflow-hidden rounded-2xl p-6 border border-white/20 hover-lift group transition-all duration-300"
             style={{
               background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,

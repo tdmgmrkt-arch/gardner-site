@@ -45,7 +45,7 @@ const cityLinks: Record<string, string> = {
   Wildomar: "https://cityofwildomar.org",
 };
 
-export function Toilet() {
+export function ToiletRep() {
   const emergencyReasons = [
     "Overflowing toilet that won’t stop",
     "Severe clog with sewage backup",

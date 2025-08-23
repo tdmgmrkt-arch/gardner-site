@@ -52,8 +52,8 @@ export function Contact() {
     },
     {
       icon: Clock,
-      title: "Business Hours",
-      primary: "Mon-Fri: 7AM-6PM",
+      title: "Office Hours",
+      primary: "Mon-Fri: 8AM-4PM",
       secondary: "Emergency: 24/7",
       action: "Schedule Service"
     }
@@ -114,7 +114,7 @@ export function Contact() {
                 </div>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[rgba(255,255,255,1)] mb-8 drop-shadow-lg leading-tight">
-                Contact <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing</span>
+                Contact <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing Co.</span>
               </h1>
               
               {/* Hero Image */}
@@ -122,7 +122,7 @@ export function Contact() {
                 <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 max-w-lg">
                 <img 
                   src={gardnercsrepImage}
-                  alt="Professional Gardner Plumbing technician ready to help with your plumbing needs" 
+                  alt="Professional Gardner Plumbing Co. technician ready to help with your plumbing needs" 
                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                     style={{ aspectRatio: '4/3', objectPosition: 'center center' }}
                   />
@@ -132,7 +132,7 @@ export function Contact() {
                   <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   
                   {/* Floating badge */}
-                  <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in">
+                  <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                         <Phone className="h-4 w-4 text-white" />
@@ -322,7 +322,7 @@ export function Contact() {
                       <div className="relative overflow-hidden rounded-2xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                         <img 
                           src={customerServiceImage}
-                          alt="Professional Gardner Plumbing customer service representative ready to assist with your service requests" 
+                          alt="Professional Gardner Plumbing Co. customer service representative ready to assist with your service requests" 
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         
@@ -330,7 +330,7 @@ export function Contact() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                         
                         {/* Floating badge */}
-                        <div className="absolute bottom-4 right-4 glassmorphism-dark rounded-xl p-3 border border-white/20 shadow-luxury">
+                        <div className="absolute bottom-4 right-4 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                           <div className="flex items-center gap-2">
                             <div className="w-6 h-6 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                               <Phone className="h-3 w-3 text-white" />
@@ -498,7 +498,7 @@ export function Contact() {
                       </div>
                       <div>
                         <p className="text-gray-300 text-sm italic leading-relaxed mb-2">
-                          "The financing option made it possible for us to get our entire plumbing system upgraded. Gardner Plumbing made the process so easy!"
+                          "The financing option made it possible for us to get our entire plumbing system upgraded. Gardner Plumbing Co. made the process so easy!"
                         </p>
                         <p className="text-gray-400 text-xs font-semibold">- Sarah M., Temecula</p>
                       </div>
@@ -557,7 +557,7 @@ export function Contact() {
                           allowFullScreen
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
-                          title="Gardner Plumbing Service Area - Riverside County"
+                          title="Gardner Plumbing Co. Service Area - Riverside County"
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 rounded-2xl"
                         />
                         
@@ -618,7 +618,7 @@ export function Contact() {
                       <div className="relative overflow-hidden rounded-2xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                         <img 
                           src={gardnerVanImage}
-                          alt="Gardner Plumbing branded service van ready for 24/7 emergency response" 
+                          alt="Gardner Plumbing Co. branded service van ready for 24/7 emergency response" 
                           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                         
@@ -626,7 +626,7 @@ export function Contact() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                         
                         {/* Floating badge */}
-                        <div className="absolute bottom-4 left-4 glassmorphism-dark rounded-xl p-3 border border-white/20 shadow-luxury">
+                        <div className="absolute bottom-4 right-4 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                           <div className="flex items-center gap-2">
                             <div className="w-6 h-6 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                               <Shield className="h-3 w-3 text-white" />

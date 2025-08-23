@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 const teamImage = "gardnerteamplumbingwbs.png";
 const bbbImage = "bbbratingbadge.png";
-const professionalTechnician = "gardner employee.png";
+const professionalTechnician = "gardnertech2.png";
 
 export function WhyChooseUs() {
   const features = [
@@ -35,7 +35,7 @@ export function WhyChooseUs() {
 
   const achievements = [
     { icon: Award, number: "30+", text: "Years in Business", subtext: "Trusted Experience" },
-    { icon: Users, number: "5K+", text: "Happy Customers", subtext: "Satisfied Clients" },
+    { icon: Users, number: "15K+", text: "Happy Customers", subtext: "Satisfied Clients" },
     { icon: Star, number: "4.9", text: "Customer Rating", subtext: "Excellent Reviews" },
     { icon: Shield, number: "100%", text: "Licensed & Insured", subtext: "Full Protection" }
   ];
@@ -83,7 +83,7 @@ export function WhyChooseUs() {
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[rgba(255,255,255,1)] mb-8 drop-shadow-lg leading-tight">
-                Why Choose <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing</span>
+                Why Choose <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing Co.</span>
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
                 Three decades of excellence in plumbing services. We combine traditional craftsmanship with modern technology to deliver unmatched quality and customer satisfaction throughout Riverside County.
@@ -105,7 +105,7 @@ export function WhyChooseUs() {
                 <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Award className="h-4 w-4 text-white" />
@@ -224,7 +224,7 @@ export function WhyChooseUs() {
               <div className="relative group overflow-hidden">
                 <img 
                   src={teamImage} 
-                  alt="Professional Gardner Plumbing team members ready to serve" 
+                  alt="Professional Gardner Plumbing Co. team members ready to serve" 
                   className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 

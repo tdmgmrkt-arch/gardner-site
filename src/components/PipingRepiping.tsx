@@ -496,7 +496,7 @@ export function PipingRepiping() {
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
                   src={repipeTech}
-                  alt="Gardner Plumbing repiping technician on site"
+                  alt="Gardner Plumbing Co. repiping technician on site"
                   className="w-full h-96 object-cover rounded-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
@@ -520,7 +520,7 @@ export function PipingRepiping() {
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
                 <Shield className="h-5 w-5 text-green-400" />
                 <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
-                  Why Choose Gardner Plumbing
+                  Why Choose Gardner Plumbing Co.
                 </span>
               </div>
 

@@ -69,7 +69,7 @@ export function Reviews() {
             <span className="text-yellow-400 font-semibold text-sm uppercase tracking-wider">Customer Reviews</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-            What Our Customers Say About <span className="text-gradient bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Gardner Plumbing</span>
+            What Customers Say About <span className="text-gradient bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Gardner Plumbing Co.</span>
           </h2>
           <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
             Don't take our word for it - hear from satisfied customers who trust Gardner Plumbing Co. for all their plumbing needs.

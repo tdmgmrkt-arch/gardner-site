@@ -15,8 +15,14 @@ import {
   Building,
   Heart,
   Target,
+  ShieldCheck,
+  Wallet,
+  ThumbsUp,
   Zap
 } from "lucide-react";
+const gardneraboutusImage = "/gardnertrucks.jpg";
+const gardneraboutusImage2 = "/GardnerTechVanTools.webp";
+const gardnerVanImage = "gplumbingtruckguy.png";
 
 export function About() {
   const stats = [
@@ -51,9 +57,9 @@ export function About() {
 
   const certifications = [
     { name: "California State License", number: "#1073177" },
-    { name: "Better Business Bureau", rating: "A+ Rating" },
-    { name: "Plumbing Contractors Association", status: "Member" },
-    { name: "EPA Certified", specialty: "Water Efficiency" }
+    { name: "Background Checked", status: "Technicians" },
+    { name: "American Home Shield", rating: "Preffered Vendor" },
+    { name: "Moen Certified", specialty: "Installer" }
   ];
 
   const timeline = [
@@ -102,7 +108,7 @@ export function About() {
               <div className="mb-6">
                 <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
                   <Building className="h-5 w-5 text-red-400" />
-                  <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">About Gardner Plumbing</span>
+                  <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">About Gardner Plumbing Co.</span>
                 </div>
               </div>
               
@@ -132,21 +138,19 @@ export function About() {
             {/* Right Column - Image Placeholder */}
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 max-w-lg w-full">
-                {/* IMAGE PLACEHOLDER - Company Building/Team Photo */}
-                <div className="w-full bg-gray-600 flex items-center justify-center rounded-3xl" style={{ aspectRatio: '4/3' }}>
-                  <div className="text-center text-gray-300 p-8">
-                    <Building className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg font-semibold">Company Building Photo</p>
-                    <p className="text-sm opacity-75">Professional facility image</p>
-                  </div>
-                </div>
+                <img 
+                  src={gardneraboutusImage}
+                  alt="Professional Gardner Plumbing Co. technician ready to help with your plumbing needs" 
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    style={{ aspectRatio: '4/3', objectPosition: 'center center' }}
+                  />
                 
                 {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Award className="h-4 w-4 text-white" />
@@ -248,14 +252,12 @@ export function About() {
             {/* Left Column - Image Placeholder */}
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-                {/* IMAGE PLACEHOLDER - Founder/Historic Photo */}
-                <div className="w-full bg-gray-600 flex items-center justify-center rounded-3xl" style={{ aspectRatio: '4/3' }}>
-                  <div className="text-center text-gray-300 p-8">
-                    <Users className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg font-semibold">Company Founder Photo</p>
-                    <p className="text-sm opacity-75">Historic company image</p>
-                  </div>
-                </div>
+                <img 
+                  src={gardneraboutusImage2}
+                  alt="Professional Gardner Plumbing Co. technician ready to help with your plumbing needs" 
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                    style={{ aspectRatio: '4/3', objectPosition: 'center center' }}
+                  />
                 
                 {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
@@ -375,162 +377,135 @@ export function About() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0"
-            style={{ 
-              background: `
-                radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
-                linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-              `
-            }}
-          />
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
-              <Users className="h-5 w-5 text-green-400" />
-              <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Our Team</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Meet Our <span className="text-gradient bg-gradient-to-r from-green-400 to-red-600 bg-clip-text text-transparent">Expert Team</span>
-            </h2>
-            <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              Our licensed professionals bring years of experience and dedication to every job. Get to know the team that makes Gardner Plumbing Co. your trusted plumbing partner.
-            </p>
-          </div>
+     {/* Trust Section */}
+<section className="py-16 sm:py-20 relative overflow-hidden">
+  <div className="absolute inset-0">
+    <div 
+      className="absolute inset-0"
+      style={{ 
+        background: `
+          radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
+          linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
+        `
+      }}
+    />
+  </div>
+  
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
+        <ShieldCheck className="h-5 w-5 text-green-400" />
+        <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
+          Why Customers Trust Us
+        </span>
+      </div>
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
+        Built on <span className="text-gradient bg-gradient-to-r from-green-400 to-red-600 bg-clip-text text-transparent">Trust & Reliability</span>
+      </h2>
+      <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
+        Every job is backed by our promise of quality workmanship, honest service, and dependable support. Here’s why thousands of homeowners count on us.
+      </p>
+    </div>
 
-          {/* Team Photo Placeholder */}
-          <div className="mb-16">
-            <div className="relative group overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-              {/* IMAGE PLACEHOLDER - Team Group Photo */}
-              <div className="w-full bg-gray-600 flex items-center justify-center rounded-3xl" style={{ aspectRatio: '21/9' }}>
-                <div className="text-center text-gray-300 p-12">
-                  <Users className="h-20 w-20 mx-auto mb-6 opacity-50" />
-                  <p className="text-2xl font-semibold mb-2">Team Group Photo</p>
-                  <p className="text-lg opacity-75">Professional team portrait</p>
-                </div>
-              </div>
-              
-              {/* Premium overlay effects */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
-              
-              {/* Floating badges */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center">
-                    <Shield className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm">Licensed Professionals</div>
-                    <div className="text-gray-300 text-xs">Fully Certified Team</div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
-                    <Star className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm">Expert Technicians</div>
-                    <div className="text-gray-300 text-xs">Years of Experience</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* Trust Marker Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+        <CardContent className="relative z-10 p-8 text-center">
+          <ShieldCheck className="h-12 w-12 mx-auto mb-4 text-green-400" />
+          <h3 className="text-xl font-bold text-white mb-2">Licensed & Insured</h3>
+          <p className="text-gray-300 leading-relaxed">Your home is protected—our work meets all codes and standards.</p>
+        </CardContent>
+      </Card>
 
-          {/* Individual Team Member Placeholders */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3].map((member) => (
-              <Card key={member} className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500" style={{ 
-                backgroundColor: '#202020',
-                backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)'
-              }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-transparent to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg"></div>
-                <div className="absolute inset-[1px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg"></div>
-                
-                <div className="relative z-10">
-                  {/* IMAGE PLACEHOLDER - Individual Team Member */}
-                  <div className="w-full bg-gray-600 flex items-center justify-center" style={{ aspectRatio: '4/3' }}>
-                    <div className="text-center text-gray-300 p-8">
-                      <Users className="h-12 w-12 mx-auto mb-4 opacity-50" />
-                      <p className="text-lg font-semibold">Team Member {member}</p>
-                      <p className="text-sm opacity-75">Professional headshot</p>
-                    </div>
-                  </div>
-                  
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-100 transition-colors duration-300">Team Member Name</h3>
-                    <p className="text-green-400 font-semibold mb-3">Licensed Plumber</p>
-                    <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                      Years of experience in residential and commercial plumbing, specializing in advanced diagnostics and repair.
-                    </p>
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+        <CardContent className="relative z-10 p-8 text-center">
+          <Clock className="h-12 w-12 mx-auto mb-4 text-green-400" />
+          <h3 className="text-xl font-bold text-white mb-2">24/7 Emergency Service</h3>
+          <p className="text-gray-300 leading-relaxed">We’re always on call to respond to urgent plumbing emergencies.</p>
+        </CardContent>
+      </Card>
+
+      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+        <CardContent className="relative z-10 p-8 text-center">
+          <Wallet className="h-12 w-12 mx-auto mb-4 text-green-400" />
+          <h3 className="text-xl font-bold text-white mb-2">Upfront Pricing</h3>
+          <p className="text-gray-300 leading-relaxed">No hidden fees—clear, honest estimates before any work begins.</p>
+        </CardContent>
+      </Card>
+
+      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+        <CardContent className="relative z-10 p-8 text-center">
+          <ThumbsUp className="h-12 w-12 mx-auto mb-4 text-green-400" />
+          <h3 className="text-xl font-bold text-white mb-2">Workmanship Guarantee</h3>
+          <p className="text-gray-300 leading-relaxed">Every job is backed by our warranty for lasting peace of mind.</p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>
+
 
       {/* Timeline Section */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0"
-            style={{ 
-              background: `
-                radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
-                linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
-              `
-            }}
-          />
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-purple-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
-              <Calendar className="h-5 w-5 text-purple-400" />
-              <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Our Journey</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Company <span className="text-gradient bg-gradient-to-r from-purple-400 to-red-600 bg-clip-text text-transparent">Timeline</span>
-            </h2>
-          </div>
+<section className="py-10 sm:py-14 relative overflow-hidden">
+  <div className="absolute inset-0">
+    <div 
+      className="absolute inset-0"
+      style={{ 
+        background: `
+          radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
+          linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
+        `
+      }}
+    />
+  </div>
+  
+  <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <div className="inline-flex items-center gap-3 mb-6 px-6 py-2 bg-gradient-to-r from-purple-600/20 to-purple-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
+        <Calendar className="h-5 w-5 text-purple-400" />
+        <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Our Journey</span>
+      </div>
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-6 drop-shadow-lg">
+        Company <span className="text-gradient bg-gradient-to-r from-purple-400 to-red-600 bg-clip-text text-transparent">Timeline</span>
+      </h2>
+    </div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 to-red-600 rounded-full"></div>
-            
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div className="glassmorphism-dark rounded-2xl p-6 border border-white/10 shadow-luxury hover-lift transition-all duration-500">
-                      <div className="text-2xl font-bold text-purple-400 mb-2">{item.year}</div>
-                      <h3 className="text-xl font-bold text-white mb-3">{item.event}</h3>
-                      <p className="text-gray-300 leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Timeline node */}
-                  <div className="relative flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-600 to-red-600 rounded-full border-4 border-gray-800 shadow-luxury z-10">
-                    <div className="w-4 h-4 bg-white rounded-full"></div>
-                  </div>
-                  
-                  <div className="w-1/2"></div>
-                </div>
-              ))}
+    <div className="relative">
+      {/* Timeline line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 to-red-600 rounded-full"></div>
+      
+      <div className="space-y-8">
+        {timeline.map((item, index) => (
+          <div 
+            key={index} 
+            className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
+          >
+            {/* Timeline Content */}
+            <div className={`w-1/2 ${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6 text-left'}`}>
+              <div className="glassmorphism-dark rounded-xl p-4 border border-white/10 shadow-md hover-lift transition-all duration-500">
+                <div className="text-xl font-bold text-purple-400 mb-1">{item.year}</div>
+                <h3 className="text-lg font-bold text-white mb-2">{item.event}</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+              </div>
             </div>
+            
+            {/* Timeline node */}
+            <div className="relative flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-red-600 rounded-full border-4 border-gray-800 shadow-md z-10">
+              <div className="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+            
+            <div className="w-1/2"></div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Certifications Section */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
@@ -612,14 +587,14 @@ export function About() {
             {/* Left Column - Text Content */}
             <div className="text-left">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-600/20 to-orange-500/20 rounded-full border border-orange-500/30 backdrop-blur-sm">
-                  <MapPin className="h-5 w-5 text-orange-400" />
-                  <span className="text-orange-400 font-semibold text-sm uppercase tracking-wider">Service Area</span>
+                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
+                  <MapPin className="h-5 w-5 text-blue-400" />
+                  <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Service Area</span>
                 </div>
               </div>
               
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
-                Proudly Serving <span className="text-gradient bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent">Riverside County</span>
+                Proudly Serving <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Riverside County</span>
               </h2>
               
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
@@ -632,15 +607,15 @@ export function About() {
                   "Canyon Lake", "Lake Elsinore", "Corona", "Moreno Valley",
                   "Riverside", "Hemet", "San Jacinto", "Wildomar"
                 ].map((city, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 glassmorphism-dark rounded-lg border border-white/10 hover:border-orange-500/30 transition-all duration-300">
-                    <CheckCircle className="h-5 w-5 text-orange-400" />
+                  <div key={index} className="flex items-center gap-3 p-3 glassmorphism-dark rounded-lg border border-white/10 hover:border-blue-500/30 transition-all duration-300">
+                    <CheckCircle className="h-5 w-5 text-blue-400" />
                     <span className="text-white font-medium">{city}</span>
                   </div>
                 ))}
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
@@ -649,25 +624,29 @@ export function About() {
               </div>
             </div>
             
-            {/* Right Column - Map Placeholder */}
-            <div className="relative group">
-              <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-                {/* IMAGE PLACEHOLDER - Service Area Map */}
-                <div className="w-full bg-gray-600 flex items-center justify-center rounded-3xl" style={{ aspectRatio: '4/3' }}>
-                  <div className="text-center text-gray-300 p-8">
-                    <MapPin className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg font-semibold">Service Area Map</p>
-                    <p className="text-sm opacity-75">Riverside County coverage</p>
-                  </div>
-                </div>
+            {/* Right Column - Map */}
+<div className="relative group">
+  <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 self-start pt-30">
+    {/* Google Maps Embed */}
+    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109144.45437258422!2d-117.20587604273275!3d33.571118777583706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc9d0f093fb225%3A0xef87e6a2bf83ed0f!2sGardner%20Plumbing%20Company!5e0!3m2!1sen!2sus!4v1755821362571!5m2!1sen!2sus"
+  width="100%"
+  height="520"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Gardner Plumbing Co. Service Area - Riverside County"
+  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 rounded-3xl"
+/>
                 
                 {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-orange-600 to-orange-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
                       <MapPin className="h-4 w-4 text-white" />
                     </div>
                     <div>
@@ -703,7 +682,7 @@ export function About() {
                 <Phone className="h-10 w-10 text-white" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-                Ready to Work with <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing?</span>
+                Ready to Work with <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gardner Plumbing Co.?</span>
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 Experience the difference that three decades of trusted service makes. Contact us today for all your plumbing needs.

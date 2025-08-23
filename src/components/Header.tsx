@@ -229,20 +229,29 @@ export function Header() {
 
                                   {/* Business Hours */}
                                   <div className="mb-6">
-                                    <h4 className="text-base text-white mb-3 pb-2 border-b-2 border-red-600 drop-shadow-sm">Business Hours</h4>
+                                    <h4 className="text-base text-white mb-3 pb-2 border-b-2 border-red-600 drop-shadow-sm">
+                                      Business Hours
+                                    </h4>
                                     <div className="space-y-1.5">
+                                      {/* Office Hours */}
                                       <div className="flex justify-between items-center">
-                                        <span className="text-gray-300 text-sm">Mon - Fri</span>
-                                        <span className="text-gray-400 text-sm">7:00 AM - 6:00 PM</span>
-                                      </div>
-                                      <div className="flex justify-between items-center">
-                                        <span className="text-gray-300 text-sm">Saturday</span>
+                                        <span className="text-gray-300 text-sm">Office (Mon - Fri)</span>
                                         <span className="text-gray-400 text-sm">8:00 AM - 4:00 PM</span>
                                       </div>
+
+                                      {/* Service Hours */}
                                       <div className="flex justify-between items-center">
-                                        <span className="text-gray-300 text-sm">Sunday</span>
+                                        <span className="text-gray-300 text-sm">Service (Mon - Fri)</span>
+                                        <span className="text-gray-400 text-sm">8:00 AM - 5:00 PM</span>
+                                      </div>
+
+                                      {/* Weekend */}
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-gray-300 text-sm">Saturday - Sunday</span>
                                         <span className="text-gray-400 text-sm">Emergency Only</span>
                                       </div>
+
+                                      {/* Emergency */}
                                       <div className="pt-1.5 border-t border-gray-600">
                                         <div className="flex justify-between items-center">
                                           <span className="text-red-400 text-sm font-medium">Emergency</span>
@@ -251,8 +260,7 @@ export function Header() {
                                       </div>
                                     </div>
                                   </div>
-
-                                  {/* Trust indicators */}
+                                                                    {/* Trust indicators */}
                                   <div className="space-y-3 mb-6">
                                     <a href="/services/emergency-plumbing" className="flex items-center gap-3 group hover-lift">
                                       <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center shadow-lg">

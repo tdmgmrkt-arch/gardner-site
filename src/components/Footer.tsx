@@ -99,15 +99,15 @@ export function Footer() {
                   </h4>
                   <div className="space-y-1.5">
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300 text-xs">Mon - Fri</span>
-                      <span className="text-gray-400 text-xs">7:00 AM - 6:00 PM</span>
+                      <span className="text-gray-300 text-xs">Office (Mon - Fri)</span>
+                      <span className="text-gray-400 text-xs">8:00 AM  - 4:00 PM</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300 text-xs">Saturday</span>
-                      <span className="text-gray-400 text-xs">8:00 AM - 4:00 PM</span>
+                      <span className="text-gray-300 text-xs">Service (Mon - Fri)</span>
+                      <span className="text-gray-400 text-xs">8:00 AM - 5:00 PM</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-gray-300 text-xs">Sunday</span>
+                      <span className="text-gray-300 text-xs">Saturday - Sunday</span>
                       <span className="text-gray-400 text-xs">Emergency Only</span>
                     </div>
                     <div className="pt-1.5 border-t border-gray-600">
@@ -129,7 +129,7 @@ export function Footer() {
                   <h4 className="text-lg text-white mb-6 pb-3 border-b-2 border-red-600 drop-shadow-sm">About Us</h4>
                   <ul className="space-y-4">
                     {[
-                      { name: "Gardner Plumbing", desc: "Our story & team", link: "/about-us" },
+                      { name: "Gardner Plumbing Co.", desc: "Our story & team", link: "/about-us" },
                       { name: "Contact Us", desc: "Get in touch today", link: "/contact-us" },
                       { name: "Customer Reviews", desc: "See what clients say", link: "/reviews" },
                       { name: "Service Areas", desc: "Where we work", link: "/service-areas" },

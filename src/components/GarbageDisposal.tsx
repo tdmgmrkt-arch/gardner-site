@@ -25,9 +25,9 @@ import {
   Star,
   AlertTriangle
 } from "lucide-react";
-const IntroImage = "/draincleaningserviceintro.png";
-const beforeafterImage = "draincleaningbeforeandafter.png";
-const dcgp2 = "draincleaningestimate.png";
+const IntroImage = "leakdetectionserviceintro.png";
+const beforeafterImage = "leakdetectionbeforeandafter.png";
+const ldgp2 = "leakdetectionestimate.png";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -44,21 +44,21 @@ const cityLinks: Record<string, string> = {
   Wildomar: "https://cityofwildomar.org",
 };
 
-export function Drain() {
+export function GarbageDisposal() {
 const emergencyReasons = [
-  "Complete drain blockage",
-  "Multiple drains backing up",
-  "Sewage backup in home",
-  "Kitchen sink not draining",
-  "Shower or tub standing water",
-  "Toilet repeatedly overflowing",
-  "Strong sewer odor indoors",
-  "Recurring stubborn clogs"
+     "Unit completely jammed or won’t turn on",
+    "Grinding noises with no operation",
+    "Leaking from bottom housing",
+    "Water backing up into sink",
+    "Burning smell / motor overheating",
+    "Reset button constantly tripping",
+    "Excessive vibration or shaking",
+    "Drain line or connection leak",
   ];
 
   const serviceAreas = [
     "Temecula",
-    "Murrieta", 
+    "Murrieta",
     "Perris",
     "Menifee",
     "Canyon Lake",
@@ -66,85 +66,93 @@ const emergencyReasons = [
     "Corona",
     "Moreno Valley",
     "Riverside",
-    "Hemet"
+    "Hemet",
+    "San Jacinto",
+    "Wildomar",
   ];
 
-  const faqs = [
+   const faqs = [
     {
-      question: "How do I know if I need professional drain cleaning?",
-      answer: "Signs include slow-draining sinks, gurgling sounds, foul odors from drains, water backing up in tubs or showers, or clogs that keep coming back even after using a plunger or store-bought drain cleaner."
+      question: "Should I repair or replace my garbage disposal?",
+      answer:
+        "If the motor is burnt out, the housing leaks, or the blades are worn, replacement is usually best. Minor issues like jams or clogs can often be repaired quickly.",
     },
     {
-      question: "Can you clear all types of drain clogs?",
-      answer: "Yes! We handle everything from kitchen grease and soap scum buildup to bathroom hair clogs, toilet blockages, and even tree root intrusions in sewer lines. We use the right tools for each situation to ensure a complete cleaning."
+      question: "How long does installation take?",
+      answer:
+        "Most installations are completed in 60–90 minutes, including removal of the old unit, new wiring/plumbing connections, and leak testing.",
     },
     {
-      question: "Is chemical drain cleaner safe to use?",
-      answer: "No. Over-the-counter chemical cleaners can corrode your pipes, damage plumbing fixtures, and are harmful to the environment. Professional drain cleaning is a safer, more effective solution that protects your plumbing system."
+      question: "Can you install a disposal I purchased?",
+      answer:
+        "Yes! We’ll confirm compatibility with your sink and plumbing, install it properly, and ensure all connections are watertight and to code.",
     },
     {
-      question: "How often should I have my drains cleaned?",
-      answer: "For most homes, we recommend professional drain cleaning once every 1–2 years as preventive maintenance. Homes with heavy usage or frequent clogs may need service more often."
+      question: "Why does my garbage disposal smell?",
+      answer:
+        "Food residue can build up in the chamber or drain line. We clean and flush the system, and can recommend enzyme treatments to keep it fresh.",
     },
     {
-      question: "Do you offer camera inspections?",
-      answer: "Yes. For stubborn or recurring clogs, we use video camera inspections to look inside your pipes and identify the exact cause of the problem. This allows us to provide a long-term solution, not just a quick fix."
+      question: "Do you handle electrical hookups?",
+      answer:
+        "Yes. We connect power safely, whether it’s hardwired or plug-in, and test the unit thoroughly before completion.",
     },
     {
-      question: "Can drain cleaning prevent future plumbing emergencies?",
-      answer: "Absolutely. Regular professional drain cleaning removes buildup before it causes major blockages, backups, or sewage overflows, helping you avoid costly repairs and water damage."
-    }
+      question: "Do you offer warranties?",
+      answer:
+        "Yes—manufacturer warranties on new disposals plus our workmanship guarantee on labor.",
+    },
   ];
 
 const services = [
-    {
-      icon: Droplets,
-      title: "Hydro-Jetting",
-      description: "High-pressure water jetting to clear the toughest blockages and clean pipe walls thoroughly.",
-      features: ["Eco-Friendly", "Root Cutting", "Grease Removal", "Scale Buildup Removal"]
-    },
-    {
-      icon: Camera,
-      title: "Video Inspection",
-      description: "Advanced camera technology to locate blockages and assess pipe condition accurately.",
-      features: ["Real-Time Viewing", "Digital Recording", "Precise Location", "Damage Assessment"]
-    },
-    {
-      icon: Wrench,
-      title: "Drain Snaking",
-      description: "Professional drain augers and snakes to break through clogs and restore flow.",
-      features: ["Various Sizes", "Flexible Tools", "Safe Method", "Immediate Results"]
-    },
-    {
-      icon: Zap,
-      title: "Emergency Service",
-      description: "24/7 emergency drain cleaning when you need it most - nights, weekends, and holidays.",
-      features: ["24/7 Availability", "Rapid Response", "Emergency Equipment", "Weekend Service"]
-    }
-  ];
+  {
+    icon: Wrench,
+    title: "Garbage Disposal Installation",
+    description: "Fast, clean installs of new or replacement units with proper electrical and plumbing connections.",
+    features: ["Old Unit Removal", "Electrical Hookup", "Leak-Free Seal", "Tested & Verified"]
+  },
+  {
+    icon: Droplets,
+    title: "Garbage Disposal Repair",
+    description: "Fix jams, leaks, strange noises, or units that won’t turn on with professional tools and parts.",
+    features: ["Unjamming", "Seal/Gasket Replacement", "Reset & Wiring Fix", "Drain Line Clearing"]
+  },
+  {
+    icon: Shield,
+    title: "Clogged Sink Assistance",
+    description: "Clear tough clogs that form in the disposal or connected drain lines without damaging pipes.",
+    features: ["Safe Clearing", "Drain Inspection", "No Chemicals", "Prevent Future Clogs"]
+  },
+  {
+    icon: DollarSign,
+    title: "Upgrades & Replacements",
+    description: "Install quiet, efficient, and long-lasting models with stainless steel grinding components.",
+    features: ["High-Horsepower Options", "Noise-Reducing Models", "Energy Efficient", "Top Brands"]
+  }
+];
 
   const benefits = [
-    {
-      icon: Clock,
-      title: "Fast Response",
-      description: "Same-day service available with most clogs cleared within hours of our arrival."
-    },
-    {
-      icon: Shield,
-      title: "Licensed & Insured",
-      description: "Fully licensed plumbers with comprehensive insurance for your peace of mind."
-    },
-    {
-      icon: DollarSign,
-      title: "Upfront Pricing",
-      description: "No hidden fees or surprise charges - you'll know the exact cost before we start."
-    },
-    {
-      icon: Award,
-      title: "30+ Years Experience",
-      description: "Three decades of drain cleaning expertise serving Riverside County homeowners."
-    }
-  ];
+  {
+    icon: Shield,
+    title: "Licensed & Insured",
+    description: "Full protection, code-compliant installs, and guaranteed workmanship."
+  },
+  {
+    icon: Clock,
+    title: "Same-Day Solutions",
+    description: "Most replacements and repairs completed in under 2 hours."
+  },
+  {
+    icon: DollarSign,
+    title: "Upfront Pricing",
+    description: "No surprises—clear written estimates before any work begins."
+  },
+  {
+    icon: Award,
+    title: "Trusted Locally",
+    description: "Decades of service with 5-star reviews across Riverside County."
+  }
+];
 
   return (
     <div className="min-h-screen">
@@ -185,30 +193,30 @@ const services = [
                   <ArrowRight className="h-4 w-4" />
                   <span>Services</span>
                   <ArrowRight className="h-4 w-4" />
-                  <span className="text-red-400">Drain Cleaning</span>
+                  <span className="text-red-400">Garbage Disposal Installation & Repair</span>
                 </div>
               </nav>
 
               {/* Badge */}
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
                 <Droplets className="h-5 w-5 text-red-400" />
-                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Expert Drain Cleaning</span>
+                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Kitchen Plumbing</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Drain Cleaning</span> Services
+                Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Garbage Disposal Install &</span> Repair
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-                Fast, effective drain cleaning throughout Riverside County. Same-day service available with 30+ years of experience clearing even the toughest clogs.
+                  Keep your kitchen sink running smoothly with professional garbage disposal installs, repairs, and replacements.
               </p>
 
               {/* Key Benefits */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { icon: Clock, text: "Same-Day Service" },
-                  { icon: Shield, text: "30-Day Guarantee" },
-                  { icon: DollarSign, text: "Upfront Pricing" },
+                  { icon: Shield, text: "Damage Prevention" },
+                  { icon: DollarSign, text: "Maximize Efficiency" },
                   { icon: Phone, text: "24/7 Emergency" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-gray-300">
@@ -240,7 +248,7 @@ const services = [
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                 <img
                   src= {IntroImage}
-                  alt="Professional plumber using hydro-jetting equipment to clean drains"
+                  alt="Professional plumber installing garbage disposal"
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
                 
@@ -248,14 +256,14 @@ const services = [
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                      <Droplets className="h-4 w-4 text-white" />
+                      <Camera className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-sm">Professional Service</div>
-                      <div className="text-gray-300 text-xs">Licensed & Insured</div>
+                      <div className="text-white font-bold text-sm">Expert</div>
+                      <div className="text-gray-300 text-xs">Installation</div>
                     </div>
                   </div>
                 </div>
@@ -298,7 +306,7 @@ const services = [
               <div className="flex items-center gap-3">
                 <AlertTriangle className="h-6 w-6 text-white animate-pulse flex-shrink-0" />
                 <span className="text-white font-bold text-lg sm:text-xl">
-                  Clogged Drain Emergency?
+                  Disposal Jammed or Leaking?
                 </span>
               </div>
 
@@ -336,14 +344,14 @@ const services = [
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-20 animate-fade-in">
             <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-              <Droplets className="h-5 w-5 text-blue-400" />
+              <Camera className="h-5 w-5 text-blue-400" />
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Our Services</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Drain Cleaning</span> Solutions
+              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Garbage Disposal</span> Solutions
             </h2>
             <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              From simple clogs to complex blockages, our experienced technicians use the latest equipment and techniques to restore your drains to perfect working condition.
+               Expert installation, fast repairs, and reliable replacements to keep your kitchen running smoothly.
             </p>
           </div>
 
@@ -390,23 +398,23 @@ const services = [
           <div className="glassmorphism-dark rounded-3xl p-8 border border-white/10 shadow-luxury">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">See the Difference Professional Drain Cleaning Makes</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">See How Professional Garbage Disposal Service Improves Your Kitchen</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Removes years of buildup and blockages</span>
+                    <span>Extends lifespan of your disposal unit</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Restores full water flow and drainage speed</span>
+                    <span>Prevents leaks, odors, and messy backups</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Eliminates foul odors and prevents future clogs</span>
+                    <span>Restores quiet, efficient operation</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Extends the life of your plumbing system</span>
+                    <span>Improves kitchen hygiene & safety</span>
                   </div>
                 </div>
               </div>
@@ -414,17 +422,17 @@ const services = [
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-luxury">
                   <img
                     src={beforeafterImage}
-                    alt="Before and after drain cleaning results showing clear vs clogged pipes"
+                    alt="Before and after garbage disposal repair"
                     className="w-full h-64 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent">
                     {/* Split overlay effect */}
                     <div className="absolute inset-0 flex">
                       <div className="w-1/2 bg-gradient-to-r from-red-900/40 to-transparent flex items-center justify-center">
-                        <span className="text-white font-bold bg-red-600/80 px-3 py-1 rounded-full text-sm">BEFORE</span>
+                        <span className="text-white font-bold bg-red-600/80 px-3 py-1 rounded-full text-sm">LEAKING / BROKEN </span>
                       </div>
                       <div className="w-1/2 bg-gradient-to-l from-green-900/40 to-transparent flex items-center justify-center">
-                        <span className="text-white font-bold bg-green-600/80 px-3 py-1 rounded-full text-sm">AFTER</span>
+                        <span className="text-white font-bold bg-green-600/80 px-3 py-1 rounded-full text-sm">FIXED /REPLACED </span>
                       </div>
                     </div>
                   </div>
@@ -455,8 +463,8 @@ const services = [
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                    src={dcgp2}
-                  alt="Professional Gardner Plumbing Co. technician with drain cleaning equipment"
+                    src={ldgp2}
+                  alt="Professional Gardner Plumbing Co. technician with repairing garbage disposal"
                   className="w-full h-96 object-cover rounded-3xl"
                 />
                 
@@ -486,11 +494,11 @@ const services = [
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Drain Experts
+                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Garbage Disposal Experts
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed text-[16px]">
-                With over three decades of experience serving Riverside County, we've cleared thousands of drains and earned our reputation as the area's most reliable plumbing professionals.
+                For 30+ years, Riverside County homeowners have trusted us for fast, reliable garbage disposal installs and repairs—saving time, preventing breakdowns, and keeping kitchens running smoothly.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -513,13 +521,14 @@ const services = [
               <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                 <span className="flex items-center justify-center gap-3">
                   <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Estimate
+                  Get Free Leak Inspection
                 </span>
               </Button>
             </div>
           </div>
         </div>
       </section>
+
       {/* Service Areas */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
   <div className="absolute inset-0">
@@ -548,7 +557,7 @@ const services = [
         </span>
       </h2>
       <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        Professional drain cleaning and repair services available throughout
+        Expert garbage disposal installation and repair services available throughout
         Riverside County with fast response times to your location.
       </p>
     </div>
@@ -629,10 +638,10 @@ const services = [
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Drain Cleaning and Repair <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
+              Garbage Disposal <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              Find answers to common questions about our drain cleaning and repair services, technology, and process.
+              Find answers to the most common questions about garbage disposal repair, installation, and maintenance.
             </p>
           </div>
 
@@ -707,7 +716,6 @@ const services = [
               </div>
             </div>
           </div>
-
           {/* Enhanced CTA Section */}
           <div className="glassmorphism-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 shadow-luxury hover-lift animate-fade-in">
             <div className="text-center">
@@ -718,7 +726,7 @@ const services = [
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">Have More Questions?</h3>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Can't find what you're looking for? Our drain cleaning and repair experts are standing by to answer your questions and schedule your professional drain cleaning service.
+                Can't find what you're looking for? Our Garbage Disposal experts are standing by to answer your questions and schedule your service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
@@ -763,11 +771,11 @@ const services = [
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                24/7 Drain Cleaning <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">Emergency</span> Service
+                24/7 Garbage Disposal <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">Emergency</span> Service
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Don't let a clogged drain cause major damage. We provide 24/7 emergency drain cleaning throughout Riverside County with rapid response times.
+                Don’t let a broken disposal disrupt your kitchen. We provide 24/7 emergency garbage disposal repair and replacement across Riverside County with rapid response times.
               </p>
 
               <div className="mb-8">
@@ -798,7 +806,7 @@ const services = [
                 <div className="text-center text-gray-400">
                   <AlertTriangle className="h-16 w-16 mx-auto mb-4 opacity-50" />
                   <p className="text-lg font-semibold mb-2">EMERGENCY SERVICE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Emergency Drain Cleaning service - technician responding to an urgent drain emergency call</p>
+                  <p className="text-sm max-w-xs">Emergency Garbage Disposal service - technician responding to urgent call </p>
                 </div>
               </div>
               
@@ -844,10 +852,10 @@ const services = [
                 <Phone className="h-6 w-6 text-white" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
-                Ready for a Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Drain Cleaning?</span>
+                Need Garbage Disposal <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Repair Today?</span>
               </h2>
               <p className="text-lg text-gray-300 mb-6 max-w-lg mx-auto">
-                Three decades of trusted service. Contact us for expert drain cleaning and repair.
+                Whether it’s a jammed disposal, a leaking unit, or a full replacement, our licensed plumbers are ready to help 24/7
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">

@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { 
-  Droplets, 
+  Flame, 
   Clock, 
   Shield, 
   CheckCircle, 
@@ -16,18 +16,20 @@ import {
   DollarSign,
   Wrench,
   Calendar,
+  MapPin,
+  AlertTriangle,
   Camera,
   Zap,
-  Award,
-  HelpCircle,
-  MapPin,
   Mail,
   Star,
-  AlertTriangle
+  Award,
+  HelpCircle,
+  Thermometer,
+  Truck,
 } from "lucide-react";
-const IntroImage = "/draincleaningserviceintro.png";
-const beforeafterImage = "draincleaningbeforeandafter.png";
-const dcgp2 = "draincleaningestimate.png";
+const IntroImage = "/GardnerPlumbingGasLine.webp";
+const beforeafterImage = "gaslineinstallationbeforeandafter.png";
+const whychooseusImage = "/GardnerEmployeCustomerEstimate.webp";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -44,16 +46,14 @@ const cityLinks: Record<string, string> = {
   Wildomar: "https://cityofwildomar.org",
 };
 
-export function Drain() {
+export function GasLine() {
 const emergencyReasons = [
-  "Complete drain blockage",
-  "Multiple drains backing up",
-  "Sewage backup in home",
-  "Kitchen sink not draining",
-  "Shower or tub standing water",
-  "Toilet repeatedly overflowing",
-  "Strong sewer odor indoors",
-  "Recurring stubborn clogs"
+   "Gas smell indoors or outdoors",
+    "Gas line leak detected",
+    "Damaged gas line from digging",
+    "Appliance won't light or stay lit",
+    "Gas pressure issues",
+    "Carbon monoxide detector alarm",
   ];
 
   const serviceAreas = [
@@ -71,79 +71,114 @@ const emergencyReasons = [
 
   const faqs = [
     {
-      question: "How do I know if I need professional drain cleaning?",
-      answer: "Signs include slow-draining sinks, gurgling sounds, foul odors from drains, water backing up in tubs or showers, or clogs that keep coming back even after using a plunger or store-bought drain cleaner."
+      question: "How much does gas line installation cost?",
+      answer:
+        "Gas line installation typically costs $500-$2,000 depending on the length and complexity. We provide upfront pricing before starting any work, so you'll know exactly what you'll pay.",
     },
     {
-      question: "Can you clear all types of drain clogs?",
-      answer: "Yes! We handle everything from kitchen grease and soap scum buildup to bathroom hair clogs, toilet blockages, and even tree root intrusions in sewer lines. We use the right tools for each situation to ensure a complete cleaning."
+      question: "How long does gas line installation take?",
+      answer:
+        "Most gas line installations take 4-8 hours. Simple connections can be completed in 4 hours, while complex runs or multiple appliances may take a full day.",
     },
     {
-      question: "Is chemical drain cleaner safe to use?",
-      answer: "No. Over-the-counter chemical cleaners can corrode your pipes, damage plumbing fixtures, and are harmful to the environment. Professional drain cleaning is a safer, more effective solution that protects your plumbing system."
+      question: "Do you offer emergency gas line service?",
+      answer:
+        "Yes! We provide 24/7 emergency gas line service throughout Riverside County. Call us immediately for urgent issues like gas leaks or gas smell emergencies.",
     },
     {
-      question: "How often should I have my drains cleaned?",
-      answer: "For most homes, we recommend professional drain cleaning once every 1–2 years as preventive maintenance. Homes with heavy usage or frequent clogs may need service more often."
+      question: "What are signs I need gas line repair?",
+      answer:
+        "Common signs include: gas smell near appliances or outdoors, hissing sounds near gas lines, dead vegetation near gas lines, dirt blowing from underground, or appliances not working properly.",
     },
     {
-      question: "Do you offer camera inspections?",
-      answer: "Yes. For stubborn or recurring clogs, we use video camera inspections to look inside your pipes and identify the exact cause of the problem. This allows us to provide a long-term solution, not just a quick fix."
+      question:
+        "Are you licensed for gas line work?",
+      answer:
+        "Absolutely! We are fully licensed and certified for gas line installation, repair, and inspection. All work meets local codes and safety standards with proper permits.",
     },
     {
-      question: "Can drain cleaning prevent future plumbing emergencies?",
-      answer: "Absolutely. Regular professional drain cleaning removes buildup before it causes major blockages, backups, or sewage overflows, helping you avoid costly repairs and water damage."
-    }
+      question: "Do you guarantee your gas line work?",
+      answer:
+        "Yes! We offer comprehensive warranties on both parts and labor. All gas line work includes pressure testing and safety certification with our workmanship guarantee.",
+    },
   ];
 
 const services = [
     {
-      icon: Droplets,
-      title: "Hydro-Jetting",
-      description: "High-pressure water jetting to clear the toughest blockages and clean pipe walls thoroughly.",
-      features: ["Eco-Friendly", "Root Cutting", "Grease Removal", "Scale Buildup Removal"]
-    },
-    {
-      icon: Camera,
-      title: "Video Inspection",
-      description: "Advanced camera technology to locate blockages and assess pipe condition accurately.",
-      features: ["Real-Time Viewing", "Digital Recording", "Precise Location", "Damage Assessment"]
+      icon: Zap,
+      title: "Gas Line\nInstallation",
+      description:
+        "Professional installation of new gas lines for appliances, fire pits, pool heaters, and outdoor kitchens with proper sizing and safety compliance.",
+      features: [
+        "New Appliance Lines",
+        "Outdoor Gas Features",
+        "Proper Sizing",
+        "Code Compliance",
+      ],
     },
     {
       icon: Wrench,
-      title: "Drain Snaking",
-      description: "Professional drain augers and snakes to break through clogs and restore flow.",
-      features: ["Various Sizes", "Flexible Tools", "Safe Method", "Immediate Results"]
+      title: "Gas Line\nRepair",
+      description:
+        "Expert repair services for damaged or leaking gas lines with emergency response and safety-first approach to restore service safely.",
+      features: [
+        "Leak Detection",
+        "Emergency Response",
+        "Safety Testing",
+        "Warranty Included",
+      ],
     },
     {
-      icon: Zap,
-      title: "Emergency Service",
-      description: "24/7 emergency drain cleaning when you need it most - nights, weekends, and holidays.",
-      features: ["24/7 Availability", "Rapid Response", "Emergency Equipment", "Weekend Service"]
-    }
+      icon: Thermometer,
+      title: "Gas Line\nInspection",
+      description:
+        "Comprehensive gas line safety inspections and pressure testing to ensure your system meets all safety codes and regulations.",
+      features: [
+        "Safety Inspections",
+        "Pressure Testing",
+        "Code Compliance",
+        "Certification Provided",
+      ],
+    },
+    {
+      icon: AlertTriangle,
+      title: "Emergency\nService",
+      description:
+        "24/7 emergency gas line service for leaks, damage, or safety concerns - immediate response for gas emergencies throughout Riverside County.",
+      features: [
+        "24/7 Availability",
+        "Immediate Response",
+        "Safety Equipment",
+        "Emergency Repairs",
+      ],
+    },
   ];
 
   const benefits = [
     {
       icon: Clock,
       title: "Fast Response",
-      description: "Same-day service available with most clogs cleared within hours of our arrival."
+      description:
+        "Same-day service available with emergency gas line issues prioritized for immediate safety response.",
     },
     {
       icon: Shield,
-      title: "Licensed & Insured",
-      description: "Fully licensed plumbers with comprehensive insurance for your peace of mind."
+      title: "Licensed & Certified",
+      description:
+        "Fully licensed gas technicians with comprehensive insurance and safety certifications for your protection.",
     },
     {
       icon: DollarSign,
       title: "Upfront Pricing",
-      description: "No hidden fees or surprise charges - you'll know the exact cost before we start."
+      description:
+        "No hidden fees or surprise charges - you'll know the exact cost before we start any gas line work.",
     },
     {
       icon: Award,
       title: "30+ Years Experience",
-      description: "Three decades of drain cleaning expertise serving Riverside County homeowners."
-    }
+      description:
+        "Three decades of gas line expertise serving Riverside County with thousands of safe installations.",
+    },
   ];
 
   return (
@@ -167,7 +202,7 @@ const services = [
             className="absolute inset-0 opacity-10"
             style={{
               backgroundImage: `
-                radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.1) 0%, transparent 50%)
               `
             }}
@@ -185,30 +220,30 @@ const services = [
                   <ArrowRight className="h-4 w-4" />
                   <span>Services</span>
                   <ArrowRight className="h-4 w-4" />
-                  <span className="text-red-400">Drain Cleaning</span>
+                  <span className="text-red-400">Gas Line</span>
                 </div>
               </nav>
 
               {/* Badge */}
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
-                <Droplets className="h-5 w-5 text-red-400" />
-                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Expert Drain Cleaning</span>
+                <Flame className="h-5 w-5 text-red-400" />
+                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Certified Gas Line Experts</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Drain Cleaning</span> Services
+                Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gas Line</span> Services
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-                Fast, effective drain cleaning throughout Riverside County. Same-day service available with 30+ years of experience clearing even the toughest clogs.
+                Expert gas line installation, repair, and inspection throughout Riverside County. Licensed and certified gas technicians ensuring your family's safety with every service.
               </p>
 
               {/* Key Benefits */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { icon: Clock, text: "Same-Day Service" },
-                  { icon: Shield, text: "30-Day Guarantee" },
-                  { icon: DollarSign, text: "Upfront Pricing" },
+                  { icon: Shield, text: "Safety Certified" },
+                  { icon: DollarSign, text: "Licensed & Insured" },
                   { icon: Phone, text: "24/7 Emergency" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-gray-300">
@@ -240,7 +275,7 @@ const services = [
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                 <img
                   src= {IntroImage}
-                  alt="Professional plumber using hydro-jetting equipment to clean drains"
+                  alt="Professional technician installing gas line with safety equipment"
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
                 
@@ -251,11 +286,11 @@ const services = [
                 <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                      <Droplets className="h-4 w-4 text-white" />
+                      <Flame className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-sm">Professional Service</div>
-                      <div className="text-gray-300 text-xs">Licensed & Insured</div>
+                      <div className="text-white font-bold text-sm">Licensed & Certified</div>
+                      <div className="text-gray-300 text-xs">Safety First</div>
                     </div>
                   </div>
                 </div>
@@ -298,7 +333,7 @@ const services = [
               <div className="flex items-center gap-3">
                 <AlertTriangle className="h-6 w-6 text-white animate-pulse flex-shrink-0" />
                 <span className="text-white font-bold text-lg sm:text-xl">
-                  Clogged Drain Emergency?
+                  Gas Line Emergency?
                 </span>
               </div>
 
@@ -310,7 +345,7 @@ const services = [
                   </span>
                 </div>
                 <span className="text-red-100 font-semibold text-sm sm:text-base">
-                  24/7 Service Available
+                  24/7 Emergency Service
                 </span>
               </div>
             </div>
@@ -336,14 +371,14 @@ const services = [
           {/* Section Header */}
           <div className="text-center mb-16 sm:mb-20 animate-fade-in">
             <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-              <Droplets className="h-5 w-5 text-blue-400" />
+              <Flame className="h-5 w-5 text-blue-400" />
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Our Services</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Drain Cleaning</span> Solutions
+              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Gas Line</span> Solutions
             </h2>
             <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              From simple clogs to complex blockages, our experienced technicians use the latest equipment and techniques to restore your drains to perfect working condition.
+              From new installations to emergency repairs, our licensed gas technicians provide comprehensive gas line services for residential and commercial properties.
             </p>
           </div>
 
@@ -390,23 +425,23 @@ const services = [
           <div className="glassmorphism-dark rounded-3xl p-8 border border-white/10 shadow-luxury">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">See the Difference Professional Drain Cleaning Makes</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Professional Gas Line Installation Makes All the Difference</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Removes years of buildup and blockages</span>
+                    <span>Proper sizing for optimal gas pressure and flow</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Restores full water flow and drainage speed</span>
+                    <span>Code-compliant installation for maximum safety</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Eliminates foul odors and prevents future clogs</span>
+                    <span>Pressure testing and leak detection included</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Extends the life of your plumbing system</span>
+                    <span>Licensed installation with proper permits</span>
                   </div>
                 </div>
               </div>
@@ -414,7 +449,7 @@ const services = [
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-luxury">
                   <img
                     src={beforeafterImage}
-                    alt="Before and after drain cleaning results showing clear vs clogged pipes"
+                    alt="Before and after of professional gas line installation"
                     className="w-full h-64 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent">
@@ -455,8 +490,8 @@ const services = [
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                    src={dcgp2}
-                  alt="Professional Gardner Plumbing Co. technician with drain cleaning equipment"
+                    src={whychooseusImage}
+                  alt="Professional Gardner Plumbing Co. technician working on gas line"
                   className="w-full h-96 object-cover rounded-3xl"
                 />
                 
@@ -486,11 +521,11 @@ const services = [
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Drain Experts
+                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Gas Line Experts
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed text-[16px]">
-                With over three decades of experience serving Riverside County, we've cleared thousands of drains and earned our reputation as the area's most reliable plumbing professionals.
+                With over three decades of experience serving Riverside County, we've installed and repaired thousands of gas lines and earned our reputation as the area's most reliable gas line professionals.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -521,57 +556,57 @@ const services = [
         </div>
       </section>
       {/* Service Areas */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
-  <div className="absolute inset-0">
-    <div
-      className="absolute inset-0"
-      style={{
-        background: `
-          radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
-          linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
-        `,
-      }}
-    />
-  </div>
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-        <MapPin className="h-5 w-5 text-blue-400" />
-        <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">
-          Service Areas
-        </span>
-      </div>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
-        Serving All of{" "}
-        <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">
-          Riverside County
-        </span>
-      </h2>
-      <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        Professional drain cleaning and repair services available throughout
-        Riverside County with fast response times to your location.
-      </p>
-    </div>
-
-    {/* Grid of cities */}
-    <div
-      className="grid gap-4 mb-12"
-      style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
-    >
-      {serviceAreas.map((area, index) => (
-        <a
-          key={index}
-          href={cityLinks[area] ?? "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Visit the official website for ${area}`}
-          className="glassmorphism-dark rounded-xl p-4 border border-white/10 text-center hover:border-blue-500/30 transition-all duration-300 hover-lift block"
-        >
-          <MapPin className="h-6 w-6 text-blue-400 mx-auto mb-2" />
-          <span className="text-white font-medium">{area}</span>
-        </a>
-      ))}
-    </div>
+            <section className="py-16 sm:py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `
+                radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
+                linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
+              `,
+            }}
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
+              <MapPin className="h-5 w-5 text-blue-400" />
+              <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">
+                Service Areas
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
+              Serving All of{" "}
+              <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">
+                Riverside County
+              </span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Professional gas line services throughout Riverside County
+              with fast response <br></br> times to your location.
+            </p>
+          </div>
+      
+          {/* Grid of cities */}
+          <div
+            className="grid gap-4 mb-12"
+            style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
+          >
+            {serviceAreas.map((area, index) => (
+              <a
+                key={index}
+                href={cityLinks[area] ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit the official website for ${area}`}
+                className="glassmorphism-dark rounded-xl p-4 border border-white/10 text-center hover:border-blue-500/30 transition-all duration-300 hover-lift block"
+              >
+                <MapPin className="h-6 w-6 text-blue-400 mx-auto mb-2" />
+                <span className="text-white font-medium">{area}</span>
+              </a>
+            ))}
+          </div>
 
     {/* Call to action */}
     <div className="text-center">
@@ -614,7 +649,7 @@ const services = [
             style={{
               backgroundImage: `
                 radial-gradient(circle at 15% 85%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 85% 15%, rgba(220, 38, 38, 0.1) 0%, transparent 50%)
+                radial-gradient(circle at 85% 15%, rgba(249, 115, 22, 0.1) 0%, transparent 50%)
               `
             }}
           />
@@ -629,10 +664,10 @@ const services = [
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Drain Cleaning and Repair <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
+              Gas Line Installation and Repair <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              Find answers to common questions about our drain cleaning and repair services, technology, and process.
+              Find answers to common questions about our gas line services, safety procedures, and installation process.
             </p>
           </div>
 
@@ -718,7 +753,7 @@ const services = [
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">Have More Questions?</h3>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Can't find what you're looking for? Our drain cleaning and repair experts are standing by to answer your questions and schedule your professional drain cleaning service.
+                Can't find what you're looking for? Our gas line installation and repair experts are standing by to answer your questions and schedule your professional service today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
@@ -763,15 +798,14 @@ const services = [
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                24/7 Drain Cleaning <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">Emergency</span> Service
+                24/7 Gas Line <span className="text-gradient bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">Emergency</span> Service
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Don't let a clogged drain cause major damage. We provide 24/7 emergency drain cleaning throughout Riverside County with rapid response times.
+                Gas emergencies require immediate attention. We provide 24/7 emergency gas line service across Riverside County with rapid response for your safety.
               </p>
-
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-6">Common Emergency Situations:</h3>
+                <h3 className="text-xl font-bold text-white mb-6">Emergency Situations:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {emergencyReasons.map((reason, index) => (
                     <div key={index} className="flex items-center gap-3 text-gray-300">
@@ -781,14 +815,18 @@ const services = [
                   ))}
                 </div>
               </div>
-
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Emergency: (951) 246-4337
-                  </span>
-                </Button>
+                <a href="tel:9512464337">
+                  <Button 
+                    size="lg" 
+                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group"
+                  >
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Emergency: (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -798,7 +836,7 @@ const services = [
                 <div className="text-center text-gray-400">
                   <AlertTriangle className="h-16 w-16 mx-auto mb-4 opacity-50" />
                   <p className="text-lg font-semibold mb-2">EMERGENCY SERVICE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Emergency Drain Cleaning service - technician responding to an urgent drain emergency call</p>
+                  <p className="text-sm max-w-xs">Emergency gas line service - technician responding to an urgent gas line emergency call</p>
                 </div>
               </div>
               
@@ -839,46 +877,58 @@ const services = [
           }}
         >
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Phone className="h-6 w-6 text-white" />
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
-                Ready for a Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Drain Cleaning?</span>
-              </h2>
-              <p className="text-lg text-gray-300 mb-6 max-w-lg mx-auto">
-                Three decades of trusted service. Contact us for expert drain cleaning and repair.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
-              <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Call (951) 246-4337
-                </span>
-              </Button>
-              <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Inspection
-                </span>
-              </Button>
-            </div>
-            <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">24/7 Emergency</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">Licensed & Insured</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">4.9 Star Rating</span>
-              </div>
-            </div>
-          </div>
+  <div className="mb-4">
+    <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+      <Phone className="h-6 w-6 text-white" />
+    </div>
+    <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
+      Ready for Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Gas Line Service?</span>
+    </h2>
+    <p className="text-lg text-gray-300 mb-6 max-w-lg mx-auto">
+      Three decades of trusted service. Contact us for expert gas line installation and repair.
+    </p>
+  </div>
+
+  <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
+    <a href="tel:9512464337" className="flex-1">
+      <Button
+        size="lg"
+        className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group w-full"
+      >
+        <span className="flex items-center justify-center gap-2">
+          <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+          Call (951) 246-4337
+        </span>
+      </Button>
+    </a>
+    <a href="mailto:office@gardnerplumbingco.com?subject=Free%20Gas%20Line%20Inspection&body=Hi%20Gardner%20Plumbing%2C%0A%0AI%27d%20like%20to%20schedule%20a%20free%20gas%20line%20inspection.%0A%0AName%3A%0APhone%3A%0AAddress%3A%0ADetails%3A" className="flex-1">
+      <Button
+        size="lg"
+        className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent w-full"
+      >
+        <span className="flex items-center justify-center gap-2">
+          <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+          Get Free Inspection
+        </span>
+      </Button>
+    </a>
+  </div>
+
+  <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
+    <div className="flex items-center gap-2">
+      <Clock className="h-4 w-4 text-green-400" />
+      <span className="text-gray-300">24/7 Emergency</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <Shield className="h-4 w-4 text-green-400" />
+      <span className="text-gray-300">Licensed & Insured</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <Star className="h-4 w-4 text-green-400" />
+      <span className="text-gray-300">4.9 Star Rating</span>
+    </div>
+  </div>
+</div>
         </div>
       </section>
     </div>

@@ -25,9 +25,9 @@ import {
   Star,
   AlertTriangle
 } from "lucide-react";
-const IntroImage = "leakdetectionserviceintro.png";
+const IntroImage = "/leakdetectionserviceintro.png";
 const beforeafterImage = "leakdetectionbeforeandafter.png";
-const ldgp2 = "leakdetectionestimate.png";
+const ldgp2 = "/leakdetectiontool.png";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -248,7 +248,7 @@ const services = [
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Camera className="h-4 w-4 text-white" />
@@ -456,7 +456,7 @@ const services = [
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
                     src={ldgp2}
-                  alt="Professional Gardner Plumbing technician with leak detection equipment"
+                  alt="Professional Gardner Plumbing Co. technician with leak detection equipment"
                   className="w-full h-96 object-cover rounded-3xl"
                 />
                 
@@ -482,7 +482,7 @@ const services = [
             <div>
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
                 <Shield className="h-5 w-5 text-green-400" />
-                <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Why Choose Gardner Plumbing</span>
+                <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Why Choose Gardner Plumbing Co.</span>
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
@@ -630,10 +630,10 @@ const services = [
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Leak Detection <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
+              Garbage Disposal <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              Find answers to common questions about our leak detection services, technology, and process.
+              Find answers to the most common questions about garbage disposal repair, installation, and maintenance.
             </p>
           </div>
 
@@ -708,7 +708,6 @@ const services = [
               </div>
             </div>
           </div>
-
           {/* Enhanced CTA Section */}
           <div className="glassmorphism-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 shadow-luxury hover-lift animate-fade-in">
             <div className="text-center">
@@ -764,7 +763,7 @@ const services = [
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                24/7 Leak Detection <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">Emergency</span> Service
+                24/7 Leak Detection <span className="text-gradient bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">Emergency</span> Service
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
@@ -794,31 +793,32 @@ const services = [
             </div>
 
             {/* Right Column - Image */}
-            <div className="relative group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 h-96 rounded-3xl border border-white/10 flex items-center justify-center shadow-luxury group-hover:shadow-2xl transition-all duration-500">
-                <div className="text-center text-gray-400">
-                  <AlertTriangle className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-semibold mb-2">EMERGENCY SERVICE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Emergency leak detection service - technician responding to urgent water leak call</p>
+                  <div className="relative group">
+                    <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
+                      <img
+                        src={ldgp2}
+                        alt="Emergency hydro-jetting service - technician responding to urgent drain blockage call"
+                        className="w-full h-96 object-cover rounded-3xl"
+                      />
+            
+                      {/* Floating Emergency Badge */}
+                      <div className="absolute top-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
+                            <Clock className="h-4 w-4 text-white" />
+                          </div>
+                          <div>
+                            <div className="text-white font-bold text-sm">24/7</div>
+                            <div className="text-gray-300 text-xs">Emergency Service</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {/* ✅ closes right column properly */}
                 </div>
               </div>
-              
-              {/* Floating Emergency Badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                    <Clock className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm">24/7</div>
-                    <div className="text-gray-300 text-xs">Emergency Service</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
       {/* Final CTA Section */}
       <section className="relative overflow-hidden">

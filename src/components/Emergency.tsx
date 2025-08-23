@@ -27,7 +27,7 @@ import {
   Building2,
 } from "lucide-react";
 
-const heroImg = "/images/emergency-hero.jpg";          // replace if you have a real image
+const heroImg = "/gardnertech2.png";          // replace if you have a real image
 const techImg = "/images/emergency-tech.jpg";          // replace if you have a real image
 const responseImg = "/images/emergency-response.jpg";  // replace if you have a real image
 
@@ -193,7 +193,7 @@ export function Emergency() {
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Clock className="h-4 w-4 text-white" />
@@ -317,7 +317,7 @@ export function Emergency() {
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
                 <Wrench className="h-5 w-5 text-red-400" />
                 <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">
-                  Why Choose Gardner Plumbing
+                  Why Choose Gardner Plumbing Co.
                 </span>
               </div>
 

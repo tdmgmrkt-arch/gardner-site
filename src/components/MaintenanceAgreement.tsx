@@ -160,7 +160,7 @@ export function MaintenanceAgreement() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl pointer-events-none -z-10"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Shield className="h-4 w-4 text-white" />
@@ -529,7 +529,7 @@ export function MaintenanceAgreement() {
         </div>
       </section>
 
-      {/* Why Gardner Plumbing Section */}
+      {/* Why Gardner Plumbing Co. Section */}
       <section className="py-16 sm:py-20 lg:py-28 relative">
         <div className="absolute inset-0 -z-10 pointer-events-none">
           <div 

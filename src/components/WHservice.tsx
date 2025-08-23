@@ -16,18 +16,20 @@ import {
   DollarSign,
   Wrench,
   Calendar,
+  MapPin,
+  AlertTriangle,
   Camera,
   Zap,
-  Award,
-  HelpCircle,
-  MapPin,
   Mail,
   Star,
-  AlertTriangle
+  Award,
+  HelpCircle,
+  Thermometer,
+  Truck,
 } from "lucide-react";
-const IntroImage = "draincleaningserviceintro.png";
+const IntroImage = "/GardnerPlumbingWaterHeater.webp";
 const beforeafterImage = "draincleaningbeforeandafter.png";
-const dcgp2 = "draincleaningestimate.png";
+const whychooseusImage = "/";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -46,14 +48,12 @@ const cityLinks: Record<string, string> = {
 
 export function WHservice() {
 const emergencyReasons = [
-  "Complete drain blockage",
-  "Multiple drains backing up",
-  "Sewage backup in home",
-  "Kitchen sink not draining",
-  "Shower or tub standing water",
-  "Toilet repeatedly overflowing",
-  "Strong sewer odor indoors",
-  "Recurring stubborn clogs"
+   "No hot water at all",
+    "Water heater leaking",
+    "Strange noises from unit",
+    "Pilot light won't stay lit",
+    "Water temperature issues",
+    "Gas smell near water heater",
   ];
 
   const serviceAreas = [
@@ -71,79 +71,114 @@ const emergencyReasons = [
 
   const faqs = [
     {
-      question: "How do I know if I need professional drain cleaning?",
-      answer: "Signs include slow-draining sinks, gurgling sounds, foul odors from drains, water backing up in tubs or showers, or clogs that keep coming back even after using a plunger or store-bought drain cleaner."
+      question: "How much does water heater installation cost?",
+      answer:
+        "Water heater installation typically costs $1,200-$3,500 depending on the type and size of unit. We provide upfront pricing before starting any work, so you'll know exactly what you'll pay.",
     },
     {
-      question: "Can you clear all types of drain clogs?",
-      answer: "Yes! We handle everything from kitchen grease and soap scum buildup to bathroom hair clogs, toilet blockages, and even tree root intrusions in sewer lines. We use the right tools for each situation to ensure a complete cleaning."
+      question: "How long does water heater installation take?",
+      answer:
+        "Most water heater installations take 2-4 hours. Simple replacements can be completed in 2 hours, while new installations or tankless units may take up to 6 hours.",
     },
     {
-      question: "Is chemical drain cleaner safe to use?",
-      answer: "No. Over-the-counter chemical cleaners can corrode your pipes, damage plumbing fixtures, and are harmful to the environment. Professional drain cleaning is a safer, more effective solution that protects your plumbing system."
+      question: "Do you offer emergency water heater service?",
+      answer:
+        "Yes! We provide 24/7 emergency water heater service throughout Riverside County. Call us anytime for urgent issues like no hot water or water heater leaks.",
     },
     {
-      question: "How often should I have my drains cleaned?",
-      answer: "For most homes, we recommend professional drain cleaning once every 1–2 years as preventive maintenance. Homes with heavy usage or frequent clogs may need service more often."
+      question: "What are signs I need a new water heater?",
+      answer:
+        "Common signs include: age over 8-12 years, rusty water, strange noises, frequent repairs, inadequate hot water, or visible leaks around the unit.",
     },
     {
-      question: "Do you offer camera inspections?",
-      answer: "Yes. For stubborn or recurring clogs, we use video camera inspections to look inside your pipes and identify the exact cause of the problem. This allows us to provide a long-term solution, not just a quick fix."
+      question:
+        "Should I choose a tankless or traditional water heater?",
+      answer:
+        "Tankless units are more energy efficient and save space but cost more upfront. Traditional tanks are less expensive initially but use more energy. We'll help you choose based on your needs and budget.",
     },
     {
-      question: "Can drain cleaning prevent future plumbing emergencies?",
-      answer: "Absolutely. Regular professional drain cleaning removes buildup before it causes major blockages, backups, or sewage overflows, helping you avoid costly repairs and water damage."
-    }
+      question: "Do you guarantee your water heater work?",
+      answer:
+        "Absolutely! We offer comprehensive warranties on both parts and labor. New installations include manufacturer warranties plus our workmanship guarantee.",
+    },
   ];
 
 const services = [
     {
-      icon: Droplets,
-      title: "Hydro-Jetting",
-      description: "High-pressure water jetting to clear the toughest blockages and clean pipe walls thoroughly.",
-      features: ["Eco-Friendly", "Root Cutting", "Grease Removal", "Scale Buildup Removal"]
-    },
-    {
-      icon: Camera,
-      title: "Video Inspection",
-      description: "Advanced camera technology to locate blockages and assess pipe condition accurately.",
-      features: ["Real-Time Viewing", "Digital Recording", "Precise Location", "Damage Assessment"]
+      icon: Zap,
+      title: "Water Heater\nInstallation",
+      description:
+        "Professional installation of new tankless and traditional water heaters with proper sizing and efficiency optimization.",
+      features: [
+        "Tank & Tankless",
+        "Energy Efficient Models",
+        "Proper Sizing",
+        "Code Compliance",
+      ],
     },
     {
       icon: Wrench,
-      title: "Drain Snaking",
-      description: "Professional drain augers and snakes to break through clogs and restore flow.",
-      features: ["Various Sizes", "Flexible Tools", "Safe Method", "Immediate Results"]
+      title: "Water Heater\nRepair",
+      description:
+        "Expert repair services for all water heater brands and models to restore hot water quickly and efficiently.",
+      features: [
+        "All Brands",
+        "Same-Day Service",
+        "Quality Parts",
+        "Warranty Included",
+      ],
     },
     {
-      icon: Zap,
-      title: "Emergency Service",
-      description: "24/7 emergency drain cleaning when you need it most - nights, weekends, and holidays.",
-      features: ["24/7 Availability", "Rapid Response", "Emergency Equipment", "Weekend Service"]
-    }
+      icon: Thermometer,
+      title: "Water Heater\nMaintenance",
+      description:
+        "Regular maintenance services to extend your water heater's life and maintain peak efficiency.",
+      features: [
+        "Annual Tune-ups",
+        "Sediment Removal",
+        "Safety Inspections",
+        "Efficiency Testing",
+      ],
+    },
+    {
+      icon: AlertTriangle,
+      title: "Emergency\nService",
+      description:
+        "24/7 emergency water heater service when you need hot water restored immediately - nights, weekends, and holidays.",
+      features: [
+        "24/7 Availability",
+        "Rapid Response",
+        "Emergency Equipment",
+        "Weekend Service",
+      ],
+    },
   ];
 
   const benefits = [
     {
       icon: Clock,
       title: "Fast Response",
-      description: "Same-day service available with most clogs cleared within hours of our arrival."
+      description:
+        "Same-day service available with most water heater issues resolved within hours of our arrival.",
     },
     {
       icon: Shield,
       title: "Licensed & Insured",
-      description: "Fully licensed plumbers with comprehensive insurance for your peace of mind."
+      description:
+        "Fully licensed plumbers with comprehensive insurance for your peace of mind.",
     },
     {
       icon: DollarSign,
       title: "Upfront Pricing",
-      description: "No hidden fees or surprise charges - you'll know the exact cost before we start."
+      description:
+        "No hidden fees or surprise charges - you'll know the exact cost before we start.",
     },
     {
       icon: Award,
       title: "30+ Years Experience",
-      description: "Three decades of drain cleaning expertise serving Riverside County homeowners."
-    }
+      description:
+        "Three decades of water heater expertise serving Riverside County homeowners.",
+    },
   ];
 
   return (
@@ -185,22 +220,22 @@ const services = [
                   <ArrowRight className="h-4 w-4" />
                   <span>Services</span>
                   <ArrowRight className="h-4 w-4" />
-                  <span className="text-red-400">Drain Cleaning</span>
+                  <span className="text-red-400">Water Heater</span>
                 </div>
               </nav>
 
               {/* Badge */}
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
                 <Droplets className="h-5 w-5 text-red-400" />
-                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Expert Drain Cleaning</span>
+                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Expert Water Heater Service</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Drain Cleaning</span> Services
+                Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Water Heater</span> Services
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-                Fast, effective drain cleaning throughout Riverside County. Same-day service available with 30+ years of experience clearing even the toughest clogs.
+                Professional water heater installation and repair throughout Riverside County. Same-day service available with 30+ years of experience serving all brands and models.
               </p>
 
               {/* Key Benefits */}
@@ -248,7 +283,7 @@ const services = [
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Droplets className="h-4 w-4 text-white" />
@@ -340,10 +375,10 @@ const services = [
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Our Services</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Drain Cleaning</span> Solutions
+              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Water Heater</span> Solutions
             </h2>
             <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              From simple clogs to complex blockages, our experienced technicians use the latest equipment and techniques to restore your drains to perfect working condition.
+              From new installations to emergency repairs, our experienced technicians provide comprehensive water heater services for all brands and models.
             </p>
           </div>
 
@@ -390,23 +425,23 @@ const services = [
           <div className="glassmorphism-dark rounded-3xl p-8 border border-white/10 shadow-luxury">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">See the Difference Professional Drain Cleaning Makes</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Professional Water Heater Installation Makes All the Difference</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Removes years of buildup and blockages</span>
+                    <span>Proper sizing for maximum efficiency and performance</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Restores full water flow and drainage speed</span>
+                    <span>Code-compliant installation for safety and reliability</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Eliminates foul odors and prevents future clogs</span>
+                    <span>Energy-efficient operation to reduce utility bills</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Extends the life of your plumbing system</span>
+                    <span>Extended equipment life with proper installation</span>
                   </div>
                 </div>
               </div>
@@ -414,7 +449,7 @@ const services = [
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-luxury">
                   <img
                     src={beforeafterImage}
-                    alt="Before and after drain cleaning results showing clear vs clogged pipes"
+                    alt="Before and after of new water heater installation"
                     className="w-full h-64 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent">
@@ -455,8 +490,8 @@ const services = [
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                    src={dcgp2}
-                  alt="Professional Gardner Plumbing technician with drain cleaning equipment"
+                    src={whychooseusImage}
+                  alt="Professional Gardner Plumbing Co. technician working on Water Heater"
                   className="w-full h-96 object-cover rounded-3xl"
                 />
                 
@@ -482,15 +517,15 @@ const services = [
             <div>
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
                 <Shield className="h-5 w-5 text-green-400" />
-                <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Why Choose Gardner Plumbing</span>
+                <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Why Choose Gardner Plumbing Co.</span>
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Drain Experts
+                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Water Heater Experts
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed text-[16px]">
-                With over three decades of experience serving Riverside County, we've cleared thousands of drains and earned our reputation as the area's most reliable plumbing professionals.
+                With over three decades of experience serving Riverside County, we've installed and repaired thousands of water heaters and earned our reputation as the area's most reliable water heater professionals.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -548,8 +583,7 @@ const services = [
         </span>
       </h2>
       <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        Professional drain cleaning and repair services available throughout
-        Riverside County with fast response times to your location.
+        Professional water heater services throughout Riverside County with fast response times to your location.
       </p>
     </div>
 
@@ -629,10 +663,10 @@ const services = [
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">FAQ</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Drain Cleaning and Repair <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
+              Water Heater Installation and Repair <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              Find answers to common questions about our drain cleaning and repair services, technology, and process.
+              Find answers to common questions about our water heater services, technology, and process.
             </p>
           </div>
 
@@ -718,7 +752,7 @@ const services = [
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">Have More Questions?</h3>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Can't find what you're looking for? Our drain cleaning and repair experts are standing by to answer your questions and schedule your professional drain cleaning service.
+                Can’t find what you’re looking for? Our water heater repair and installation experts are standing by to answer your questions and schedule your professional service today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
@@ -763,13 +797,12 @@ const services = [
               </div>
               
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                24/7 Drain Cleaning <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">Emergency</span> Service
+                24/7 Water Heater <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">Emergency</span> Service
               </h2>
               
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Don't let a clogged drain cause major damage. We provide 24/7 emergency drain cleaning throughout Riverside County with rapid response times.
+                Hot water problems can’t wait. We provide 24/7 emergency water heater repair across Riverside County with fast, reliable response times.
               </p>
-
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-white mb-6">Common Emergency Situations:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -802,7 +835,7 @@ const services = [
                 <div className="text-center text-gray-400">
                   <AlertTriangle className="h-16 w-16 mx-auto mb-4 opacity-50" />
                   <p className="text-lg font-semibold mb-2">EMERGENCY SERVICE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Emergency Drain Cleaning service - technician responding to an urgent drain emergency call</p>
+                  <p className="text-sm max-w-xs">Emergency water heater service - technician responding to an urgent drain emergency call</p>
                 </div>
               </div>
               
@@ -848,10 +881,10 @@ const services = [
       <Phone className="h-6 w-6 text-white" />
     </div>
     <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
-      Ready for a Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Drain Cleaning?</span>
+      Ready for a Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Water Heater Service?</span>
     </h2>
     <p className="text-lg text-gray-300 mb-6 max-w-lg mx-auto">
-      Three decades of trusted service. Contact us for expert drain cleaning and repair.
+      Three decades of trusted service. Contact us for expert Water Heater installation and repair.
     </p>
   </div>
 

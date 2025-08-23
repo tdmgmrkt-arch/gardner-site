@@ -99,38 +99,39 @@ export default function ServiceAreas() {
             </div>
           </div>
 
-          {/* Right Column - Map Placeholder */}
-          <div className="relative group">
-            <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-              {/* IMAGE PLACEHOLDER - Service Area Map */}
-              <div
-                className="w-full bg-gray-600 flex items-center justify-center rounded-3xl"
-                style={{ aspectRatio: "4/3" }}
-              >
-                <div className="text-center text-gray-300 p-8">
-                  <MapPin className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-semibold">Service Area Map</p>
-                  <p className="text-sm opacity-75">Riverside County coverage</p>
-                </div>
-              </div>
+          {/* Right Column - Map */}
+<div className="relative group">
+  <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 self-start pt-30">
+    {/* Google Maps Embed */}
+    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109144.45437258422!2d-117.20587604273275!3d33.571118777583706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc9d0f093fb225%3A0xef87e6a2bf83ed0f!2sGardner%20Plumbing%20Company!5e0!3m2!1sen!2sus!4v1755821362571!5m2!1sen!2sus"
+  width="100%"
+  height="520"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Gardner Plumbing Co. Service Area - Riverside County"
+  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 rounded-3xl"
+/>
 
-              {/* Premium overlay effects */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
+    {/* Premium overlay effects */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
 
-              {/* Floating badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
-                    <MapPin className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm">Full Coverage</div>
-                    <div className="text-gray-300 text-xs">Riverside County</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* Floating badge */}
+    <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
+          <MapPin className="h-4 w-4 text-white" />
+        </div>
+        <div>
+          <div className="text-white font-bold text-sm">Full Coverage</div>
+          <div className="text-gray-300 text-xs">Riverside County</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
           {/* /Right Column */}
         </div>
       </div>

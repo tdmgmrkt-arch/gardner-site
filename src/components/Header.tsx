@@ -63,7 +63,7 @@ export function Header() {
     <>
       {/* Top notification bar */}
       <div
-        className="relative overflow-hidden text-white py-1.5 sm:py-2 px-2 sm:px-4 m-0"
+        className="relative overflow-hidden text-white py-1 sm:py-1.5 lg:py-2 px-2 sm:px-4 m-0"
         style={{
           background: `linear-gradient(90deg, #8B0000 0%, #DC2626 100%)`,
           boxShadow: `
@@ -86,36 +86,36 @@ export function Header() {
           }}
         />
         <div className="relative max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-          <div className="flex items-center justify-between text-xs sm:text-sm">
-            <div className="flex items-center gap-3 sm:gap-6">
+          <div className="flex items-center justify-between text-[10px] sm:text-xs lg:text-sm">
+            <div className="flex items-center gap-2 sm:gap-3 lg:gap-6">
               <div className="flex items-center gap-1 sm:gap-2">
                 <a href="/services/emergency-plumbing" aria-label="24/7 Emergency Service">
-                  <Clock className="h-3 w-3 sm:h-4 sm:w-4 drop-shadow-sm" />
+                  <Clock className="h-2.5 w-2.5 sm:h-3 sm:w-3 lg:h-4 lg:w-4 drop-shadow-sm" />
                 </a>
-                <a href="/services/emergency-plumbing" className="font-medium drop-shadow-sm text-xs sm:text-sm">
+                <a href="/services/emergency-plumbing" className="font-medium drop-shadow-sm text-[10px] sm:text-xs lg:text-sm">
                   24/7 Emergency Service
                 </a>
               </div>
               <div className="hidden md:flex items-center gap-2">
                 <a href="/reviews" aria-label="See Reviews">
-                  <Star className="h-4 w-4 text-yellow-300" />
+                  <Star className="h-3 w-3 lg:h-4 lg:w-4 text-yellow-300" />
                 </a>
-                <a href="/reviews">4.9★ Rated Service</a>
+                <a href="/reviews" className="text-xs lg:text-sm">4.9★ Rated Service</a>
               </div>
             </div>
             <div className="flex items-center gap-2 sm:gap-4">
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="hidden sm:flex items-center gap-1 sm:gap-2">
                 <a href="/reviews" aria-label="Service Area">
-                  <MapPin className="h-4 w-4" />
+                  <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 lg:h-4 lg:w-4" />
                 </a>
-                <a href="/service-areas" className="hidden md:inline">Serving Greater Riverside Area</a>
-                <a href="/service-areas" className="md:hidden">Local Service</a>
+                <a href="/service-areas" className="hidden md:inline text-xs lg:text-sm">Serving Greater Riverside Area</a>
+                <a href="/service-areas" className="md:hidden text-xs">Local Service</a>
               </div>
-              <div className="flex items-center gap-1 sm:gap-2 font-medium">
+              <div className="flex items-center gap-0.5 sm:gap-1 lg:gap-2 font-medium">
                 <a href="tel:9512464337" aria-label="Call (951) 246-4337">
-                  <Phone className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <Phone className="h-2.5 w-2.5 sm:h-3 sm:w-3 lg:h-4 lg:w-4" />
                 </a>
-                <a href="tel:9512464337" className="text-xs sm:text-sm">(951) 246-4337</a>
+                <a href="tel:9512464337" className="text-[10px] sm:text-xs lg:text-sm">(951) 246-4337</a>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ export function Header() {
         />
 
         <nav
-          className="relative z-50 py-2 sm:py-4 m-0 backdrop-blur-sm"
+          className="relative z-50 py-2 sm:py-3 lg:py-4 m-0 backdrop-blur-sm"
           style={{
             borderBottom: "1px solid rgba(255, 255, 255, 0.03)",
             boxShadow: `
@@ -157,7 +157,7 @@ export function Header() {
               {/* Logo */}
               <div className="flex items-center hover-lift">
                 <a href="/" aria-label="Go to homepage">
-                  <img src={logo} alt="Gardner Plumbing Co." className="h-10 sm:h-12 lg:h-14 w-auto drop-shadow-lg" />
+                  <img src={logo} alt="Gardner Plumbing Co." className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto drop-shadow-lg" />
                 </a>
               </div>
 
@@ -453,43 +453,44 @@ export function Header() {
               {/* CTA + Mobile */}
               <div className="flex items-center gap-2 sm:gap-4">
                 <a href="tel:9512464337">
-                  <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-3 py-2 sm:px-6 sm:py-3 hidden sm:flex shadow-lg hover:shadow-xl transition-all duration-300 hover-lift rounded-xl border border-red-400/20 text-sm sm:text-base">
-                    <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
-                    <span className="hidden sm:inline">Call Today</span>
-                    <span className="sm:hidden">Call</span>
+                  <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-2 py-1.5 sm:px-3 sm:py-2 lg:px-6 lg:py-3 hidden sm:flex shadow-lg hover:shadow-xl transition-all duration-300 hover-lift rounded-lg sm:rounded-xl border border-red-400/20 text-xs sm:text-sm lg:text-base">
+                    <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-3 sm:w-3 lg:h-4 lg:w-4" />
+                    <span className="hidden lg:inline">Call Today</span>
+                    <span className="lg:hidden">Call</span>
                   </Button>
                 </a>
                 <button
-                  className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-all duration-300 hover-lift backdrop-blur-sm"
+                  className="lg:hidden text-white p-1.5 sm:p-2 rounded-md hover:bg-white/10 transition-all duration-300 hover-lift backdrop-blur-sm"
                   onClick={() => setIsMenuOpen((v) => !v)}
                 >
-                  <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+                  <Menu className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
                 </button>
               </div>
             </div>
 
             {/* Mobile menu */}
             {isMenuOpen && (
-              <div className="lg:hidden mt-3 sm:mt-4 pb-3 sm:pb-4 border-t border-white/10 animate-fade-in">
-                <div className="glassmorphism-dark rounded-2xl p-4 mt-4 border border-white/10">
-                  <div className="flex flex-col space-y-3 sm:space-y-4">
+              <div className="lg:hidden mt-2 sm:mt-3 lg:mt-4 pb-2 sm:pb-3 lg:pb-4 border-t border-white/10 animate-fade-in">
+                <div className="glassmorphism-dark rounded-xl sm:rounded-2xl p-3 sm:p-4 mt-3 sm:mt-4 border border-white/10">
+                  <div className="flex flex-col space-y-2 sm:space-y-3 lg:space-y-4">
                     {[
                       ["/", "Home"],
                       ["/about-us", "About Us"],
-                      ["/services", "Services"], // updated from /placeholder
+                      ["/services", "Services"],
                       ["/reviews", "Reviews"],
                       ["/contact-us", "Contact"],
                     ].map(([href, label]) => (
                       <a
                         key={href as string}
                         href={href as string}
-                        className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift text-base sm:text-lg py-2 px-3 rounded-lg hover:bg-white/5 drop-shadow-sm"
+                        className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift text-sm sm:text-base lg:text-lg py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg hover:bg-white/5 drop-shadow-sm"
+                        onClick={() => setIsMenuOpen(false)}
                       >
                         {label}
                       </a>
                     ))}
                     <a href="tel:9512464337" className="sm:hidden">
-                      <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-4 py-3 w-full sm:hidden shadow-lg hover:shadow-xl transition-all duration-300 hover-lift mt-2 text-base rounded-xl border border-red-400/20">
+                      <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-3 py-2.5 w-full shadow-lg hover:shadow-xl transition-all duration-300 hover-lift mt-2 text-sm rounded-lg border border-red-400/20">
                         <Phone className="mr-2 h-4 w-4" />
                         Call Today
                       </Button>

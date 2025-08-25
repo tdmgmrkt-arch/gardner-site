@@ -26,8 +26,9 @@ import {
   AlertTriangle
 } from "lucide-react";
 const IntroImage = "/leakdetectionserviceintro.png";
-const beforeafterImage = "leakdetectionbeforeandafter.png";
-const ldgp2 = "/leakdetectiontool.png";
+const beforeafterImage = "/leakdetectionbeforeandafter.webp";
+const whychooseusImage = "/gardnertecharrival3.webp"
+const EmergencyLeakDetectionImage = "/gardnertecharrival.webp";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -248,7 +249,7 @@ const services = [
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Camera className="h-4 w-4 text-white" />
@@ -455,9 +456,9 @@ const services = [
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                    src={ldgp2}
+                    src={whychooseusImage}
                   alt="Professional Gardner Plumbing Co. technician with leak detection equipment"
-                  className="w-full h-96 object-cover rounded-3xl"
+                  className="w-full h-200 object-cover rounded-3xl"
                 />
                 
                 {/* Premium overlay effects */}
@@ -465,7 +466,7 @@ const services = [
               </div>
               
               {/* Floating Achievement Badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                     <Award className="h-4 w-4 text-white" />
@@ -796,7 +797,7 @@ const services = [
                   <div className="relative group">
                     <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                       <img
-                        src={ldgp2}
+                        src={EmergencyLeakDetectionImage}
                         alt="Emergency hydro-jetting service - technician responding to urgent drain blockage call"
                         className="w-full h-96 object-cover rounded-3xl"
                       />

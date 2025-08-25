@@ -26,7 +26,7 @@ import {
   AlertTriangle
 } from "lucide-react";
 const IntroImage = "/gardnerhydrojetservice.webp";
-const beforeafterImage = "leakdetectionbeforeandafter.png";
+const beforeafterImage = "/hydrojetbefore&after.webp";
 const hjgp2 = "/emergencyhydro.webp";
 
 const cityLinks: Record<string, string> = {
@@ -766,7 +766,7 @@ const emergencyReasons = [
           />
 
           {/* Floating Emergency Badge */}
-          <div className="absolute top-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+          <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                 <Clock className="h-4 w-4 text-white" />

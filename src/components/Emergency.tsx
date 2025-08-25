@@ -29,7 +29,7 @@ import {
 
 const heroImg = "/gardnertech2.png";          // replace if you have a real image
 const techImg = "/images/emergency-tech.jpg";          // replace if you have a real image
-const responseImg = "/images/emergency-response.jpg";  // replace if you have a real image
+const responseImg = "/gardnertech2.webp";  // replace if you have a real image
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -193,7 +193,7 @@ export function Emergency() {
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Clock className="h-4 w-4 text-white" />
@@ -299,7 +299,7 @@ export function Emergency() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
               </div>
 
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                     <Shield className="h-4 w-4 text-white" />

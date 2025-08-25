@@ -26,8 +26,9 @@ import {
 
 // --- Images (swap to your real assets) ---
 const IntroImage = "/toilet-install-intro.webp";
-const beforeafterImage = "toilet-before-after.png";
-const techImage = "toilet-tech.png";
+const beforeafterImage = "/toilebeforeandafter.webp";
+const whychooseusImage = "/gardnertecharrival2.webp"
+const toiletEmergencyImg = "/gardnertecharrival.webp";
 
 // --- City links (same map you’ve been using) ---
 const cityLinks: Record<string, string> = {
@@ -480,14 +481,14 @@ export function ToiletRep() {
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                  src={techImage}
+                  src={whychooseusImage}
                   alt="Gardner Plumbing Co. technician repairing toilet"
-                  className="w-full h-96 object-cover rounded-3xl"
+                  className="w-full h-180 object-cover rounded-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
               </div>
 
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                     <Award className="h-4 w-4 text-white" />
@@ -768,92 +769,102 @@ export function ToiletRep() {
       </section>
 
       {/* Emergency Section */}
-      <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0"
-            style={{
-              background: `
-                radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
-                linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-              `,
-            }}
-          />
+<section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
+  <div className="absolute inset-0">
+    <div
+      className="absolute inset-0"
+      style={{
+        background: `
+          radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
+          linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
+        `,
+      }}
+    />
+  </div>
+
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Left Column - Content */}
+      <div>
+        <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
+          <AlertTriangle className="h-5 w-5 text-red-400" />
+          <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">
+            Emergency Service
+          </span>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Content */}
-            <div>
-              <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
-                <AlertTriangle className="h-5 w-5 text-red-400" />
-                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Emergency Service</span>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
+          24/7 Toilet{" "}
+          <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
+            Emergency
+          </span>{" "}
+          Response
+        </h2>
+
+        <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+          Shut off the water supply valve and call us. We’ll stop the overflow,
+          cleanly repair, and restore service.
+        </p>
+
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-white mb-6">
+            Common Emergency Situations:
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {emergencyReasons.map((reason, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-3 text-gray-300"
+              >
+                <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0" />
+                <span className="text-sm">{reason}</span>
               </div>
+            ))}
+          </div>
+        </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                24/7 Toilet{" "}
-                <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
-                  Emergency
-                </span>{" "}
-                Response
-              </h2>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a href="tel:9512464337">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group"
+            >
+              <span className="flex items-center justify-center gap-3">
+                <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                Emergency: (951) 246-4337
+              </span>
+            </Button>
+          </a>
+        </div>
+      </div>
 
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Shut off the water supply valve and call us. We’ll stop the overflow, cleanly repair, and restore service.
-              </p>
+      {/* Right Column - Image */}
+      <div className="relative group">
+        <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
+          <img
+            src={toiletEmergencyImg}
+            alt="Emergency toilet repair - technician responding to overflowing/leaking toilet"
+            className="w-full h-96 object-cover rounded-3xl"
+          />
 
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-6">Common Emergency Situations:</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {emergencyReasons.map((reason) => (
-                    <div key={reason} className="flex items-center gap-3 text-gray-300">
-                      <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0" />
-                      <span className="text-sm">{reason}</span>
-                    </div>
-                  ))}
-                </div>
+          {/* Floating Emergency Badge */}
+          <div className="absolute top-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
+                <Clock className="h-4 w-4 text-white" />
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:9512464337">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group"
-                  >
-                    <span className="flex items-center justify-center gap-3">
-                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                      Emergency: (951) 246-4337
-                    </span>
-                  </Button>
-                </a>
-              </div>
-            </div>
-
-            {/* Right Placeholder / Image */}
-            <div className="relative group">
-              <div className="bg-gradient-to-br from-gray-8 00 to-gray-900 h-96 rounded-3xl border border-white/10 flex items-center justify-center shadow-luxury group-hover:shadow-2xl transition-all duration-500">
-                <div className="text-center text-gray-400">
-                  <AlertTriangle className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-semibold mb-2">EMERGENCY SERVICE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Technician responding to overflowing/leaking toilet</p>
-                </div>
-              </div>
-
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                    <Clock className="h-4 w-4 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-sm">24/7</div>
-                    <div className="text-gray-300 text-xs">Emergency Service</div>
-                  </div>
-                </div>
+              <div>
+                <div className="text-white font-bold text-sm">24/7</div>
+                <div className="text-gray-300 text-xs">Emergency Service</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      {/* ✅ closes right column properly */}
+    </div>
+  </div>
+</section>
 
       {/* Final CTA */}
       <section className="relative overflow-hidden">

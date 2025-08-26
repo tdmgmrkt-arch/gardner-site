@@ -25,9 +25,10 @@ import {
   Star,
   AlertTriangle
 } from "lucide-react";
-const IntroImage = "leakdetectionserviceintro.png";
+const IntroImage = "/garbagedisposalintro.webp";
 const beforeafterImage = "leakdetectionbeforeandafter.png";
-const ldgp2 = "leakdetectionestimate.png";
+const WhyChooseUsImage = "/gardnertecharrival2.webp";
+const EmergencyGarbageDipsosalImage = "/gardnertech2.webp"
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -228,21 +229,24 @@ const services = [
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Call (951) 246-4337
-                  </span>
-                </Button>
-                <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
-                  <span className="flex items-center justify-center gap-3">
-                    <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Schedule Service
-                  </span>
-                </Button>
+                <a href="tel:9512464337" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Call (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
+                <a href="/contact-us" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
+                    <span className="flex items-center justify-center gap-3">
+                      <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Schedule Service
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
-
             {/* Right Column - Hero Image */}
             <div className="relative group animate-slide-up">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
@@ -311,12 +315,14 @@ const services = [
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                <a href="tel:9512464337" className="w-full sm:w-auto">
                 <div className="flex items-center gap-2 bg-black/20 rounded-full px-4 py-2">
                   <Phone className="h-5 w-5 text-red-100" />
                   <span className="text-white font-bold text-lg">
                     (951) 246-4337
                   </span>
                 </div>
+                </a>
                 <span className="text-red-100 font-semibold text-sm sm:text-base">
                   24/7 Service Available
                 </span>
@@ -463,9 +469,9 @@ const services = [
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                    src={ldgp2}
+                    src={WhyChooseUsImage}
                   alt="Professional Gardner Plumbing Co. technician with repairing garbage disposal"
-                  className="w-full h-96 object-cover rounded-3xl"
+                  className="w-full h-185 object-cover rounded-3xl"
                 />
                 
                 {/* Premium overlay effects */}
@@ -473,7 +479,7 @@ const services = [
               </div>
               
               {/* Floating Achievement Badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                     <Award className="h-4 w-4 text-white" />
@@ -592,12 +598,16 @@ const services = [
           We serve additional areas throughout Riverside County. Call to
           confirm service availability.
         </p>
+        <a href="tel:9512464337" className="w-full sm:w-auto">
+        <a href="tel:9512464337" className="w-full sm:w-auto">
         <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
           <span className="flex items-center justify-center gap-3">
             <Phone className="h-5 w-5" />
             Check Service Area
           </span>
         </Button>
+        </a>
+        </a>
       </div>
     </div>
   </div>
@@ -803,15 +813,14 @@ const services = [
             {/* Right Column - Image */}
             <div className="relative group">
               <div className="bg-gradient-to-br from-gray-800 to-gray-900 h-96 rounded-3xl border border-white/10 flex items-center justify-center shadow-luxury group-hover:shadow-2xl transition-all duration-500">
-                <div className="text-center text-gray-400">
-                  <AlertTriangle className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-semibold mb-2">EMERGENCY SERVICE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Emergency Garbage Disposal service - technician responding to urgent call </p>
-                </div>
-              </div>
+                <img
+            src={EmergencyGarbageDipsosalImage}
+            alt="Emergency gas line repair - technician responding to urgent call"
+            className="w-full h-120 object-cover rounded-3xl"
+            />
               
               {/* Floating Emergency Badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                     <Clock className="h-4 w-4 text-white" />
@@ -824,6 +833,7 @@ const services = [
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 

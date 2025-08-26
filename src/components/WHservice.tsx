@@ -256,18 +256,22 @@ const services = [
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Call (951) 246-4337
-                  </span>
-                </Button>
-                <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
-                  <span className="flex items-center justify-center gap-3">
-                    <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Schedule Service
-                  </span>
-                </Button>
+                <a href="tel:9512464337" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Call (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
+                <a href="/contact-us" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
+                    <span className="flex items-center justify-center gap-3">
+                      <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Schedule Service
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -339,12 +343,16 @@ const services = [
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                <a href="tel:9512464337" className="w-full sm:w-auto">
+                <a href="tel:9512464337" className="w-full sm:w-auto">
                 <div className="flex items-center gap-2 bg-black/20 rounded-full px-4 py-2">
                   <Phone className="h-5 w-5 text-red-100" />
                   <span className="text-white font-bold text-lg">
                     (951) 246-4337
                   </span>
                 </div>
+                </a>
+                </a>
                 <span className="text-red-100 font-semibold text-sm sm:text-base">
                   24/7 Service Available
                 </span>
@@ -546,12 +554,14 @@ const services = [
                 })}
               </div>
 
-              <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Estimate
-                </span>
-              </Button>
+              <a href="/contact-us">
+                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Estimate
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -618,12 +628,16 @@ const services = [
           We serve additional areas throughout Riverside County. Call to
           confirm service availability.
         </p>
+        <a href="tel:9512464337" className="w-full sm:w-auto">
+        <a href="tel:9512464337" className="w-full sm:w-auto">
         <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
           <span className="flex items-center justify-center gap-3">
             <Phone className="h-5 w-5" />
             Check Service Area
           </span>
         </Button>
+        </a>
+        </a>
       </div>
     </div>
   </div>
@@ -756,18 +770,23 @@ const services = [
                 Can’t find what you’re looking for? Our water heater repair and installation experts are standing by to answer your questions and schedule your professional service today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+                <a href="/contact-us" className="w-full sm:w-auto">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
                     View Full FAQ
                   </span>
                 </Button>
+                </a>
+
+                <a href="/contact-us" className="w-full sm:w-auto">
                 <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
                     Contact Us
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -918,7 +937,7 @@ const services = [
       </Button>
     </a>
   <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto"></div>
-    <a href="mailto:office@gardnerplumbingco.com?subject=Free%20Drain%20Inspection&body=Hi%20Gardner%20Plumbing%2C%0A%0AI%27d%20like%20to%20schedule%20a%20free%20drain%20inspection.%0A%0AName%3A%0APhone%3A%0AAddress%3A%0ADetails%3A" className="flex-1">
+    <a href="/contact-us" className="flex-1">
       <Button
         size="lg"
         className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent w-full"

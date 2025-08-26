@@ -126,7 +126,7 @@ export const platforms = [
     name: "Google Reviews",
     rating: 4.9,
     reviews: 401,
-    image: "G"
+    icon: "G"
   },
   {
     name: "Yelp",

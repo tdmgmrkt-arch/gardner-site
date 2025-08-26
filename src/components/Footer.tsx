@@ -87,7 +87,7 @@ export function Footer() {
                     </div>
                     <div>
                       <p className="text-gray-300 text-xs sm:text-sm font-medium leading-tight">30714 Wealth St, Murrieta, CA 92563</p>
-                      <p className="text-gray-400 text-[10px] sm:text-xs">Licensed & Insured</p>
+                      <p className="text-gray-400 text-[10px] sm:text-xs">Location</p>
                     </div>
                   </a>
                 </div>
@@ -132,8 +132,8 @@ export function Footer() {
                       { name: "Gardner Plumbing Co.", desc: "Our story & team", link: "/about-us" },
                       { name: "Contact Us", desc: "Get in touch today", link: "/contact-us" },
                       { name: "Customer Reviews", desc: "See what clients say", link: "/reviews" },
-                      { name: "Service Areas", desc: "Where we work", link: "/service-areas" },
-                      { name: "Testimonials", desc: "Success stories", link: "/testimonials" },
+                      { name: "Service Areas", desc: "Where we work", link: "/about-us#service-area" },
+                      { name: "Testimonials", desc: "Success stories", link: "/reviews" },
                       { name: "Our Guarantee", desc: "Quality promise", link: "/guarantee" },
                     ].map((item, index) => (
                       <li key={index}>
@@ -250,7 +250,7 @@ export function Footer() {
                       }}
                     />
                     <div className="relative">
-                      <div className="text-red-100 text-xs sm:text-sm mb-1.5 sm:mb-2 font-semibold drop-shadow-sm">Emergency? Call Now!</div>
+                      <div className="text-red-100 text-center text-xs sm:text-sm mb-1.5 sm:mb-2 font-semibold drop-shadow-sm">Emergency? Call Now!</div>
                       <a href="tel:19512464337">
                         <Button
                           size="sm"
@@ -281,7 +281,7 @@ export function Footer() {
                   <a href="/privacy-policy" className="text-gray-400 hover:text-red-400 transition-colors duration-300 hover-lift">
                     Privacy Policy
                   </a>
-                  <a href="/terms" className="text-gray-400 hover:text-red-400 transition-colors duration-300 hover-lift">
+                  <a href="/terms-and-services" className="text-gray-400 hover:text-red-400 transition-colors duration-300 hover-lift">
                     Terms of Service
                   </a>
                   <a href="/sitemap" className="text-gray-400 hover:text-red-400 transition-colors duration-300 hover-lift">

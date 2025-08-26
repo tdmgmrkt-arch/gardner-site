@@ -244,7 +244,7 @@ export function ToiletRep() {
                     </span>
                   </Button>
                 </a>
-                <a href="/contactus" className="w-full sm:w-auto">
+                <a href="/contact-us" className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent"
@@ -546,7 +546,7 @@ export function ToiletRep() {
                 })}
               </div>
 
-              <a href="/contactus">
+              <a href="/contact-us">
                 <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -754,7 +754,7 @@ export function ToiletRep() {
                     </span>
                   </Button>
                 </a>
-                <a href="/contactus">
+                <a href="/contact-us">
                   <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
                     <span className="flex items-center justify-center gap-3">
                       <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -909,7 +909,7 @@ export function ToiletRep() {
                   </span>
                 </Button>
               </a>
-              <a href="/contactus" className="flex-1">
+              <a href="/contact-us" className="flex-1">
                 <Button className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
                   <span className="flex items-center justify-center gap-2">
                     <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />

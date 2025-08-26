@@ -204,6 +204,11 @@
   }
 }
 
+
 html {
   font-size: var(--font-size);
+}
+
+html {
+  scroll-padding-top: 80px; /* match your sticky header height */
 }

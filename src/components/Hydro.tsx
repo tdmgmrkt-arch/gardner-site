@@ -46,7 +46,7 @@ const cityLinks: Record<string, string> = {
 
 export function Hydro() {
 const emergencyReasons = [
-     "Complete sewer blockage",
+    "Complete sewer blockage",
     "Multiple drain backups",
     "Sewage backing up",
     "Tree root invasion",
@@ -181,9 +181,9 @@ const emergencyReasons = [
               {/* Breadcrumb */}
               <nav className="mb-6">
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
-                  <span>Home</span>
+                  <a href="/" className="hover:text-white">Home</a>
                   <ArrowRight className="h-4 w-4" />
-                  <span>Services</span>
+                  <a href="/services" className="hover:text-white">Services</a>
                   <ArrowRight className="h-4 w-4" />
                   <span className="text-red-400">Hydro-Jetting</span>
                 </div>
@@ -220,18 +220,22 @@ const emergencyReasons = [
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Call (951) 246-4337
-                  </span>
-                </Button>
-                <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
-                  <span className="flex items-center justify-center gap-3">
-                    <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Schedule Service
-                  </span>
-                </Button>
+                <a href="tel:9512464337" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Call (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
+                <a href="/contact-us" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
+                    <span className="flex items-center justify-center gap-3">
+                      <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Schedule Service
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -457,12 +461,14 @@ const emergencyReasons = [
                 })}
               </div>
 
-              <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Estimate
-                </span>
-              </Button>
+              <a href="/contact-us">
+                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Estimate
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -470,77 +476,79 @@ const emergencyReasons = [
 
       {/* Service Areas */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
-  <div className="absolute inset-0">
-    <div
-      className="absolute inset-0"
-      style={{
-        background: `
-          radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
-          linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
-        `,
-      }}
-    />
-  </div>
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
-        <MapPin className="h-5 w-5 text-blue-400" />
-        <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">
-          Service Areas
-        </span>
-      </div>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
-        Serving All of{" "}
-        <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">
-          Riverside County
-        </span>
-      </h2>
-      <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        Professional drain cleaning and repair services available throughout
-        Riverside County with fast response times to your location.
-      </p>
-    </div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `
+                radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
+                linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
+              `,
+            }}
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
+              <MapPin className="h-5 w-5 text-blue-400" />
+              <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">
+                Service Areas
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
+              Serving All of{" "}
+              <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">
+                Riverside County
+              </span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Professional drain cleaning and repair services available throughout
+              Riverside County with fast response times to your location.
+            </p>
+          </div>
 
-    {/* Grid of cities */}
-    <div
-      className="grid gap-4 mb-12"
-      style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
-    >
-      {serviceAreas.map((area, index) => (
-        <a
-          key={index}
-          href={cityLinks[area] ?? "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Visit the official website for ${area}`}
-          className="glassmorphism-dark rounded-xl p-4 border border-white/10 text-center hover:border-blue-500/30 transition-all duration-300 hover-lift block"
-        >
-          <MapPin className="h-6 w-6 text-blue-400 mx-auto mb-2" />
-          <span className="text-white font-medium">{area}</span>
-        </a>
-      ))}
-    </div>
+          {/* Grid of cities */}
+          <div
+            className="grid gap-4 mb-12"
+            style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
+          >
+            {serviceAreas.map((area, index) => (
+              <a
+                key={index}
+                href={cityLinks[area] ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit the official website for ${area}`}
+                className="glassmorphism-dark rounded-xl p-4 border border-white/10 text-center hover:border-blue-500/30 transition-all duration-300 hover-lift block"
+              >
+                <MapPin className="h-6 w-6 text-blue-400 mx-auto mb-2" />
+                <span className="text-white font-medium">{area}</span>
+              </a>
+            ))}
+          </div>
 
-    {/* Call to action */}
-    <div className="text-center">
-      <div className="glassmorphism-dark rounded-2xl p-8 border border-white/10 shadow-luxury inline-block">
-        <h3 className="text-2xl font-bold text-white mb-4">
-          Don't See Your Area?
-        </h3>
-        <p className="text-gray-300 mb-6">
-          We serve additional areas throughout Riverside County. Call to
-          confirm service availability.
-        </p>
-        <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
-          <span className="flex items-center justify-center gap-3">
-            <Phone className="h-5 w-5" />
-            Check Service Area
-          </span>
-        </Button>
-      </div>
-    </div>
-  </div>
-</section>
+          {/* Call to action */}
+          <div className="text-center">
+            <div className="glassmorphism-dark rounded-2xl p-8 border border-white/10 shadow-luxury inline-block">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Don't See Your Area?
+              </h3>
+              <p className="text-gray-300 mb-6">
+                We serve additional areas throughout Riverside County. Call to
+                confirm service availability.
+              </p>
+              <a href="tel:9512464337">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5" />
+                    Check Service Area
+                  </span>
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ Section */}
       <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
@@ -669,18 +677,22 @@ const emergencyReasons = [
                 Can't find what you're looking for? Our Hydro Jetting experts are standing by to answer your questions and schedule your professional Hydro Jetting Service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
-                    View Full FAQ
-                  </span>
-                </Button>
-                <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Contact Us
-                  </span>
-                </Button>
+                <a href="/faq">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
+                      View Full FAQ
+                    </span>
+                  </Button>
+                </a>
+                <a href="/contact-us">
+                  <Button className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Contact Us
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -688,101 +700,103 @@ const emergencyReasons = [
       </section>
 
       {/* Emergency Section */}
-<section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
-  <div className="absolute inset-0">
-    <div
-      className="absolute inset-0"
-      style={{
-        background: `
-          radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
-          linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-        `,
-      }}
-    />
-  </div>
-
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      {/* Left Column - Content */}
-      <div>
-        <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
-          <AlertTriangle className="h-5 w-5 text-red-400" />
-          <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">
-            Emergency Service
-          </span>
-        </div>
-
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-          24/7 Hydro-Jetting{" "}
-          <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
-            Emergency
-          </span>{" "}
-          Service
-        </h2>
-
-        <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-          Don't let severe blockages cause sewage backups or property damage. We
-          provide 24/7 emergency hydro-jetting throughout Riverside County with
-          rapid response times.
-        </p>
-
-        <div className="mb-8">
-          <h3 className="text-xl font-bold text-white mb-6">
-            Common Emergency Situations:
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {emergencyReasons.map((reason, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-3 text-gray-300"
-              >
-                <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0" />
-                <span className="text-sm">{reason}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group"
-          >
-            <span className="flex items-center justify-center gap-3">
-              <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-              Emergency: (951) 246-4337
-            </span>
-          </Button>
-        </div>
-      </div>
-
-      {/* Right Column - Image */}
-      <div className="relative group">
-        <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-          <img
-            src={hjgp2}
-            alt="Emergency hydro-jetting service - technician responding to urgent drain blockage call"
-            className="w-full h-96 object-cover rounded-3xl"
+      <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `
+                radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
+                linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
+              `,
+            }}
           />
+        </div>
 
-          {/* Floating Emergency Badge */}
-          <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                <Clock className="h-4 w-4 text-white" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Content */}
+            <div>
+              <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
+                <AlertTriangle className="h-5 w-5 text-red-400" />
+                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">
+                  Emergency Service
+                </span>
               </div>
-              <div>
-                <div className="text-white font-bold text-sm">24/7</div>
-                <div className="text-gray-300 text-xs">Emergency Service</div>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
+                24/7 Hydro-Jetting{" "}
+                <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
+                  Emergency
+                </span>{" "}
+                Service
+              </h2>
+
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                Don't let severe blockages cause sewage backups or property damage. We
+                provide 24/7 emergency hydro-jetting throughout Riverside County with
+                rapid response times.
+              </p>
+
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-white mb-6">
+                  Common Emergency Situations:
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {emergencyReasons.map((reason, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 text-gray-300"
+                    >
+                      <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0" />
+                      <span className="text-sm">{reason}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:9512464337">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group"
+                  >
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Emergency: (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="relative group">
+              <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
+                <img
+                  src={hjgp2}
+                  alt="Emergency hydro-jetting service - technician responding to urgent drain blockage call"
+                  className="w-full h-96 object-cover rounded-3xl"
+                />
+
+                {/* Floating Emergency Badge */}
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
+                      <Clock className="h-4 w-4 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold text-sm">24/7</div>
+                      <div className="text-gray-300 text-xs">Emergency Service</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* ✅ closes right column properly */}
-    </div>
-  </div>
-</section>
+      </section>
+      
       {/* Final CTA Section */}
       <section className="relative overflow-hidden">
         <div 
@@ -815,18 +829,22 @@ const emergencyReasons = [
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
-              <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Call (951) 246-4337
-                </span>
-              </Button>
-              <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Inspection
-                </span>
-              </Button>
+              <a href="tel:9512464337" className="flex-1">
+                <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group">
+                  <span className="flex items-center justify-center gap-2">
+                    <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                    Call (951) 246-4337
+                  </span>
+                </Button>
+              </a>
+              <a href="/contact-us" className="flex-1">
+                <Button size="lg" className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
+                  <span className="flex items-center justify-center gap-2">
+                    <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Inspection
+                  </span>
+                </Button>
+              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
               <div className="flex items-center gap-2">

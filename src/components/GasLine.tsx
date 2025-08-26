@@ -27,7 +27,7 @@ import {
   Thermometer,
   Truck,
 } from "lucide-react";
-const IntroImage = "/GardnerPlumbingGasLine.webp";
+const IntroImage = "/gaslineinspection.webp";
 const beforeafterImage = "/gaslinebefore&after.webp";
 const whychooseusImage = "/GardnerEmployeCustomerEstimate.webp";
 const EmergencyGasImage ="/gardnertech2.webp"
@@ -256,18 +256,23 @@ const services = [
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:9512464337" className="w-full sm:w-auto">
                 <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
                   </span>
                 </Button>
+                </a>
+
+                <a href="/contact-us" className="w-full sm:w-auto">
                 <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
                   <span className="flex items-center justify-center gap-3">
                     <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Schedule Service
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
 
@@ -339,12 +344,14 @@ const services = [
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+                <a href="tel:9512464337" className="w-full sm:w-auto">
                 <div className="flex items-center gap-2 bg-black/20 rounded-full px-4 py-2">
                   <Phone className="h-5 w-5 text-red-100" />
                   <span className="text-white font-bold text-lg">
                     (951) 246-4337
                   </span>
                 </div>
+                </a>
                 <span className="text-red-100 font-semibold text-sm sm:text-base">
                   24/7 Emergency Service
                 </span>
@@ -546,12 +553,14 @@ const services = [
                 })}
               </div>
 
-              <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Estimate
-                </span>
-              </Button>
+              <a href="/contact-us">
+                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Estimate
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -619,12 +628,14 @@ const services = [
           We serve additional areas throughout Riverside County. Call to
           confirm service availability.
         </p>
+        <a href="tel:9512464337" className="w-full sm:w-auto">
         <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
           <span className="flex items-center justify-center gap-3">
             <Phone className="h-5 w-5" />
             Check Service Area
           </span>
         </Button>
+        </a>
       </div>
     </div>
   </div>
@@ -852,11 +863,11 @@ const services = [
           <img
             src={EmergencyGasImage}
             alt="Emergency gas line repair - technician responding to urgent call"
-            className="w-full h-96 object-cover rounded-3xl"
+            className="w-full h-120 object-cover rounded-3xl"
           />
 
           {/* Floating Emergency Badge */}
-          <div className="absolute top-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+          <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                 <Clock className="h-4 w-4 text-white" />

@@ -120,18 +120,22 @@ export function About() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href = "/contact-us">
                 <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Contact Us Today
                   </span>
                 </Button>
+                </a>
+                <a href = "/contact-us">
                 <Button className="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white border border-gray-500/30 hover:border-gray-400/50 px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
                   <span className="flex items-center justify-center gap-3">
                     <Mail className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Get Free Estimate
+                    office@gardnerplumbingco.com
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
             
@@ -569,7 +573,7 @@ export function About() {
       </section>
 
       {/* Service Area Section */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
+      <section id ="service-area" className="py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div 
             className="absolute inset-0"

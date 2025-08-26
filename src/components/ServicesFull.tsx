@@ -307,7 +307,7 @@ export function ServicesFull() {
           </div>
 
           {/* Enhanced Commercial Services */}
-          <div className="mb-20 sm:mb-24 animate-slide-up">
+          <div id = 'commercial-services' className="mb-20 sm:mb-24 animate-slide-up">
             <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
               <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
                 background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,

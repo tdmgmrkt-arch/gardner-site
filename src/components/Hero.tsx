@@ -304,7 +304,7 @@ export function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-12 animate-fade-in">
           {/* 24/7 Emergency */}
           <a
-            href="/services/emergency-plumbing"
+            href="/services/emergency-service"
             className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 hover-lift group transition-all duration-300"
             style={{
               background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,

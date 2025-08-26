@@ -18,16 +18,16 @@ export function Header() {
     "Water Heaters": "/services/water-heater-service",
     "Toilet Repair": "/services/toilet-installation-and-repair",
     "Piping & Repiping": "/services/piping-and-repiping",
-    "Fixtures": "/services/fixtures",
+    "Garbage Disposals": "/services/garbage-disposal-service",
   };
 
   const commercialLinks: Record<string, string> = {
-    "Commercial Plumbing": "/services/commercial-plumbing",
+    "Commercial Plumbing": "/services#commercial-services",
     "Hydro Jetting": "/services/hydro-jetting",
-    "Sewer Lines": "/services/sewer-lines",
+    "Sewer & Septic": "/services/sewer-and-septic",
     "Maintenance Plans": "/services/maintenance-plans",
     "Emergency Service": "/services/emergency-service",
-    "System Inspections": "/services/system-inspections",
+    "System Inspections": "/services/65-point-inspection",
   };
 
   const emergencyLinks: Record<string, string> = {
@@ -108,8 +108,8 @@ export function Header() {
                 <a href="/reviews" aria-label="Service Area">
                   <MapPin className="h-2.5 w-2.5 sm:h-3 sm:w-3 lg:h-4 lg:w-4" />
                 </a>
-                <a href="/service-areas" className="hidden md:inline text-xs lg:text-sm">Serving Greater Riverside Area</a>
-                <a href="/service-areas" className="md:hidden text-xs">Local Service</a>
+                <a href="#service-area" className="hidden md:inline text-xs lg:text-sm">Serving Greater Riverside Area</a>
+                <a href="#service-area" className="md:hidden text-xs">Local Service</a>
               </div>
               <div className="flex items-center gap-0.5 sm:gap-1 lg:gap-2 font-medium">
                 <a href="tel:9512464337" aria-label="Call (951) 246-4337">
@@ -294,24 +294,30 @@ export function Header() {
                                 </div>
                               </div>
 
+                          
                               {/* Services grid */}
-                              <div className="col-span-8">
-                                <div className="grid grid-cols-3 gap-8">
-                                  {/* Residential */}
-                                  <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
+                              <div className="col-span-8 grid grid-cols-10 gap-8">
+                                {/* Residential (60%) */}
+                                <div className="col-span-6 glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
                                     <a href="/services">
                                       <h4 className="text-lg font-bold text-white mb-4 pb-3 border-b-2 border-red-600 drop-shadow-sm hover:text-red-400 transition-colors duration-300">
-                                        Residential
+                                        Our Services
                                       </h4>
                                     </a>
-                                    <ul className="space-y-3">
+                                    <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
                                       {[
                                         { name: "Drain Cleaning", desc: "Professional clearing" },
                                         { name: "Leak Detection", desc: "Quick detection & fix" },
                                         { name: "Water Heaters", desc: "Install & service" },
+                                        { name: "Hydro Jetting", desc: "High-pressure cleaning" },
                                         { name: "Toilet Repair", desc: "Complete solutions" },
                                         { name: "Piping & Repiping", desc: "New & replacement" },
-                                        { name: "Fixtures", desc: "Faucets & sinks" },
+                                        { name: "Garbage Disposals", desc: "Faucets & sinks" },
+                                         { name: "Commercial Plumbing", desc: "Business solutions" },
+                                        { name: "Sewer & Septic", desc: "Main line service" },
+                                        { name: "Maintenance Plans", desc: "Preventive care" },
+                                        { name: "Emergency Service", desc: "24/7 response" },
+                                        { name: "System Inspections", desc: "Complete checks" },
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
@@ -330,54 +336,21 @@ export function Header() {
                                     </ul>
                                   </div>
 
-                                  {/* Commercial */}
-                                  <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
-                                    <a href="/services/commercial-services">
-                                      <h4 className="text-lg font-bold text-white mb-4 pb-3 border-b-2 border-red-600 drop-shadow-sm hover:text-red-400 transition-colors duration-300">
-                                        Commercial
-                                      </h4>
-                                    </a>
-                                    <ul className="space-y-3">
-                                      {[
-                                        { name: "Commercial Plumbing", desc: "Business solutions" },
-                                        { name: "Hydro Jetting", desc: "High-pressure cleaning" },
-                                        { name: "Sewer Lines", desc: "Main line service" },
-                                        { name: "Maintenance Plans", desc: "Preventive care" },
-                                        { name: "Emergency Service", desc: "24/7 response" },
-                                        { name: "System Inspections", desc: "Complete checks" },
-                                      ].map((service) => (
-                                        <li key={service.name}>
-                                          <a
-                                            href={commercialLinks[service.name] ?? "/services#commercial"}
-                                            className="group block p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
-                                          >
-                                            <div className="nav-dropdown-service-name font-medium transition-colors duration-300 drop-shadow-sm">
-                                              {service.name}
-                                            </div>
-                                            <div className="nav-dropdown-service-desc text-xs transition-colors duration-300">
-                                              {service.desc}
-                                            </div>
-                                          </a>
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-
                                   {/* Emergency */}
-                                  <div className="glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
+                                  <div className="col-span-4 glassmorphism-dark rounded-2xl p-6 shadow-luxury hover-lift transition-all duration-500 border border-white/10">
                                     <a href="/services/emergency-service">
                                       <h4 className="text-lg font-bold text-white mb-4 pb-3 border-b-2 border-red-600 drop-shadow-sm hover:text-red-400 transition-colors duration-300">
                                         Emergency
                                       </h4>
                                     </a>
-                                    <ul className="space-y-3 mb-4">
+                                    <ul className="grid grid-cols-2 gap-y-3">
                                       {[
                                         { name: "24/7 Service", desc: "Always available" },
                                         { name: "Burst Pipes", desc: "Immediate response" },
                                         { name: "Water Damage", desc: "Prevention & repair" },
                                         { name: "Gas Lines", desc: "Safe service" },
                                         { name: "Backups", desc: "Sewer & drain" },
-                                        { name: "No Heat/Hot Water", desc: "Quick restoration" },
+                                        { name: "No Hot Water", desc: "Quick restoration" },
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
@@ -397,7 +370,7 @@ export function Header() {
 
                                     {/* Emergency CTA */}
                                     <div
-                                      className="relative overflow-hidden rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift"
+                                      className="mt-40 text-center relative overflow-hidden rounded-xl p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover-lift"
                                       style={{
                                         background: `linear-gradient(135deg, rgba(139, 0, 0, 0.9) 0%, rgba(220, 38, 38, 0.9) 100%)`,
                                         boxShadow: `
@@ -440,7 +413,6 @@ export function Header() {
                             </div>
                           </div>
                         </div>
-                      </div>
                     </>
                   )}
                 </div>

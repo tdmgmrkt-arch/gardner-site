@@ -89,10 +89,10 @@ export function Header() {
           <div className="flex items-center justify-between text-[10px] sm:text-xs lg:text-sm">
             <div className="flex items-center gap-2 sm:gap-3 lg:gap-6">
               <div className="flex items-center gap-1 sm:gap-2">
-                <a href="/services/emergency-plumbing" aria-label="24/7 Emergency Service">
+                <a href="/services/emergency-service" aria-label="24/7 Emergency Service">
                   <Clock className="h-2.5 w-2.5 sm:h-3 sm:w-3 lg:h-4 lg:w-4 drop-shadow-sm" />
                 </a>
-                <a href="/services/emergency-plumbing" className="font-medium drop-shadow-sm text-[10px] sm:text-xs lg:text-sm">
+                <a href="/services/emergency-service" className="font-medium drop-shadow-sm text-[10px] sm:text-xs lg:text-sm">
                   24/7 Emergency Service
                 </a>
               </div>
@@ -176,13 +176,16 @@ export function Header() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <button className="flex items-center gap-1 text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm py-4 px-1">
-                    Services
-                    <ChevronDown
-                      className="h-4 w-4 transition-transform duration-300"
-                      style={{ transform: isServicesOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-                    />
-                  </button>
+                  <a
+  href="/services"
+  className="flex items-center gap-1 text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift drop-shadow-sm py-4 px-1"
+>
+  Services
+  <ChevronDown
+    className="h-4 w-4 transition-transform duration-300"
+    style={{ transform: isServicesOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+  />
+</a>
 
                   {isServicesOpen && (
                     <>
@@ -262,13 +265,13 @@ export function Header() {
                                   </div>
                                                                     {/* Trust indicators */}
                                   <div className="space-y-3 mb-6">
-                                    <a href="/services/emergency-plumbing" className="flex items-center gap-3 group hover-lift">
+                                    <a href="/services/emergency-service" className="flex items-center gap-3 group hover-lift">
                                       <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center shadow-lg">
                                         <Clock className="h-4 w-4 text-white drop-shadow-sm" />
                                       </div>
                                       <span className="text-gray-300 text-sm font-medium drop-shadow-sm">24/7 Emergency Service</span>
                                     </a>
-                                    <a href="/emergency-service" className="flex items-center gap-3 group hover-lift">
+                                    <a href="/about-us" className="flex items-center gap-3 group hover-lift">
                                       <div className="w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-lg">
                                         <Phone className="h-4 w-4 text-white drop-shadow-sm" />
                                       </div>

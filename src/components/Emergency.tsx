@@ -11,7 +11,6 @@ import {
   Phone,
   Clock,
   Shield,
-  CheckCircle,
   ArrowRight,
   DollarSign,
   Wrench,
@@ -27,9 +26,8 @@ import {
   Building2,
 } from "lucide-react";
 
-const heroImg = "/gardnertech2.png";          // replace if you have a real image
-const techImg = "/images/emergency-tech.jpg";          // replace if you have a real image
-const responseImg = "/gardnertech2.webp";  // replace if you have a real image
+const heroImg = "/gardnertech2.png";
+const responseImg = "/gardnertech2.webp";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -61,12 +59,12 @@ export function Emergency() {
   ];
 
   const emergencies = [
-    { icon: Droplets, title: "Burst / Leaking Pipes", desc: "Immediate shutoff & repair to stop water damage." },
-    { icon: AlertTriangle, title: "Slab Leaks", desc: "Rapid detection and mitigation to protect your foundation." },
-    { icon: Zap, title: "No Hot Water", desc: "Emergency water heater diagnostics & replacement." },
-    { icon: Flame, title: "Gas Leaks", desc: "Licensed, safe isolation and repair of gas lines." },
-    { icon: Home, title: "Backed-Up Drains", desc: "Main line stoppages cleared fast — 24/7." },
-    { icon: Building2, title: "Commercial Emergencies", desc: "Priority response to keep your business open." },
+    { icon: Droplets, title: "Burst / Leaking Pipes", desc: "Immediate shutoff & repair to stop water damage.", href: "/services/drain-cleaning" },
+    { icon: AlertTriangle, title: "Slab Leaks", desc: "Rapid detection and mitigation to protect your foundation.", href: "/services/leak-detection" },
+    { icon: Zap, title: "No Hot Water", desc: "Emergency water heater diagnostics & replacement.", href: "/services/water-heater-service" },
+    { icon: Flame, title: "Gas Leaks", desc: "Licensed, safe isolation and repair of gas lines.", href: "/services/gas-lines"},
+    { icon: Home, title: "Backed-Up Drains", desc: "Main line stoppages cleared fast — 24/7.", href: "/services/drain-cleaning" },
+    { icon: Building2, title: "Commercial Emergencies", desc: "Priority response to keep your business open.", href: "/services/#commercial-services" },
   ];
 
   const benefits = [
@@ -119,7 +117,6 @@ export function Emergency() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left */}
             <div className="text-left animate-fade-in">
-              {/* Breadcrumb */}
               <nav className="mb-6">
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
                   <span>Home</span>
@@ -148,7 +145,6 @@ export function Emergency() {
                 Burst pipe? Sewage backup? No hot water? Get rapid, expert help anywhere in Riverside County — day or night.
               </p>
 
-              {/* Key points */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { icon: Clock, text: "Rapid Dispatch" },
@@ -163,7 +159,6 @@ export function Emergency() {
                 ))}
               </div>
 
-              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="tel:9512464337">
                   <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
@@ -192,18 +187,6 @@ export function Emergency() {
                   alt="Emergency plumber responding to a late-night call"
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                      <Clock className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-white font-bold text-sm">On the Way</div>
-                      <div className="text-gray-300 text-xs">24/7 Dispatch</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -226,51 +209,52 @@ export function Emergency() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 sm:mb-20">
-            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
-              <AlertTriangle className="h-5 w-5 text-red-400" />
-              <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Emergency Issues We Handle</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg">
               Fast Help For{" "}
               <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
                 Critical Problems
               </span>
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              If water’s flowing where it shouldn’t — or not flowing at all — we’ll fix it now.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {emergencies.map((item, i) => {
+            {emergencies.map((item) => {
               const Icon = item.icon;
               return (
-                <Card
+                <a
                   key={item.title}
-                  className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
-                  style={{ backgroundColor: "#202020", backgroundImage: "linear-gradient(145deg, #202020 0%, #1a1a1a 100%)" }}
+                  href={item.href}
+                  className="block group h-full"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
-                  <div className="absolute inset-[1px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg" />
-                  <div className="relative z-10">
-                    <CardHeader className="text-center pb-4 pt-8">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-600/30 to-orange-500/30 rounded-2xl flex items-center justify-center mx-auto group-hover:from-red-600 group-hover:to-orange-500 transition-all duration-500 shadow-lg">
-                        <Icon className="h-8 w-8 sm:h-10 sm:w-10 text-red-400 group-hover:text-white transition-all duration-500" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mt-4 group-hover:text-red-100 transition-colors duration-300">
-                        {item.title}
-                      </h3>
-                    </CardHeader>
-                    <CardContent className="px-6 pb-8">
-                      <p className="text-gray-300 text-center">{item.desc}</p>
-                    </CardContent>
-                  </div>
-                </Card>
+                  <Card
+                    className="relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500 h-full"
+                    style={{
+                      backgroundColor: "#202020",
+                      backgroundImage: "linear-gradient(145deg, #202020 0%, #1a1a1a 100%)",
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-transparent to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg" />
+                    <div className="absolute inset-[1px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg" />
+                    <div className="relative z-10">
+                      <CardHeader className="text-center pb-4 pt-8">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-red-600/30 to-orange-500/30 rounded-2xl flex items-center justify-center mx-auto group-hover:from-red-600 group-hover:to-orange-500 transition-all duration-500 shadow-lg">
+                          <Icon className="h-8 w-8 sm:h-10 sm:w-10 text-red-400 group-hover:text-white transition-all duration-500" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mt-4 group-hover:text-red-100 transition-colors duration-300">
+                          {item.title}
+                        </h3>
+                      </CardHeader>
+                      <CardContent className="px-6 pb-8">
+                        <p className="text-gray-300 text-center">{item.desc}</p>
+                      </CardContent>
+                    </div>
+                  </Card>
+                </a>
               );
             })}
           </div>
         </div>
-      </section>
+      </section> 
 
       {/* Why choose us */}
       <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">

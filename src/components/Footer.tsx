@@ -158,7 +158,7 @@ export function Footer() {
                   <h4 className="text-base sm:text-lg text-white mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-2 border-red-600 drop-shadow-sm">Quick Links</h4>
                   <ul className="space-y-3 sm:space-y-4">
                     {[
-                      { name: "Request Service", desc: "Schedule appointment", link: "/request-service" },
+                      { name: "Request Service", desc: "Schedule appointment", link: "/contact-us" },
                       { name: "Emergency Service", desc: "24/7 urgent help", link: "/services/emergency-service" },
                       { name: "FAQ", desc: "Common questions", link: "/faq" },
                       { name: "Blog", desc: "Tips & insights", link: "/blog" },

@@ -453,118 +453,84 @@ export function Header() {
                 </a>
               </div>
 
-              {/* CTA + Mobile */}
-              <div className="flex items-center gap-2 sm:gap-4">
-                <a href="tel:9512464337">
-                  <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-2 py-1.5 sm:px-3 sm:py-2 lg:px-6 lg:py-3 hidden sm:flex shadow-lg hover:shadow-xl transition-all duration-300 hover-lift rounded-lg sm:rounded-xl border border-red-400/20 text-xs sm:text-sm lg:text-base">
-                    <Phone className="mr-1 sm:mr-2 h-3 w-3 sm:h-3 sm:w-3 lg:h-4 lg:w-4" />
-                    <span className="hidden lg:inline">Call Today</span>
-                    <span className="lg:hidden">Call</span>
-                  </Button>
-                </a>
-                <button
-                  className="lg:hidden text-white p-1.5 sm:p-2 rounded-md hover:bg-white/10 transition-all duration-300 hover-lift backdrop-blur-sm"
-                  onClick={() => setIsMenuOpen((v) => !v)}
-                >
-                  <Menu className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
-                </button>
-              </div>
+              {/* Mobile Toggle Only (no CTA here) */}
+            <div className="lg:hidden flex items-center">
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="p-2 text-white hover:text-red-400"
+              >
+                <Menu className="h-6 w-6" />
+              </button>
+            </div>
             </div>
 
-                  {/* Mobile Menu Slider */}
+                 {/* Mobile Menu Fullscreen */}
 {isMenuOpen && (
-  <div className="fixed inset-0 z-[100] lg:hidden">
-    {/* Overlay */}
-    <div
-      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-      onClick={() => setIsMenuOpen(false)}
-    />
-
-    {/* Menu Panel */}
-    <div
-      className={`absolute top-0 right-0 h-full w-full max-w-xs z-[101] shadow-xl transition-transform duration-300 ease-in-out ${
-        isMenuOpen ? "translate-x-0" : "translate-x-full"
-      } bg-[#111827]`}
-    >
-      {/* Header */}
-      <div className="flex justify-between items-center p-4 border-b border-white/10">
-        <a href="/" onClick={() => setIsMenuOpen(false)}>
-          <img src={logo} alt="Gardner Plumbing Co." className="h-10 w-auto" />
-        </a>
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="p-2 text-white hover:text-red-400"
-        >
-          <X className="h-6 w-6" />
-        </button>
-      </div>
-
-      {/* Nav Links */}
-      <nav className="flex-grow overflow-y-auto p-4">
-        <ul className="flex flex-col space-y-2">
-          {mainNavLinks.map((link) => (
-            <li key={link.label}>
-              {link.dropdown ? (
-                <>
-                  <button
-                    onClick={() => setIsMobileServicesOpen((prev) => !prev)}
-                    className="w-full flex justify-between items-center text-left text-lg font-medium text-white hover:text-red-400 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
-                  >
-                    <span>Services</span>
-                    <ChevronDown
-                      className={`h-5 w-5 transition-transform duration-300 ${
-                        isMobileServicesOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isMobileServicesOpen ? "max-h-[1000px]" : "max-h-0"
-                    }`}
-                  >
-                    <ul className="pl-4 pt-2 pb-2 border-l-2 border-red-500/30 ml-3 flex flex-col space-y-1">
-                      {Object.entries(serviceLinks).map(([name, href]) => (
-                        <li key={name}>
-                          <a
-                            href={href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="block p-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200"
-                          >
-                            {name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </>
-              ) : (
-                <a
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block text-lg font-medium text-white hover:text-red-400 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      {/* Bottom CTA */}
-      <div className="p-4 border-t border-white/10">
-        <a
-          href="tel:9512464337"
-          className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white py-3 shadow-lg rounded-xl text-base flex items-center justify-center"
-        >
-          <Phone className="mr-2 h-5 w-5" />
-          <span>Call for Service</span>
-        </a>
-      </div>
+  <div
+    className={`fixed inset-0 z-[9999] transition-transform duration-300 ease-in-out ${
+      isMenuOpen ? "translate-y-0" : "-translate-y-full"
+    } bg-[#17181F]`} // solid full cover
+  >
+    {/* Header (logo + close only) */}
+    <div className="flex justify-between items-center p-4 border-b border-white/10 bg-[#111827]">
+      <a href="/" onClick={() => setIsMenuOpen(false)}>
+        <img src={logo} alt="Gardner Plumbing Co." className="h-10 w-auto" />
+      </a>
+      <button
+        onClick={() => setIsMenuOpen(false)}
+        className="p-2 text-white hover:text-red-400"
+      >
+        <X className="h-6 w-6" />
+      </button>
     </div>
+
+    {/* Nav */}
+    <nav className="flex flex-col p-6 space-y-4 bg-[#111827]">
+      {mainNavLinks.map((link) => (
+        <div key={link.label}>
+          {link.dropdown ? (
+            <div>
+              <button
+                onClick={() => setIsMobileServicesOpen((prev) => !prev)}
+                className="w-full flex justify-between items-center text-left text-lg font-small text-white hover:text-red-400 px-4 py-3 rounded-lg bg-[#1f2937] border border-white/10"
+              >
+                <span>Services</span>
+                <ChevronDown
+                  className={`h-5 w-5 transition-transform duration-300 ${
+                    isMobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {isMobileServicesOpen && (
+                <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 bg-black/40 p-2 rounded-lg overflow-y-auto max-h-[60vh]">
+  {Object.entries(serviceLinks).map(([name, href]) => (
+    <li key={name}>
+      <a
+        href={href}
+        onClick={() => setIsMenuOpen(false)}
+        className="block px-3 py-2 text-gray-200 hover:text-white rounded-md bg-black/40 border border-white/10"
+      >
+        {name}
+      </a>
+    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ) : (
+            <a
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-lg font-medium text-white hover:text-red-400 px-4 py-3 rounded-lg bg-[#1f2937] border border-white/10"
+            >
+              {link.label}
+            </a>
+          )}
+        </div>
+      ))}
+    </nav>
   </div>
 )}
-
 
       </div>
     </nav>

@@ -27,10 +27,10 @@ import {
 } from "lucide-react";
 
 // UPDATE: Replace with your actual image paths for sewer & septic
-const IntroImage = "/sewer-service-intro.png";
-const beforeafterImage = "/clogged-vs-clean-pipe.webp";
-const whychooseusImage = "/sewer-technician-at-work.webp";
-const EmergencySewerImage = "/emergency-sewer-backup.webp";
+const IntroImage = "/gardnerhydrojetservice.webp";
+const beforeafterImage = "/hydrojetbefore&after.webp";
+const whychooseusImage = "/gardnertecharrival.webp";
+const EmergencySewerImage = "/gardnertech2.webp";
 
 
 const cityLinks: Record<string, string> = {
@@ -463,7 +463,7 @@ export function SewerSeptic() {
                 <img
                     src={whychooseusImage}
                   alt="Professional Gardner Plumbing Co. technician working on a sewer line"
-                  className="w-full h-200 object-cover rounded-3xl"
+                  className="w-full h-96 object-cover rounded-3xl"
                 />
                 
                 {/* Premium overlay effects */}

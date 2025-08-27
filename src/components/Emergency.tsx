@@ -26,7 +26,7 @@ import {
   Building2,
 } from "lucide-react";
 
-const heroImg = "/gardnertech2.png";
+const heroImg = "/gardnertech2.webp";
 const responseImg = "/gardnertech2.webp";
 
 const cityLinks: Record<string, string> = {

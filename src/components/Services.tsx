@@ -16,8 +16,8 @@ import {
 
 const professionalTechnician = "/GardnerPlumbingCoEmergencyTech.webp";
 const customerServiceRep = "/GardnerPlumbingCoCSrep.webp";
-const gardnerTruck = "/GPTRUCK.png";
-const facilityImage = "/gardnertrucks.jpg";
+const gardnerTruck = "/GPTRUCK.webp";
+const facilityImage = "/gardnertrucks.webp";
 
 type ServiceItem = {
   icon: LucideIcon;

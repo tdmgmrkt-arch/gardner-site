@@ -24,8 +24,8 @@ import {
   Gift
 } from "lucide-react";
 const gardnercsrepImage = "/GardnerPlumbingCoCSrep.webp";
-const customerServiceImage = "gpcsrep2.png";
-const gardnerVanImage = "gplumbingtruckguy.png";
+const customerServiceImage = "gpcsrep2.webp";
+const gardnerVanImage = "gplumbingtruckguy.webp";
 
 export function Contact() {
   const contactInfo = [

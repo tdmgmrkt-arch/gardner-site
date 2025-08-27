@@ -1,9 +1,9 @@
 import { DollarSign, UserCheck, CheckCircle, Clock, Award, Shield, Star, Users, ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
-const teamImage = "gardnerteamplumbingwbs.png";
-const bbbImage = "bbbratingbadge.png";
-const professionalTechnician = "gardnertech2.png";
+const teamImage = "gardnerteamplumbingwbs.webp";
+const bbbImage = "bbbratingbadge.webp";
+const professionalTechnician = "gardnertech2.webp";
 
 export function WhyChooseUs() {
   const features = [

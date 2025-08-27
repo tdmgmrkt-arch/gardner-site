@@ -20,9 +20,9 @@ import {
   ThumbsUp,
   Zap
 } from "lucide-react";
-const gardneraboutusImage = "/gardnertrucks.jpg";
+const gardneraboutusImage = "/gardnertrucks.webp";
 const gardneraboutusImage2 = "/GardnerTechVanTools.webp";
-const gardnerVanImage = "gplumbingtruckguy.png";
+const gardnerVanImage = "gplumbingtruckguy.webp";
 
 export function About() {
   const stats = [
@@ -74,102 +74,133 @@ export function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
-        {/* Enhanced Background */}
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0"
-            style={{ 
-              background: `
-                radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
-                linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-              `
-            }}
-          />
-          
-          {/* Premium texture overlay */}
-          <div 
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `
-                radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%)
-              `
-            }}
-          />
+<section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
+  {/* Enhanced Background */}
+  <div className="absolute inset-0">
+    <div 
+      className="absolute inset-0"
+      style={{ 
+        background: `
+          radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
+          linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
+        `
+      }}
+    />
+    
+    {/* Premium texture overlay */}
+    <div 
+      className="absolute inset-0 opacity-10"
+      style={{
+        backgroundImage: `
+          radial-gradient(circle at 20% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%)
+        `
+      }}
+    />
+  </div>
+  
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Hero Content */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      
+      {/* Left Column - Text Content */}
+      <div className="order-2 lg:order-1 text-left">
+        <div className="mb-6">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
+            <Building className="h-5 w-5 text-red-400" />
+            <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">About Gardner Plumbing Co.</span>
+          </div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Left Column - Text Content */}
-            <div className="text-left">
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
-                  <Building className="h-5 w-5 text-red-400" />
-                  <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">About Gardner Plumbing Co.</span>
-                </div>
-              </div>
-              
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Three Decades of <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Plumbing Excellence</span>
-              </h1>
-              <p className="text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
-                Since 1993, Gardner Plumbing Co. has been the trusted choice for residential and commercial plumbing services throughout Riverside County. Our commitment to quality, integrity, and customer satisfaction has made us a cornerstone of the community.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href = "/contact-us">
-                <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Contact Us Today
-                  </span>
-                </Button>
-                </a>
-                <a href = "/contact-us">
-                <Button className="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white border border-gray-500/30 hover:border-gray-400/50 px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Mail className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    office@gardnerplumbingco.com
-                  </span>
-                </Button>
-                </a>
-              </div>
-            </div>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg leading-tight">
+          Three Decades of <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Plumbing Excellence</span>
+        </h1>
+
+        {/* 👇 Mobile Image (with floating badge, hidden on desktop) */}
+        <div className="block lg:hidden mb-6 relative group">
+          <div className="relative overflow-hidden rounded-2xl shadow-lg">
+            <img 
+              src={gardneraboutusImage}
+              alt="Professional Gardner Plumbing Co. technician ready to help with your plumbing needs"
+              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+
+            {/* Overlay effects */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
             
-            {/* Right Column - Image Placeholder */}
-            <div className="relative group">
-              <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 max-w-lg w-full">
-                <img 
-                  src={gardneraboutusImage}
-                  alt="Professional Gardner Plumbing Co. technician ready to help with your plumbing needs" 
-                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
-                    style={{ aspectRatio: '4/3', objectPosition: 'center center' }}
-                  />
-                
-                {/* Premium overlay effects */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
-                
-                {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                      <Award className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-white font-bold text-sm">30+ Years</div>
-                      <div className="text-gray-300 text-xs">Trusted Service</div>
-                    </div>
-                  </div>
+            {/* Floating badge */}
+            <div className="absolute bottom-4 left-4 glassmorphism-dark rounded-xl p-3 border border-white/20 shadow-lg bg-black/60 backdrop-blur-md">
+              <div className="flex items-center gap-3">
+                <div className="w-7 h-7 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
+                  <Award className="h-4 w-4 text-white" />
+                </div>
+                <div>
+                  <div className="text-white font-bold text-sm">30+ Years</div>
+                  <div className="text-gray-300 text-xs">Trusted Service</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+
+        <p className="text-lg text-gray-300 leading-relaxed max-w-xl mb-8">
+          Since 1993, Gardner Plumbing Co. has been the trusted choice for residential and commercial plumbing services throughout Riverside County. Our commitment to quality, integrity, and customer satisfaction has made us a cornerstone of the community.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a href="/contact-us">
+            <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
+              <span className="flex items-center justify-center gap-3">
+                <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                Contact Us Today
+              </span>
+            </Button>
+          </a>
+          <a href="/contact-us">
+            <Button className="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white border border-gray-500/30 hover:border-gray-400/50 px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
+              <span className="flex items-center justify-center gap-3">
+                <Mail className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                office@gardnerplumbingco.com
+              </span>
+            </Button>
+          </a>
+        </div>
+      </div>
+      
+      {/* Right Column - Image (desktop only) */}
+      <div className="order-1 lg:order-2 hidden lg:block relative group">
+        <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 max-w-lg w-full">
+          <img 
+            src={gardneraboutusImage}
+            alt="Professional Gardner Plumbing Co. technician ready to help with your plumbing needs" 
+            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+            style={{ aspectRatio: '4/3', objectPosition: 'center center' }}
+          />
+          
+          {/* Premium overlay effects */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
+          
+          {/* Floating badge */}
+          <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
+                <Award className="h-4 w-4 text-white" />
+              </div>
+              <div>
+                <div className="text-white font-bold text-sm">30+ Years</div>
+                <div className="text-gray-300 text-xs">Trusted Service</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Stats Section */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
@@ -382,134 +413,138 @@ export function About() {
       </section>
 
      {/* Trust Section */}
-<section className="py-16 sm:py-20 relative overflow-hidden">
-  <div className="absolute inset-0">
-    <div 
-      className="absolute inset-0"
-      style={{ 
-        background: `
-          radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
-          linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-        `
-      }}
-    />
-  </div>
-  
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-16">
-      <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
-        <ShieldCheck className="h-5 w-5 text-green-400" />
-        <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
-          Why Customers Trust Us
-        </span>
-      </div>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-        Built on <span className="text-gradient bg-gradient-to-r from-green-400 to-red-600 bg-clip-text text-transparent">Trust & Reliability</span>
-      </h2>
-      <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-        Every job is backed by our promise of quality workmanship, honest service, and dependable support. Here’s why thousands of homeowners count on us.
-      </p>
-    </div>
-
-    {/* Trust Marker Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
-        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
-        <CardContent className="relative z-10 p-8 text-center">
-          <ShieldCheck className="h-12 w-12 mx-auto mb-4 text-green-400" />
-          <h3 className="text-xl font-bold text-white mb-2">Licensed & Insured</h3>
-          <p className="text-gray-300 leading-relaxed">Your home is protected—our work meets all codes and standards.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
-        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
-        <CardContent className="relative z-10 p-8 text-center">
-          <Clock className="h-12 w-12 mx-auto mb-4 text-green-400" />
-          <h3 className="text-xl font-bold text-white mb-2">24/7 Emergency Service</h3>
-          <p className="text-gray-300 leading-relaxed">We’re always on call to respond to urgent plumbing emergencies.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
-        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
-        <CardContent className="relative z-10 p-8 text-center">
-          <Wallet className="h-12 w-12 mx-auto mb-4 text-green-400" />
-          <h3 className="text-xl font-bold text-white mb-2">Upfront Pricing</h3>
-          <p className="text-gray-300 leading-relaxed">No hidden fees—clear, honest estimates before any work begins.</p>
-        </CardContent>
-      </Card>
-
-      <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
-        style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
-        <CardContent className="relative z-10 p-8 text-center">
-          <ThumbsUp className="h-12 w-12 mx-auto mb-4 text-green-400" />
-          <h3 className="text-xl font-bold text-white mb-2">Workmanship Guarantee</h3>
-          <p className="text-gray-300 leading-relaxed">Every job is backed by our warranty for lasting peace of mind.</p>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-</section>
-
-
-      {/* Timeline Section */}
-<section className="py-10 sm:py-14 relative overflow-hidden">
-  <div className="absolute inset-0">
-    <div 
-      className="absolute inset-0"
-      style={{ 
-        background: `
-          radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
-          linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
-        `
-      }}
-    />
-  </div>
-  
-  <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <div className="inline-flex items-center gap-3 mb-6 px-6 py-2 bg-gradient-to-r from-purple-600/20 to-purple-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
-        <Calendar className="h-5 w-5 text-purple-400" />
-        <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Our Journey</span>
-      </div>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-6 drop-shadow-lg">
-        Company <span className="text-gradient bg-gradient-to-r from-purple-400 to-red-600 bg-clip-text text-transparent">Timeline</span>
-      </h2>
-    </div>
-
-    <div className="relative">
-      {/* Timeline line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 to-red-600 rounded-full"></div>
-      
-      <div className="space-y-8">
-        {timeline.map((item, index) => (
+      <section className="py-16 sm:py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
           <div 
-            key={index} 
-            className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
-          >
-            {/* Timeline Content */}
-            <div className={`w-1/2 ${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6 text-left'}`}>
-              <div className="glassmorphism-dark rounded-xl p-4 border border-white/10 shadow-md hover-lift transition-all duration-500">
-                <div className="text-xl font-bold text-purple-400 mb-1">{item.year}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.event}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
-              </div>
+            className="absolute inset-0"
+            style={{ 
+              background: `
+                radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
+                linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
+              `
+            }}
+          />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
+              <ShieldCheck className="h-5 w-5 text-green-400" />
+              <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">
+                Why Customers Trust Us
+              </span>
             </div>
-            
-            {/* Timeline node */}
-            <div className="relative flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-red-600 rounded-full border-4 border-gray-800 shadow-md z-10">
-              <div className="w-3 h-3 bg-white rounded-full"></div>
-            </div>
-            
-            <div className="w-1/2"></div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
+              Built on <span className="text-gradient bg-gradient-to-r from-green-400 to-red-600 bg-clip-text text-transparent">Trust & Reliability</span>
+            </h2>
+            <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
+              Every job is backed by our promise of quality workmanship, honest service, and dependable support. Here’s why thousands of homeowners count on us.
+            </p>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</section>
 
+          {/* Trust Marker Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+              style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+              <CardContent className="relative z-10 p-8 text-center">
+                <ShieldCheck className="h-12 w-12 mx-auto mb-4 text-green-400" />
+                <h3 className="text-xl font-bold text-white mb-2">Licensed & Insured</h3>
+                <p className="text-gray-300 leading-relaxed">Your home is protected—our work meets all codes and standards.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+              style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+              <CardContent className="relative z-10 p-8 text-center">
+                <Clock className="h-12 w-12 mx-auto mb-4 text-green-400" />
+                <h3 className="text-xl font-bold text-white mb-2">24/7 Emergency Service</h3>
+                <p className="text-gray-300 leading-relaxed">We’re always on call to respond to urgent plumbing emergencies.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+              style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+              <CardContent className="relative z-10 p-8 text-center">
+                <Wallet className="h-12 w-12 mx-auto mb-4 text-green-400" />
+                <h3 className="text-xl font-bold text-white mb-2">Upfront Pricing</h3>
+                <p className="text-gray-300 leading-relaxed">No hidden fees—clear, honest estimates before any work begins.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="group relative border-none overflow-hidden shadow-luxury hover-lift transition-all duration-500"
+              style={{ backgroundColor: '#202020', backgroundImage: 'linear-gradient(145deg, #202020 0%, #1a1a1a 100%)' }}>
+              <CardContent className="relative z-10 p-8 text-center">
+                <ThumbsUp className="h-12 w-12 mx-auto mb-4 text-green-400" />
+                <h3 className="text-xl font-bold text-white mb-2">Workmanship Guarantee</h3>
+                <p className="text-gray-300 leading-relaxed">Every job is backed by our warranty for lasting peace of mind.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section -- OPTIMIZED */}
+      <section className="py-10 sm:py-14 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0"
+            style={{ 
+              background: `
+                radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%),
+                linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)
+              `
+            }}
+          />
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-3 mb-6 px-6 py-2 bg-gradient-to-r from-purple-600/20 to-purple-500/20 rounded-full border border-purple-500/30 backdrop-blur-sm">
+              <Calendar className="h-5 w-5 text-purple-400" />
+              <span className="text-purple-400 font-semibold text-sm uppercase tracking-wider">Our Journey</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-6 drop-shadow-lg">
+              Company <span className="text-gradient bg-gradient-to-r from-purple-400 to-red-600 bg-clip-text text-transparent">Timeline</span>
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Timeline line - OPTIMIZED */}
+            <div className="absolute left-4 lg:left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 to-red-600 rounded-full"></div>
+            
+            <div className="space-y-0">
+              {timeline.map((item, index) => (
+                // Timeline Item Loop - OPTIMIZED
+                <div 
+                  key={index} 
+                  className="relative"
+                >
+                  <div className="absolute left-4 top-2 lg:left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="relative flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-red-600 rounded-full border-4 border-gray-800 shadow-md">
+                      <div className="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                  </div>
+
+                  <div 
+                    className={`
+                      pl-12 lg:pl-0 
+                      w-full lg:w-1/2
+                      ${index % 2 === 0 ? 'lg:pr-10 lg:text-right' : 'lg:pl-10 lg:text-left'}
+                      pb-8 flex items-center
+                    `}
+                  >
+                    <div className="glassmorphism-dark rounded-xl p-4 border border-white/10 shadow-md hover-lift transition-all duration-500 w-full">
+                      <div className={`text-xl font-bold text-purple-400 mb-1 ${index % 2 === 0 ? '' : 'lg:text-left'}`}>{item.year}</div>
+                      <h3 className={`text-lg font-bold text-white mb-2 ${index % 2 === 0 ? '' : 'lg:text-left'}`}>{item.event}</h3>
+                      <p className={`text-gray-300 text-sm leading-relaxed ${index % 2 === 0 ? '' : 'lg:text-left'}`}>{item.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Certifications Section */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
@@ -629,26 +664,25 @@ export function About() {
             </div>
             
             {/* Right Column - Map */}
-<div className="relative group">
-  <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 self-start pt-30">
-    {/* Google Maps Embed */}
-    <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109144.45437258422!2d-117.20587604273275!3d33.571118777583706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc9d0f093fb225%3A0xef87e6a2bf83ed0f!2sGardner%20Plumbing%20Company!5e0!3m2!1sen!2sus!4v1755821362571!5m2!1sen!2sus"
-  width="100%"
-  height="520"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-  title="Gardner Plumbing Co. Service Area - Riverside County"
-  className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700 rounded-3xl"
-/>
+            <div className="relative group">
+              <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500 self-start">
+                {/* Google Maps Embed - OPTIMIZED */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109144.45437258422!2d-117.20587604273275!3d33.571118777583706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc9d0f093fb225%3A0xef87e6a2bf83ed0f!2sGardner%20Plumbing%20Company!5e0!3m2!1sen!2sus!4v1755821362571!5m2!1sen!2sus"
+                  width="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Gardner Plumbing Co. Service Area - Riverside County"
+                  className="w-full h-80 sm:h-96 lg:h-[520px] object-cover group-hover:scale-105 transition-transform duration-700 rounded-3xl"
+                />
                 
                 {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
                       <MapPin className="h-4 w-4 text-white" />
@@ -708,7 +742,8 @@ export function About() {
               </Button>
             </div>
             
-            <div className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-400">
+            {/* CTA Footer - OPTIMIZED */}
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-green-400" />
                 <span>24/7 Emergency Service</span>

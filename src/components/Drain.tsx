@@ -25,7 +25,7 @@ import {
   Star,
   AlertTriangle
 } from "lucide-react";
-const IntroImage = "/draincleaningserviceintro.png";
+const IntroImage = "/draincleaningserviceintro.webp";
 const beforeafterImage = "/draincleaningbeforeandafter.webp";
 const whychooseusImage = "/gardnertechvanbackground.webp";
 const drainCleaningEmergencyImg = "/gardnertecharrival.webp"

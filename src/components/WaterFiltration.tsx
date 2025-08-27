@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 
 // UPDATE: Replace with your actual image paths for water filtration
-const IntroImage = "/whole-house-water-filter-system.png";
+const IntroImage = "/whole-house-water-filter-system.webp";
 const beforeafterImage = "/hard-water-vs-soft-water.webp";
 const whychooseusImage = "/technician-installing-filter.webp";
 const HowItWorksImage = "/reverse-osmosis-faucet.webp";
@@ -224,18 +224,23 @@ export function WaterFiltration() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:9512464337">
                 <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
                   </span>
                 </Button>
+                </a>
+
+                <a href= "/contact-us">
                 <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
                   <span className="flex items-center justify-center gap-3">
                     <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Get Free Water Test
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
 
@@ -252,7 +257,7 @@ export function WaterFiltration() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
+                <div className="absolute bottom-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Star className="h-4 w-4 text-white" />
@@ -507,12 +512,14 @@ export function WaterFiltration() {
                 })}
               </div>
 
+              <a href="tel:9512464337">
               <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                 <span className="flex items-center justify-center gap-3">
                   <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   Get a Free Consultation
                 </span>
               </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -578,12 +585,14 @@ export function WaterFiltration() {
                 We serve additional areas throughout Riverside County. Call to
                 confirm service availability.
               </p>
-              <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
+              <a href="tel:9512464337">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
                 <span className="flex items-center justify-center gap-3">
                   <Phone className="h-5 w-5" />
                   Check Service Area
                 </span>
               </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -810,18 +819,22 @@ export function WaterFiltration() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
+              <a href="tel:9512464337">
               <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group flex-1">
                 <span className="flex items-center justify-center gap-2">
                   <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                   Call (951) 246-4337
                 </span>
               </Button>
+                 </a>
+            <a href="/contact-us">
               <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent flex-1">
                 <span className="flex items-center justify-center gap-2">
                   <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                   Get Free Estimate
                 </span>
               </Button>
+               </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
               <div className="flex items-center gap-2">

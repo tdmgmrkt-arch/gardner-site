@@ -7,6 +7,7 @@ import { Phone, Star, Shield, Clock, Users } from "lucide-react";
 import { useState } from "react";
 
 const heroBackground = "/garnderplumbingcoemployeearrival.webp";
+const mobileHeroBackground = "/gpmobilehero.webp"
 
 export function Hero() {
   const [formData, setFormData] = useState({
@@ -30,34 +31,41 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden min-h-[80vh] flex items-center" style={{ backgroundColor: "transparent" }}>
       {/* Background */}
-      <div className="absolute inset-0">
-        <div
-          className="
-            absolute inset-0 bg-cover bg-no-repeat
-            bg-[position:center_top] sm:bg-[position:50%_35%]
-          "
-          style={{
-            backgroundImage: `url(${heroBackground})`,
-            filter: "brightness(0.7) contrast(1.2) saturate(1.1)",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
-      </div>
-
-
-      {/* Bottom shadow */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-30"
-        style={{
-          background: `linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%)`,
-          boxShadow: `
-               0 25px 50px rgba(0, 0, 0, 0.3),
-               0 15px 35px rgba(0, 0, 0, 0.2),
-               0 8px 20px rgba(0, 0, 0, 0.15)
-             `,
-        }}
+  <div className="absolute inset-0">
+    <picture>
+      {/* Mobile Image */}
+      <source srcSet={mobileHeroBackground} media="(max-width: 640px)" />
+      {/* Tablet/Desktop Image */}
+      <img
+        src={heroBackground}
+        alt="Hero background"
+        className="
+          w-full 
+          h-full             /* ✅ fills full hero section height */
+          object-cover 
+          object-top sm:object-[50%_30%]
+          brightness-75 contrast-125 saturate-110
+        "
       />
+    </picture>
+
+    {/* Overlay Gradients */}
+    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+  </div>
+
+  {/* Bottom shadow */}
+  <div
+    className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-30"
+    style={{
+      background: `linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%)`,
+      boxShadow: `
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 8px 20px rgba(0, 0, 0, 0.15)
+      `,
+    }}
+  />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">

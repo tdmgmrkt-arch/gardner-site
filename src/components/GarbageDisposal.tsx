@@ -26,7 +26,7 @@ import {
   AlertTriangle
 } from "lucide-react";
 const IntroImage = "/garbagedisposalintro.webp";
-const beforeafterImage = "leakdetectionbeforeandafter.png";
+const beforeafterImage = "leakdetectionbeforeandafter.webp";
 const WhyChooseUsImage = "/gardnertecharrival2.webp";
 const EmergencyGarbageDipsosalImage = "/gardnertech2.webp"
 

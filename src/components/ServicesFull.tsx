@@ -20,10 +20,10 @@ import {
   Recycle,
   MapPin
 } from "lucide-react";
-const professionalTechnician = '/gardnertrucks.jpg';
-const customerServiceRep = '/gardnertrucks.jpg';
-const gardnerTruck = '/gardnertrucks.jpg';
-const facilityImage = '/gardnertrucks.jpg';
+const professionalTechnician = '/GardnerPlumbingCoEmergencyTech.webp';
+const customerServiceRep = '/GardnerPlumbingCoCSrep.webp';
+const gardnerTruck = '/GARDNERPPLUMBINGTRUCK.webp';
+const facilityImage = '/gardnertrucks.webp';
 
 export function ServicesFull() {
   const residentialServices = [
@@ -307,7 +307,7 @@ export function ServicesFull() {
           </div>
 
           {/* Enhanced Commercial Services */}
-          <div id = 'commercial-services' className="mb-20 sm:mb-24 animate-slide-up">
+          <div className="mb-20 sm:mb-24 animate-slide-up">
             <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
               <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
                 background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
@@ -329,7 +329,7 @@ export function ServicesFull() {
                     )`
                   }}
                 />
-                <div className="relative flex items-center justify-center gap-4">
+                <div id = 'commercial-services' className="relative flex items-center justify-center gap-4">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
                     <Building className="h-6 w-6 sm:h-7 sm:w-7 text-white drop-shadow-sm" />
                   </div>

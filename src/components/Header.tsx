@@ -1,5 +1,5 @@
 import { Button } from "./ui/button";
-import { Phone, Mail, Menu, MapPin, ChevronDown, Clock, Star } from "lucide-react";
+import { Phone, Mail, Menu, MapPin, ChevronDown, Clock, Star, X } from "lucide-react";
 import { useState, useCallback, useRef, useEffect } from "react";
 
 const logo = "/gplogo.svg";
@@ -10,6 +10,34 @@ export function Header() {
 
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+
+  // ---------- Link maps ----------
+  const serviceLinks: Record<string, string> = {
+    "Drain Cleaning": "/services/drain-cleaning",
+    "Leak Detection": "/services/leak-detection",
+    "Water Heaters": "/services/water-heater-service",
+    "Toilet Repair": "/services/toilet-installation-and-repair",
+    "Piping & Repiping": "/services/piping-and-repiping",
+    "Garbage Disposals": "/services/garbage-disposal-service",
+    "Commercial Plumbing": "/services/commercial-plumbing",
+    "Hydro Jetting": "/services/hydro-jetting",
+    "Sewer & Septic": "/services/sewer-and-septic",
+    "Maintenance Plans": "/services/maintenance-plans",
+    "Emergency Service": "/services/emergency-service",
+    "System Inspections": "/services/65-point-inspection",
+    "Gas Lines": "/services/gas-lines",
+    "Water Filtration": "/services/water-filtration-system",
+  };
+
+  const mainNavLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about-us", label: "About Us" },
+    { href: "/services", label: "Services", dropdown: true },
+    { href: "/reviews", label: "Reviews" },
+    { href: "/contact-us", label: "Contact" },
+  ];
 
   // ---------- Link maps ----------
   const residentialLinks: Record<string, string> = {
@@ -443,39 +471,103 @@ export function Header() {
               </div>
             </div>
 
-            {/* Mobile menu */}
-            {isMenuOpen && (
-              <div className="lg:hidden mt-2 sm:mt-3 lg:mt-4 pb-2 sm:pb-3 lg:pb-4 border-t border-white/10 animate-fade-in">
-                <div className="glassmorphism-dark rounded-xl sm:rounded-2xl p-3 sm:p-4 mt-3 sm:mt-4 border border-white/10">
-                  <div className="flex flex-col space-y-2 sm:space-y-3 lg:space-y-4">
-                    {[
-                      ["/", "Home"],
-                      ["/about-us", "About Us"],
-                      ["/services", "Services"],
-                      ["/reviews", "Reviews"],
-                      ["/contact-us", "Contact"],
-                    ].map(([href, label]) => (
-                      <a
-                        key={href as string}
-                        href={href as string}
-                        className="text-white hover:text-red-400 font-medium transition-all duration-300 hover-lift text-sm sm:text-base lg:text-lg py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg hover:bg-white/5 drop-shadow-sm"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {label}
-                      </a>
-                    ))}
-                    <a href="tel:9512464337" className="sm:hidden">
-                      <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-3 py-2.5 w-full shadow-lg hover:shadow-xl transition-all duration-300 hover-lift mt-2 text-sm rounded-lg border border-red-400/20">
-                        <Phone className="mr-2 h-4 w-4" />
-                        Call Today
-                      </Button>
-                    </a>
+                  {/* Mobile Menu Slider */}
+{isMenuOpen && (
+  <div className="fixed inset-0 z-[100] lg:hidden">
+    {/* Overlay */}
+    <div
+      className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+      onClick={() => setIsMenuOpen(false)}
+    />
+
+    {/* Menu Panel */}
+    <div
+      className={`absolute top-0 right-0 h-full w-full max-w-xs z-[101] shadow-xl transition-transform duration-300 ease-in-out ${
+        isMenuOpen ? "translate-x-0" : "translate-x-full"
+      } bg-[#111827]`}
+    >
+      {/* Header */}
+      <div className="flex justify-between items-center p-4 border-b border-white/10">
+        <a href="/" onClick={() => setIsMenuOpen(false)}>
+          <img src={logo} alt="Gardner Plumbing Co." className="h-10 w-auto" />
+        </a>
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="p-2 text-white hover:text-red-400"
+        >
+          <X className="h-6 w-6" />
+        </button>
+      </div>
+
+      {/* Nav Links */}
+      <nav className="flex-grow overflow-y-auto p-4">
+        <ul className="flex flex-col space-y-2">
+          {mainNavLinks.map((link) => (
+            <li key={link.label}>
+              {link.dropdown ? (
+                <>
+                  <button
+                    onClick={() => setIsMobileServicesOpen((prev) => !prev)}
+                    className="w-full flex justify-between items-center text-left text-lg font-medium text-white hover:text-red-400 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
+                  >
+                    <span>Services</span>
+                    <ChevronDown
+                      className={`h-5 w-5 transition-transform duration-300 ${
+                        isMobileServicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      isMobileServicesOpen ? "max-h-[1000px]" : "max-h-0"
+                    }`}
+                  >
+                    <ul className="pl-4 pt-2 pb-2 border-l-2 border-red-500/30 ml-3 flex flex-col space-y-1">
+                      {Object.entries(serviceLinks).map(([name, href]) => (
+                        <li key={name}>
+                          <a
+                            href={href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block p-2 text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors duration-200"
+                          >
+                            {name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </nav>
+                </>
+              ) : (
+                <a
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block text-lg font-medium text-white hover:text-red-400 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Bottom CTA */}
+      <div className="p-4 border-t border-white/10">
+        <a
+          href="tel:9512464337"
+          className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white py-3 shadow-lg rounded-xl text-base flex items-center justify-center"
+        >
+          <Phone className="mr-2 h-5 w-5" />
+          <span>Call for Service</span>
+        </a>
+      </div>
+    </div>
+  </div>
+)}
+
+
+      </div>
+    </nav>
       </header>
     </>
   );

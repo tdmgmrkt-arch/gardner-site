@@ -26,6 +26,7 @@ export function Header() {
     "Sewer & Septic": "/services/sewer-and-septic",
     "Maintenance Plans": "/services/maintenance-plans",
     "Emergency Service": "/services/emergency-service",
+    "Moen Flo Installation" : "services/moen-flo-installation",
     "System Inspections": "/services/65-point-inspection",
     "Gas Lines": "/services/gas-lines",
     "Water Filtration": "/services/water-filtration-system",
@@ -41,13 +42,21 @@ export function Header() {
 
   // ---------- Link maps ----------
   const residentialLinks: Record<string, string> = {
-    "Drain Cleaning": "/services/drain-cleaning",
+   "Drain Cleaning": "/services/drain-cleaning",
     "Leak Detection": "/services/leak-detection",
     "Water Heaters": "/services/water-heater-service",
     "Toilet Repair": "/services/toilet-installation-and-repair",
     "Piping & Repiping": "/services/piping-and-repiping",
     "Garbage Disposals": "/services/garbage-disposal-service",
-    "Sewer & Septic" : "/services/sewer-and-septic"
+    "Commercial Plumbing": "/services#commercial-services",
+    "Hydro Jetting": "/services/hydro-jetting",
+    "Sewer & Septic": "/services/sewer-and-septic",
+    "Maintenance Plans": "/services/maintenance-plans",
+    "Emergency Service": "/services/emergency-service",
+    "Moen Flo Installation" : "services/moen-flo-installation",
+    "System Inspections": "/services/65-point-inspection",
+    "Gas Lines": "/services/gas-lines",
+    "Water Filtration": "/services/water-filtration-system",
   };
 
   const commercialLinks: Record<string, string> = {
@@ -346,12 +355,13 @@ export function Header() {
                                         { name: "Sewer & Septic", desc: "Main line service" },
                                         { name: "Maintenance Plans", desc: "Preventive care" },
                                         { name: "Water Filtration", desc: "Pure Water Solutions" },
-                                        { name: "Emergency Service", desc: "24/7 response" },
                                         { name: "System Inspections", desc: "Complete checks" },
+                                        { name: "Moen Flo Installation", desc: "Smart Water Monitors"},
+                                        { name: "Emergency Service", desc: "24/7 response" },
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={residentialLinks[service.name] ?? "/services/water-filtration-system"}
+                                            href={residentialLinks[service.name] ?? "/services#commercial-plumbing"}
                                             className="group block p-2 rounded-lg hover:bg-white/3 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name hover:text-red-500 font-medium transition-colors duration-300 drop-shadow-sm">
@@ -534,7 +544,7 @@ export function Header() {
                                       <a
                                         href={href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="flex items-center justify-center px-3 py-2 text-sm font-medium text-gray-200 rounded-md bg-gradient-to-br from-[#1f2937] to-[#111827] border border-white/5 hover:from-red-600 hover:to-red-500 hover:text-white transition-all duration-300"
+                                        className="flex items-center justify-center px-3 py-2 text-sm font-small text-gray-200 rounded-md bg-gradient-to-br from-[#1f2937] to-[#111827] border border-white/5 hover:from-red-600 hover:to-red-500 hover:text-white transition-all duration-300"
                                       >
                                         {name}
                                       </a>
@@ -562,6 +572,40 @@ export function Header() {
 
                     {/* Footer with Socials + CTA */}
                     <div className="p-6 border-t border-white/10 bg-[#111827] space-y-4">
+                    {/* Business Hours */}
+                                  <div className="mb-6">
+                                    <h4 className="text-base text-white mb-3 pb-2 border-b-2 border-red-600 drop-shadow-sm">
+                                      Business Hours
+                                    </h4>
+                                    <div className="space-y-1.5">
+                                      {/* Office Hours */}
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-gray-300 text-sm">Office (Mon - Fri)</span>
+                                        <span className="text-gray-400 text-sm">8:00 AM - 4:00 PM</span>
+                                      </div>
+
+                                      {/* Service Hours */}
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-gray-300 text-sm">Service (Mon - Fri)</span>
+                                        <span className="text-gray-400 text-sm">8:00 AM - 5:00 PM</span>
+                                      </div>
+
+                                      {/* Weekend */}
+                                      <div className="flex justify-between items-center">
+                                        <span className="text-gray-300 text-sm">Saturday - Sunday</span>
+                                        <span className="text-gray-400 text-sm">Emergency Only</span>
+                                      </div>
+
+                                      {/* Emergency */}
+                                      <div className="pt-1.5 border-t border-gray-600">
+                                        <div className="flex justify-between items-center">
+                                          <span className="text-red-400 text-sm font-medium">Emergency</span>
+                                          <span className="text-red-400 text-sm font-medium">24/7 Available</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
                       {/* Socials */}
                       <div className="flex justify-center gap-5">
                         <a href="https://www.facebook.com/people/Gardner-Plumbing-Company/100063665179161/" className="text-gray-400 hover:text-white transition">

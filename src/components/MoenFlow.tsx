@@ -26,12 +26,9 @@ import {
   AlertTriangle
 } from "lucide-react";
 
-// UPDATE: Replace with your actual image paths for sewer & septic
-const IntroImage = "/gardnerhydrojetservice.webp";
-const beforeafterImage = "/hydrojetbefore&after.webp";
-const whychooseusImage = "/gardnertecharrival.webp";
-const EmergencySewerImage = "/gardnertech2.webp";
-
+const moenFlowHeroImage = "/moen-whole-house-water-filter-system.webp";
+const moenFlowDashboardImage = "/moen-flow-app-dashboard.webp";
+const moenFlowInstallImage = "/moen-whole-house-water-filter-system.webp";
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -48,16 +45,17 @@ const cityLinks: Record<string, string> = {
   Wildomar: "https://cityofwildomar.org",
 };
 
-export function SewerSeptic() {
-  const emergencyReasons = [
-    "Severe sewer line backup",
-    "Septic tank overflow",
-    "Multiple drains clogged",
-    "Foul sewage odors",
-    "Gurgling toilets or drains",
-    "Wet spots in the yard",
-    "Septic system alarm",
-    "Suspected main line break"
+export function MoenFlow() {
+  // Using your Moen Flow page data
+  const emergencyReasons = [ // Renamed from leakSources to match original variable name for styling
+    "Burst Pipes & Supply Lines",
+    "Leaking Toilets",
+    "Faulty Appliances (Washers, etc.)",
+    "Slab Leaks",
+    "Frozen Pipes",
+    "Dripping Faucets",
+    "Water Heater Leaks",
+    "Unusual Water Usage"
   ];
 
   const serviceAreas = [
@@ -75,78 +73,78 @@ export function SewerSeptic() {
 
   const faqs = [
     {
-      question: "How often should I have my septic tank pumped?",
-      answer: "For most residential systems, we recommend pumping every 3 to 5 years. However, the frequency depends on the size of your tank, the number of people in your household, and your water usage. We can help you determine the best schedule for your specific system."
+      question: "What is the Moen Flow Smart Water Monitor?",
+      answer: "The Moen Flow is a smart home device that monitors your home's water usage 24/7. It learns your habits and can detect leaks as small as a drip per minute. If a catastrophic leak occurs, it can automatically shut off your water to prevent damage."
     },
     {
-      question: "What are the signs of a main sewer line clog?",
-      answer: "Common signs include multiple fixtures draining slowly, gurgling sounds from toilets or drains, water backing up in showers when a toilet is flushed, and foul odors. If you notice any of these, call us immediately to prevent a major backup."
+      question: "How does the automatic water shutoff work?",
+      answer: "The Moen Flow is installed on your main water line. If it detects a major leak or you manually trigger it via the app, it closes an internal valve, stopping water flow to your entire home. Our certified installation ensures it's installed correctly for reliable operation."
     },
     {
-      question: "What is hydro jetting and when is it needed?",
-      answer: "Hydro jetting is a powerful cleaning method that uses high-pressure water to scour the inside of your pipes, removing tough blockages like grease, scale, and tree roots. It's recommended for severe clogs or as a preventative maintenance measure to restore full pipe flow."
+      question: "Can I get discounts on my homeowner's insurance?",
+      answer: "Many insurance providers offer significant discounts for homes with smart water monitors and automatic shutoff valves like the Moen Flow. Check with your provider for specific details on potential savings."
     },
     {
-      question: "Can you repair a sewer line without digging up my yard?",
-      answer: "Yes! We offer trenchless sewer repair methods like pipe lining and pipe bursting. These techniques allow us to repair or replace your sewer line with minimal disruption to your landscaping, driveway, or patio, saving you time and money on restoration costs."
+      question: "What can I do with the Moen app?",
+      answer: "The app is your command center. You can view real-time water usage, set conservation goals, receive leak alerts, and remotely shut off your water from anywhere in the world. It provides complete control over your home's water."
     },
     {
-      question: "What shouldn't I put down my drains or in my septic system?",
-      answer: "Avoid flushing anything other than human waste and toilet paper. Do not put grease, coffee grounds, 'flushable' wipes, feminine hygiene products, or harsh chemicals down your drains, as they can cause clogs and damage your septic system's bacteria balance."
+      question: "Why do I need a certified professional for installation?",
+      answer: "Proper installation on the main water line is crucial for the device to work correctly. As Certified Moen Installers, we ensure the device is placed optimally, calibrated, and connected to your network, guaranteeing its performance and protecting your warranty."
     },
     {
-      question: "How does a sewer camera inspection work?",
-      answer: "We feed a high-resolution, waterproof camera into your sewer line to get a real-time view of its condition. This allows us to accurately pinpoint the exact location and cause of any problems, such as blockages, cracks, or tree root intrusion, without any guesswork."
+      question: "How long does the installation take?",
+      answer: "A standard installation by our certified technicians typically takes between 1 to 2 hours. We handle everything from cutting the pipe to setting up the app, ensuring a seamless experience for you."
     }
   ];
 
   const services = [
     {
-      icon: Camera,
-      title: "Sewer Camera Inspection",
-      description: "Pinpoint the exact cause of sewer problems with our high-definition camera inspections.",
-      features: ["Non-Invasive", "Locate Blockages", "Assess Pipe Health", "Accurate Diagnosis"]
+      icon: Wrench,
+      title: "Certified Installation",
+      description: "Our Moen-certified technicians ensure your device is installed correctly on the main water line for optimal performance.",
+      features: ["Moen Certified", "Warranty Protected", "System Calibration", "App Setup"]
     },
     {
-      icon: Droplets,
-      title: "Septic Tank Pumping",
-      description: "Routine and emergency septic tank pumping to prevent backups and maintain system health.",
-      features: ["Prevent Overflows", "Sludge Removal", "System Inspection", "Scheduled Maintenance"]
+      icon: Shield,
+      title: "24/7 Leak Detection",
+      description: "The device runs daily Health Tests and continuously monitors for leaks, from tiny drips to major bursts.",
+      features: ["Micro-Leak Detection", "Pressure/Temp Alerts", "Freeze Detection", "Always On"]
     },
     {
       icon: Zap,
-      title: "Hydro Jetting",
-      description: "High-pressure water jetting to clear the toughest clogs and restore pipes to like-new condition.",
-      features: ["Removes Roots & Grease", "Restores Full Flow", "Long-Lasting Results", "Safe for Pipes"]
+      title: "Auto Water Shutoff",
+      description: "In the event of a catastrophic leak, the Moen Flow can automatically shut off your water to prevent damage.",
+      features: ["Remote Shutoff", "Automatic Protection", "Emergency Override", "Peace of Mind"]
     },
     {
-      icon: Wrench,
-      title: "Trenchless Sewer Repair",
-      description: "Advanced no-dig sewer repair and replacement that saves your landscaping and property.",
-      features: ["No-Dig Solution", "Minimal Disruption", "Cost-Effective", "Permanent Repair"]
+      icon: Droplets,
+      title: "Usage Monitoring",
+      description: "Track water usage by fixture, set conservation goals, and identify areas to save money on your water bill.",
+      features: ["Real-time Data", "Usage by Fixture", "Conservation Goals", "Cost Savings"]
     }
   ];
 
   const benefits = [
     {
-      icon: Clock,
-      title: "Fast, Reliable Service",
-      description: "Our experienced technicians resolve your sewer and septic issues quickly and efficiently."
+      icon: Shield,
+      title: "Prevent Water Damage",
+      description: "Stop catastrophic leaks in their tracks and protect your home from costly water damage repairs."
     },
     {
-      icon: Shield,
-      title: "Licensed & Insured",
-      description: "Fully licensed sewer and septic specialists with comprehensive insurance for your peace of mind."
+      icon: Droplets,
+      title: "Conserve & Save",
+      description: "Monitor water usage to identify waste, set goals, and lower your monthly water bill."
     },
     {
       icon: DollarSign,
-      title: "Prevent Costly Backups",
-      description: "Our services protect your property from damaging and unsanitary sewer or septic backups."
+      title: "Lower Insurance Rates",
+      description: "Many insurance providers offer discounts for homes protected by a smart water shutoff device."
     },
     {
       icon: Award,
-      title: "30+ Years Experience",
-      description: "Three decades of expertise solving the toughest sewer and septic challenges for local residents."
+      title: "Moen Certified",
+      description: "Our technicians are officially certified by Moen to provide expert installation and support."
     }
   ];
 
@@ -166,7 +164,7 @@ export function SewerSeptic() {
             }}
           />
           
-          {/* Premium texture overlay */}
+          {/* Premium texture overlay - STYLED LIKE HYDRO-JETTING */}
           <div 
             className="absolute inset-0 opacity-10"
             style={{
@@ -182,38 +180,39 @@ export function SewerSeptic() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Content */}
             <div className="text-left animate-fade-in">
-              {/* Breadcrumb */}
+              {/* Breadcrumb - STYLED LIKE HYDRO-JETTING */}
               <nav className="mb-6">
                 <div className="flex items-center space-x-2 text-sm text-gray-400">
-                  <span>Home</span>
+                  <a href="/" className="hover:text-white">Home</a>
                   <ArrowRight className="h-4 w-4" />
-                  <span>Services</span>
+                  <a href="/services" className="hover:text-white">Services</a>
                   <ArrowRight className="h-4 w-4" />
-                  <span className="text-red-400">Sewer & Septic</span>
+                  <span className="text-red-400">Moen Flow Installation</span>
                 </div>
               </nav>
 
-              {/* Badge */}
+              {/* Badge - STYLED LIKE HYDRO-JETTING */}
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
-                <Wrench className="h-5 w-5 text-red-400" />
-                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Expert Sewer & Septic</span>
+                <Award className="h-5 w-5 text-red-400" />
+                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Certified Moen Installer</span>
               </div>
               
+              {/* H1 - STYLED LIKE HYDRO-JETTING */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Comprehensive <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Sewer & Septic</span> Services
+                Moen Flow Smart Water <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Monitor Installation</span>
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-                Reliable solutions for sewer line backups, septic tank maintenance, and drain cleaning throughout Riverside County.
+                Protect your home 24/7 from water damage. We provide certified installation of the Moen Flow Smart Water Monitor to help you conserve water and prevent leaks.
               </p>
 
-              {/* Key Benefits */}
+              {/* Key Benefits - STYLED LIKE HYDRO-JETTING */}
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { icon: Clock, text: "Same-Day Service" },
-                  { icon: Shield, text: "Prevent Backups" },
-                  { icon: Wrench, text: "Protect Property" },
-                  { icon: Phone, text: "24/7 Emergency" }
+                  { icon: Clock, text: "24/7 Leak Alerts" },
+                  { icon: Shield, text: "Protect Your Home" },
+                  { icon: DollarSign, text: "Save on Water Bills" },
+                  { icon: Wrench, text: "Pro Installation" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 text-gray-300">
                     <item.icon className="h-5 w-5 text-green-400" />
@@ -222,20 +221,24 @@ export function SewerSeptic() {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
+              {/* CTA Buttons - STYLED LIKE HYDRO-JETTING */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Call (951) 246-4337
-                  </span>
-                </Button>
-                <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
-                  <span className="flex items-center justify-center gap-3">
-                    <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Schedule Service
-                  </span>
-                </Button>
+                <a href="tel:9512464337" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Call (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
+                <a href="/contact-us" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
+                    <span className="flex items-center justify-center gap-3">
+                      <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Schedule Installation
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -243,23 +246,22 @@ export function SewerSeptic() {
             <div className="relative group animate-slide-up">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                 <img
-                  src= {IntroImage}
-                  alt="Sewer inspection camera inside a clean pipe"
+                  src={moenFlowHeroImage}
+                  alt="Moen Flow Smart Water Monitor installed on a home's main water line"
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
                 
-                {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
                 
-                {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
+                {/* Floating badge - STYLED LIKE HYDRO-JETTING */}
+                <div className="absolute bottom-4 left-4 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                      <Camera className="h-4 w-4 text-white" />
+                      <Shield className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-sm">Advanced Diagnostics</div>
-                      <div className="text-gray-300 text-xs">Sewer Camera Inspections</div>
+                      <div className="text-white font-bold text-sm">24/7 Leak Detection</div>
+                      <div className="text-gray-300 text-xs">Automatic Shutoff</div>
                     </div>
                   </div>
                 </div>
@@ -269,62 +271,7 @@ export function SewerSeptic() {
         </div>
       </section>
 
-      {/* Emergency Alert Banner */}
-      <section className="relative overflow-hidden">
-        <div
-          className="relative overflow-hidden py-2 sm:py-3"
-          style={{
-            background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
-            boxShadow: `
-            inset 0 2px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -2px 0 rgba(0, 0, 0, 0.2),
-            0 8px 32px rgba(139, 0, 0, 0.4),
-            0 -8px 32px rgba(139, 0, 0, 0.3),
-            0 12px 24px rgba(0, 0, 0, 0.6),
-            0 -12px 24px rgba(0, 0, 0, 0.4)
-          `,
-          }}
-        >
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              background: `linear-gradient(135deg, 
-                transparent 0%, 
-                rgba(255, 255, 255, 0.1) 25%, 
-                rgba(255, 255, 255, 0.2) 50%, 
-                rgba(255, 255, 255, 0.1) 75%, 
-                transparent 100%
-              )`,
-            }}
-          />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
-              <div className="flex items-center gap-3">
-                <AlertTriangle className="h-6 w-6 text-white animate-pulse flex-shrink-0" />
-                <span className="text-white font-bold text-lg sm:text-xl">
-                  Sewer or Septic Emergency?
-                </span>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-                <a href="tel:9512464337" className="w-full sm:w-auto">
-                <div className="flex items-center gap-2 bg-black/20 rounded-full px-4 py-2">
-                  <Phone className="h-5 w-5 text-red-100" />
-                  <span className="text-white font-bold text-lg">
-                    (951) 246-4337
-                  </span>
-                </div>
-                </a>
-                <span className="text-red-100 font-semibold text-sm sm:text-base">
-                  24/7 Service Available
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Overview */}
+      {/* Service Overview - This section uses the blue/green theme from the original style */}
       <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <div 
@@ -339,21 +286,19 @@ export function SewerSeptic() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
           <div className="text-center mb-16 sm:mb-20 animate-fade-in">
             <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
               <Camera className="h-5 w-5 text-blue-400" />
-              <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">Our Services</span>
+              <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">System Features</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Complete <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Sewer & Septic</span> Solutions
+              Total Home <span className="text-gradient bg-gradient-to-r from-blue-400 to-green-600 bg-clip-text text-transparent">Water Management</span>
             </h2>
             <p className="text-lg text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              From routine septic pumping to emergency sewer line repair, our certified technicians use state-of-the-art equipment to keep your systems flowing smoothly.
+              Our certified installation service ensures your Moen Flow system provides real-time data, automatic shutoff, and complete peace of mind.
             </p>
           </div>
 
-          {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16 animate-slide-up">
             {services.map((service, index) => {
               const IconComponent = service.icon;
@@ -392,45 +337,43 @@ export function SewerSeptic() {
             })}
           </div>
 
-          {/* Before/After Image Section */}
           <div className="glassmorphism-dark rounded-3xl p-8 border border-white/10 shadow-luxury">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">See The Difference Professional Cleaning Makes</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">From Worried to Worry-Free</h3>
                 <div className="space-y-4 text-gray-300">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Eliminates tough blockages before they cause backups</span>
+                    <span>Get alerts for leaks anywhere in your home, 24/7</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Prevents foul odors and unsanitary conditions</span>
+                    <span>Shut off your water from anywhere using the app</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Restores full drainage capacity to your pipes</span>
+                    <span>Automatically stops water during a major leak to prevent damage</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
-                    <span>Extends the life of your plumbing system</span>
+                    <span>Track water usage to conserve and save money</span>
                   </div>
                 </div>
               </div>
               <div>
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-luxury">
                   <img
-                    src={beforeafterImage}
-                    alt="Before and after of a hydro-jetted sewer pipe"
+                    src={moenFlowDashboardImage}
+                    alt="Moen Flow app dashboard showing water usage and protection status"
                     className="w-full h-64 object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-transparent">
-                    {/* Split overlay effect */}
                     <div className="absolute inset-0 flex">
                       <div className="w-1/2 bg-gradient-to-r from-red-900/40 to-transparent flex items-center justify-center">
-                        <span className="text-white font-bold bg-red-600/80 px-3 py-1 rounded-full text-sm">CLOGGED PIPE</span>
+                        <span className="text-white font-bold bg-red-600/80 px-3 py-1 rounded-full text-sm">UNPROTECTED</span>
                       </div>
                       <div className="w-1/2 bg-gradient-to-l from-green-900/40 to-transparent flex items-center justify-center">
-                        <span className="text-white font-bold bg-green-600/80 px-3 py-1 rounded-full text-sm">CLEANED PIPE</span>
+                        <span className="text-white font-bold bg-green-600/80 px-3 py-1 rounded-full text-sm">PROTECTED</span>
                       </div>
                     </div>
                   </div>
@@ -441,7 +384,7 @@ export function SewerSeptic() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Why Choose Us Section - This section uses the green/blue theme from the original style */}
       <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
           <div 
@@ -457,48 +400,39 @@ export function SewerSeptic() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Column - Image */}
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
                 <img
-                    src={whychooseusImage}
-                  alt="Professional Gardner Plumbing Co. technician working on a sewer line"
+                  src={moenFlowInstallImage}
+                  alt="Professional Gardner Plumbing Co. technician installing a Moen Flow device"
                   className="w-full h-96 object-cover rounded-3xl"
                 />
-                
-                {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl"></div>
               </div>
-              
-              {/* Floating Achievement Badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                     <Award className="h-4 w-4 text-white" />
                   </div>
                   <div>
-                    <div className="text-white font-bold text-sm">30+ Years</div>
-                    <div className="text-gray-300 text-xs">Experience</div>
+                    <div className="text-white font-bold text-sm">Moen Certified</div>
+                    <div className="text-gray-300 text-xs">Installer</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right Column - Content */}
             <div>
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-green-600/20 to-green-500/20 rounded-full border border-green-500/30 backdrop-blur-sm">
                 <Shield className="h-5 w-5 text-green-400" />
-                <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Why Choose Gardner Plumbing Co.</span>
+                <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Certified Moen Installers</span>
               </div>
-              
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                Riverside County's Most <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Trusted</span> Sewer & Septic Experts
+                Riverside County's Trusted <span className="text-gradient bg-gradient-to-r from-green-400 to-blue-600 bg-clip-text text-transparent">Certified</span> Moen Flow Installers
               </h2>
-              
               <p className="text-lg text-gray-300 mb-8 leading-relaxed text-[16px]">
-                With over three decades of experience, we've resolved thousands of sewer and septic issues, protecting homes and businesses from costly damage and ensuring their systems run reliably.
+                As officially certified Moen installers, we have the expertise to perfectly integrate the Flo Smart Water Monitor into your home's plumbing system, ensuring flawless operation and protection.
               </p>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                 {benefits.map((benefit, index) => {
                   const IconComponent = benefit.icon;
@@ -515,13 +449,14 @@ export function SewerSeptic() {
                   );
                 })}
               </div>
-
-              <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get a Free Estimate
-                </span>
-              </Button>
+              <a href="/contact-us">
+                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Estimate
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -548,6 +483,7 @@ export function SewerSeptic() {
                 Service Areas
               </span>
             </div>
+            {/* H2 - STYLED LIKE HYDRO-JETTING */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg">
               Serving All of{" "}
               <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">
@@ -555,10 +491,9 @@ export function SewerSeptic() {
               </span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Professional sewer and septic services are available throughout Riverside County with fast, reliable response times to your location.
+              Professional Moen Flow installation services are available throughout Riverside County with fast, reliable scheduling.
             </p>
           </div>
-
           <div
             className="grid gap-4 mb-12"
             style={{ gridTemplateColumns: "repeat(5, 1fr)" }}
@@ -577,22 +512,22 @@ export function SewerSeptic() {
               </a>
             ))}
           </div>
-
           <div className="text-center">
             <div className="glassmorphism-dark rounded-2xl p-8 border border-white/10 shadow-luxury inline-block">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Don't See Your Area?
               </h3>
               <p className="text-gray-300 mb-6">
-                We serve additional areas throughout Riverside County. Call to
-                confirm service availability.
+                We serve additional areas throughout Riverside County. Call to confirm service availability.
               </p>
-              <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5" />
-                  Check Service Area
-                </span>
-              </Button>
+              <a href="tel:9512464337">
+                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5" />
+                    Check Service Area
+                  </span>
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -610,7 +545,6 @@ export function SewerSeptic() {
               `
             }}
           />
-          
           <div 
             className="absolute inset-0 opacity-10"
             style={{
@@ -623,22 +557,23 @@ export function SewerSeptic() {
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
           <div className="text-center mb-16 sm:mb-20 animate-fade-in">
             <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-blue-600/20 to-blue-500/20 rounded-full border border-blue-500/30 backdrop-blur-sm">
               <HelpCircle className="h-5 w-5 text-blue-400" />
               <span className="text-blue-400 font-semibold text-sm uppercase tracking-wider">FAQ</span>
             </div>
+            {/* H2 - STYLED LIKE HYDRO-JETTING */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 drop-shadow-lg">
-              Sewer & Septic <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
+              Moen Flow <span className="text-gradient bg-gradient-to-r from-blue-400 to-red-600 bg-clip-text text-transparent">Questions</span>
             </h2>
             <p className="text-[16px] text-gray-300 text-center max-w-4xl mx-auto leading-relaxed">
-              Find answers to the most common questions about sewer line repair, septic tank maintenance, and drain cleaning.
+              Find answers to common questions about the Moen Flow monitor, our installation process, and how it protects your home.
             </p>
           </div>
 
           <div className="mb-16 sm:mb-20 animate-slide-up">
             <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
+              {/* Premium Red Banner Header - STYLED LIKE HYDRO-JETTING */}
               <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
                 background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
                 boxShadow: `
@@ -680,6 +615,7 @@ export function SewerSeptic() {
                         animationDelay: `${index * 100}ms`
                       }}
                     >
+                      {/* Gradient Border Effect - STYLED LIKE HYDRO-JETTING */}
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                       <div className="absolute inset-[1px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl"></div>
                       
@@ -704,7 +640,7 @@ export function SewerSeptic() {
               </div>
             </div>
           </div>
-          
+
           <div className="glassmorphism-dark rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/10 shadow-luxury hover-lift animate-fade-in">
             <div className="text-center">
               <div className="flex items-center justify-center gap-4 mb-6">
@@ -714,21 +650,26 @@ export function SewerSeptic() {
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">Have More Questions?</h3>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-                Can't find what you're looking for? Our sewer & septic experts are standing by to answer your questions and schedule your service.
+                Our Moen Flow experts are standing by to answer your questions and schedule your certified installation service.
               </p>
+              {/* CTA Buttons - STYLED LIKE HYDRO-JETTING */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-                <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
-                    View Full FAQ
-                  </span>
-                </Button>
-                <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Contact Us
-                  </span>
-                </Button>
+                <a href="/faq">
+                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
+                      View Full FAQ
+                    </span>
+                  </Button>
+                </a>
+                <a href="/contact-us">
+                  <Button className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Contact Us
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -738,39 +679,49 @@ export function SewerSeptic() {
       {/* Emergency Section */}
       <section className="py-16 sm:py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div 
+          <div
             className="absolute inset-0"
-            style={{ 
+            style={{
               background: `
                 radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
                 linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-              `
+              `,
             }}
           />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left Column - Content */}
             <div>
               <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-to-r from-red-600/20 to-red-500/20 rounded-full border border-red-500/30 backdrop-blur-sm">
                 <AlertTriangle className="h-5 w-5 text-red-400" />
-                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">Emergency Service</span>
+                <span className="text-red-400 font-semibold text-sm uppercase tracking-wider">
+                  Prevent Catastrophic Leaks
+                </span>
               </div>
-              
+
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-8 drop-shadow-lg leading-tight">
-                24/7 Sewer & Septic <span className="text-gradient bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">Emergency</span> Service
+                Automatic Protection From Plumbing{" "}
+                <span className="text-gradient bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
+                  Disasters
+                </span>
               </h2>
-              
+
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                Don't let a sewer backup or septic failure cause major damage. We provide 24/7 emergency services throughout Riverside County with rapid response times.
+                A burst pipe can release gallons of water per minute, causing thousands in damage. The Moen Flow detects these disasters and automatically shuts off the water to protect your home.
               </p>
 
               <div className="mb-8">
-                <h3 className="text-xl font-bold text-white mb-6">Common Emergency Situations:</h3>
+                <h3 className="text-xl font-bold text-white mb-6">
+                  Leaks Detected & Prevented:
+                </h3>
+                {/* List - STYLED LIKE HYDRO-JETTING */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {emergencyReasons.map((reason, index) => (
-                    <div key={index} className="flex items-center gap-3 text-gray-300">
+                    <div
+                      key={index}
+                      className="flex items-center gap-3 text-gray-300"
+                    >
                       <AlertTriangle className="h-4 w-4 text-red-400 flex-shrink-0" />
                       <span className="text-sm">{reason}</span>
                     </div>
@@ -779,32 +730,37 @@ export function SewerSeptic() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
-                  <span className="flex items-center justify-center gap-3">
-                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Emergency: (951) 246-4337
-                  </span>
-                </Button>
+                <a href="tel:9512464337">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group"
+                  >
+                    <span className="flex items-center justify-center gap-3">
+                      <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                      Emergency: (951) 246-4337
+                    </span>
+                  </Button>
+                </a>
               </div>
             </div>
 
-            {/* Right Column - Image */}
             <div className="relative group">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
                 <img
-                  src={EmergencySewerImage}
-                  alt="Emergency plumber dealing with a sewer backup situation at night"
-                  className="w-full h-120 object-cover rounded-3xl"
+                  src={moenFlowInstallImage}
+                  alt="Certified Moen Flow installer working to prevent a plumbing emergency"
+                  className="w-full h-96 object-cover rounded-3xl"
                 />
-        
-                <div className="absolute top-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
+
+                {/* Floating Emergency Badge - STYLED LIKE HYDRO-JETTING */}
+                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Clock className="h-4 w-4 text-white" />
                     </div>
                     <div>
-                      <div className="text-white font-bold text-sm">24/7</div>
-                      <div className="text-gray-300 text-xs">Emergency Service</div>
+                      <div className="text-white font-bold text-sm">Automatic Shutoff</div>
+                      <div className="text-gray-300 text-xs">Damage Prevention</div>
                     </div>
                   </div>
                 </div>
@@ -813,7 +769,7 @@ export function SewerSeptic() {
           </div>
         </div>
       </section>
-
+      
       {/* Final CTA Section */}
       <section className="relative overflow-hidden">
         <div 
@@ -835,42 +791,49 @@ export function SewerSeptic() {
         >
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="mb-4">
+              {/* Icon - STYLED LIKE HYDRO-JETTING */}
               <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Phone className="h-6 w-6 text-white" />
               </div>
+              {/* H2 - STYLED LIKE HYDRO-JETTING */}
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3 drop-shadow-lg">
-                Need Professional <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">Sewer & Septic</span> Service?
+                Ready for a Smarter, Safer Home <span className="text-gradient bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">with Moen Flow?</span>
               </h2>
               <p className="text-lg text-gray-300 mb-6 max-w-lg mx-auto">
-                Three decades of trusted service. Contact us for expert sewer and septic solutions today.
+                Get peace of mind with 24/7 leak protection. Contact us for a free estimate on your Moen Flow installation.
               </p>
             </div>
+            {/* CTA Buttons - STYLED LIKE HYDRO-JETTING */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
-              <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Call (951) 246-4337
-                </span>
-              </Button>
-              <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Request Service Online
-                </span>
-              </Button>
+              <a href="tel:9512464337" className="flex-1">
+                <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group">
+                  <span className="flex items-center justify-center gap-2">
+                    <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                    Call (951) 246-4337
+                  </span>
+                </Button>
+              </a>
+              <a href="/contact-us" className="flex-1">
+                <Button size="lg" className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
+                  <span className="flex items-center justify-center gap-2">
+                    <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                    Get a Free Estimate
+                  </span>
+                </Button>
+              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">24/7 Emergency</span>
+                <span className="text-gray-300">Fast Installation</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-green-400" />
                 <span className="text-gray-300">Licensed & Insured</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-green-400" />
-                <span className="text-gray-300">4.9 Star Rating</span>
+                <Award className="h-4 w-4 text-green-400" />
+                <span className="text-gray-300">Moen Certified</span>
               </div>
             </div>
           </div>

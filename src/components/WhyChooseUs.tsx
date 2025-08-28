@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 const teamImage = "gardnerteamplumbingwbs.webp";
 const bbbImage = "bbbratingbadge.webp";
-const professionalTechnician = "gardnertech2.webp";
+const professionalTechnician = "/satisfiedgardnercustomer.webp";
 
 export function WhyChooseUs() {
   const features = [

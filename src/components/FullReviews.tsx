@@ -125,19 +125,19 @@ export const platforms = [
   {
     name: "Google Reviews",
     rating: 4.9,
-    reviews: 401,
+    reviews: "400+",
     icon: "G"
   },
   {
     name: "Yelp",
     rating: 4.8,
-    reviews: 131,
+    reviews: "100+",
     icon: "Y"
   },
   {
     name: "FrontDoorPro",
-    rating: 5.0,
-    reviews: 89,
+    rating: 4.8,
+    reviews: "500+",
     icon: "FDP"
   },
   {

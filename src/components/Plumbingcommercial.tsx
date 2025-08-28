@@ -85,7 +85,7 @@ export function Plumbingcommercial() {
       title: "Drain & Sewer",
       desc: "Stoppages cleared and lines restored with minimal downtime.",
       bullets: ["Camera inspection", "Localized repair", "Grease management"],
-      link: "/services/sewer-lines",
+      link: "/services/sewer-and-septic",
     },
     {
       icon: Zap,

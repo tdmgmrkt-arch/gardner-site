@@ -381,7 +381,7 @@ export function Services() {
           <div className="glassmorphism-dark rounded-2xl sm:rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
             {/* Banner with link to emergency page */}
             <a
-              href="/services/emergency-plumbing"
+              href="/services/emergency-service"
               className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 block focus:outline-none"
               style={{
                 background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
@@ -423,7 +423,7 @@ export function Services() {
                     Always Available When You Need Us
                   </h4>
                   <div className="mb-4 sm:mb-6 flex justify-center lg:justify-start">
-                    <a href="/services/emergency-plumbing" className="relative group block">
+                    <a href="/services/emergency-service" className="relative group block">
                       <img
                         src={professionalTechnician}
                         alt="Professional Gardner Plumbing Co. technician providing reliable emergency service"
@@ -442,7 +442,7 @@ export function Services() {
                 {/* Middle column */}
                 <div className="flex flex-col order-3 lg:order-2">
                   <div className="mb-4 sm:mb-6 flex justify-center">
-                    <a href="/services/emergency-plumbing" className="relative group block">
+                    <a href="/services/emergency-service" className="relative group block">
                       <img
                         src={gardnerTruck}
                         alt="Gardner Plumbing Co. service van ready for emergency calls"
@@ -518,7 +518,7 @@ export function Services() {
                   </div>
 
                   <div className="mb-4 sm:mb-6 flex justify-center">
-                    <a href="/services/emergency-plumbing" className="relative group block">
+                    <a href="/services/emergency-service" className="relative group block">
                       <img
                         src={customerServiceRep}
                         alt="Gardner Plumbing Co. customer service representative ready to take your emergency call"

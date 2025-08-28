@@ -528,7 +528,7 @@ export function Contact() {
             </div>
             
             {/* Right Column - Service Areas & Emergency */}
-            <div className="space-y-8">
+            <div id ="service-area" className="space-y-8">
               {/* Service Areas */}
               <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift animate-slide-up">
                 <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 

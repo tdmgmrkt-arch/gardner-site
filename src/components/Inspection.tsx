@@ -222,18 +222,22 @@ export function Inspection() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href = "tel:9512464337">
                 <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
                   </span>
                 </Button>
+                </a>
+                <a href = "/contact-us">
                 <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
                   <span className="flex items-center justify-center gap-3">
                     <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Schedule Your Inspection
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
 
@@ -475,20 +479,21 @@ export function Inspection() {
                   );
                 })}
               </div>
-
+                <a href = "/contact-us">
               <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                 <span className="flex items-center justify-center gap-3">
                   <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   Schedule Your Inspection
                 </span>
               </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Service Areas */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
+      <section id ="service-area" className="py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at bottom, #374151 0%, #1f2937 50%, #111827 100%), linear-gradient(135deg, #2c2c2c 0%, #374151 50%, #1f2937 100%)` }} />
         </div>
@@ -638,6 +643,7 @@ export function Inspection() {
                 Protect your investment and gain peace of mind. Contact us today to book your comprehensive plumbing health check.
               </p>
             </div>
+            <a href = "/contact-us">
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
               <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group flex-1">
                 <span className="flex items-center justify-center gap-2">
@@ -652,6 +658,7 @@ export function Inspection() {
                 </span>
               </Button>
             </div>
+            </a>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-green-400" />

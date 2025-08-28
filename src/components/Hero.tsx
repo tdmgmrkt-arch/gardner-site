@@ -1,4 +1,3 @@
-
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -7,7 +6,7 @@ import { Phone, Star, Shield, Clock, Users } from "lucide-react";
 import { useState } from "react";
 
 const heroBackground = "/garnderplumbingcoemployeearrival.webp";
-const mobileHeroBackground = "/gpmobilehero.webp"
+const mobileHeroBackground = "/gpmobilehero.webp";
 
 export function Hero() {
   const [formData, setFormData] = useState({
@@ -23,82 +22,112 @@ export function Hero() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    try {
+      const response = await fetch(
+        "https://api.leadconnectorhq.com/widget/form/MgXDOYMSfcf6nWP0YjgR",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            postal_code: formData.postalCode,
+            terms_and_conditions: formData.consent ? "true" : "false",
+          }),
+        }
+      );
+
+      if (response.ok) {
+        console.log("✅ Sent to GHL:", await response.text());
+        alert("Form submitted successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          postalCode: "",
+          consent: false,
+        });
+      } else {
+        console.error("❌ Error from GHL:", await response.text());
+        alert("There was an error submitting the form.");
+      }
+    } catch (err) {
+      console.error("⚡ Submission error:", err);
+      alert("Submission failed, please try again.");
+    }
   };
 
   return (
-    <section className="relative overflow-hidden min-h-[80vh] flex items-center" style={{ backgroundColor: "transparent" }}>
+    <section
+      className="relative overflow-hidden min-h-[80vh] flex items-center"
+      style={{ backgroundColor: "transparent" }}
+    >
       {/* Background */}
-  <div className="absolute inset-0">
-    <picture>
-      {/* Mobile Image */}
-      <source srcSet={mobileHeroBackground} media="(max-width: 640px)" />
-      {/* Tablet/Desktop Image */}
-      <img
-        src={heroBackground}
-        alt="Hero background"
-        className="
-          w-full 
-          h-full             /* ✅ fills full hero section height */
-          object-cover 
-          object-top sm:object-[50%_30%]
-          brightness-75 contrast-125 saturate-110
-        "
+      <div className="absolute inset-0">
+        <picture>
+          <source srcSet={mobileHeroBackground} media="(max-width: 640px)" />
+          <img
+            src={heroBackground}
+            alt="Hero background"
+            className="w-full h-full object-cover object-top sm:object-[50%_30%] brightness-75 contrast-125 saturate-110"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
+      </div>
+
+      {/* Bottom shadow */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-30"
+        style={{
+          background: `linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%)`,
+          boxShadow: `
+            0 25px 50px rgba(0, 0, 0, 0.3),
+            0 15px 35px rgba(0, 0, 0, 0.2),
+            0 8px 20px rgba(0, 0, 0, 0.15)
+          `,
+        }}
       />
-    </picture>
 
-    {/* Overlay Gradients */}
-    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40" />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30" />
-  </div>
-
-  {/* Bottom shadow */}
-  <div
-    className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-30"
-    style={{
-      background: `linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 100%)`,
-      boxShadow: `
-        0 25px 50px rgba(0, 0, 0, 0.3),
-        0 15px 35px rgba(0, 0, 0, 0.2),
-        0 8px 20px rgba(0, 0, 0, 0.15)
-      `,
-    }}
-  />
-
+      {/* Content grid */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left content */}
           <div className="text-left animate-fade-in">
             <div className="mb-4 sm:mb-6 animate-slide-up">
-              <h1
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2 sm:mb-3 text-white drop-shadow-lg tracking-tight"
-                style={{ letterSpacing: "-0.03em", wordSpacing: "-0.1em" }}
-              >
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-2 sm:mb-3 text-white drop-shadow-lg tracking-tight">
                 Gardner Plumbing Co.
               </h1>
-
               <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-3 sm:mb-4 bg-gradient-to-r from-gray-200 via-white to-gray-300 bg-clip-text text-transparent drop-shadow-sm">
                 Your Trusted Local Plumbing Experts
               </h2>
-
               <p className="text-sm sm:text-base lg:text-lg text-gray-200 leading-relaxed mb-4 sm:mb-6 max-w-xl drop-shadow-sm">
-                Need trusted plumbing professionals for your home or business? Gardner Plumbing Co. is your local,
-                licensed team ready for repairs, installs, or remodels. From leaky pipes to major projects, we're just
-                a call away.
+                Need trusted plumbing professionals for your home or business?
+                Gardner Plumbing Co. is your local, licensed team ready for
+                repairs, installs, or remodels. From leaky pipes to major
+                projects, we're just a call away.
               </p>
             </div>
 
             {/* Trust text */}
             <div className="text-white mb-3 sm:mb-4">
-              <p className="text-xs sm:text-sm font-medium text-gray-300 drop-shadow-sm">Trusted by Hundreds of Local Customers</p>
+              <p className="text-xs sm:text-sm font-medium text-gray-300 drop-shadow-sm">
+                Trusted by Hundreds of Local Customers
+              </p>
             </div>
 
             {/* Trust indicators */}
             <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
               {/* Google */}
-              <a href="/reviews" className="flex items-center gap-2 sm:gap-3 group hover-lift" aria-label="Read our reviews">
+              <a href="/reviews" className="flex items-center gap-2 sm:gap-3 group hover-lift">
                 <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-lg border border-white/20">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500/20 backdrop-blur-sm rounded flex items-center justify-center border border-blue-400/30">
                     <span className="text-xs sm:text-sm font-bold text-blue-200">G</span>
@@ -111,9 +140,8 @@ export function Hero() {
                   </div>
                 </div>
               </a>
-
               {/* Yelp */}
-              <a href="/reviews" className="flex items-center gap-2 sm:gap-3 group hover-lift" aria-label="Read our reviews">
+              <a href="/reviews" className="flex items-center gap-2 sm:gap-3 group hover-lift">
                 <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-lg border border-white/20">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-500/20 backdrop-blur-sm rounded flex items-center justify-center border border-red-400/30">
                     <span className="text-xs sm:text-sm font-bold text-red-200">Y</span>
@@ -130,64 +158,55 @@ export function Hero() {
 
             {/* Action buttons */}
             <div className="flex flex-col gap-3 sm:gap-4 mb-6 sm:mb-8">
-              {/* Call now */}
-              <a href="tel:9512464337" aria-label="Call Gardner Plumbing Co. at (951) 246-4337" className="w-full">
+              <a href="tel:9512464337" className="w-full">
                 <Button
                   size="lg"
-                  className="w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-4 sm:px-6 py-3 sm:py-3 text-sm sm:text-base font-bold shadow-luxury transition-all duration-500 focus:ring-4 focus:ring-red-500/30 rounded-xl border border-red-400/20 hover-lift group relative"
-                  style={{
-                    boxShadow: `
-                      0 20px 40px rgba(220, 38, 38, 0.3),
-                      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                      inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-                    `,
-                  }}
+                  className="w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-4 sm:px-6 py-3 font-bold shadow-luxury rounded-xl border border-red-400/20 hover-lift"
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">
-                    <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform" />
-                    Call Now: (951) 246-4337
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500" />
+                  <Phone className="h-4 w-4 mr-2" /> Call Now: (951) 246-4337
                 </Button>
               </a>
-
-              {/* Free estimate */}
-              <a href="/contact" className="w-full" aria-label="Get a free plumbing estimate">
+              <a href="/contact" className="w-full">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full border-2 border-white/30 bg-white/10 hover:bg-white/20 text-white px-4 sm:px-6 py-3 sm:py-3 text-sm sm:text-base font-bold backdrop-blur-sm transition-all duration-500 focus:ring-4 focus:ring-white/30 rounded-xl hover-lift group"
+                  className="w-full border-2 border-white/30 bg-white/10 hover:bg-white/20 text-white px-4 sm:px-6 py-3 font-bold rounded-xl hover-lift"
                 >
-                  <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">Get Free Estimate</span>
+                  Get Free Estimate
                 </Button>
               </a>
             </div>
           </div>
 
-          {/* Right form */}
+           {/* ✅ Right form with preserved styling */}
           <div className="animate-fade-in mt-6 lg:mt-0">
             <div
               className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 w-full border border-white/20"
               style={{
                 background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,
                 boxShadow: `
-                     0 25px 50px rgba(0, 0, 0, 0.4),
-                     0 10px 25px rgba(0, 0, 0, 0.2),
-                     inset 0 1px 0 rgba(255, 255, 255, 0.1),
-                     inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-                     0 0 0 1px rgba(59, 130, 246, 0.1)
-                   `,
+                  0 25px 50px rgba(0, 0, 0, 0.4),
+                  0 10px 25px rgba(0, 0, 0, 0.2),
+                  inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+                  0 0 0 1px rgba(59, 130, 246, 0.1)
+                `,
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl sm:rounded-3xl" />
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl" />
 
               <div className="text-center mb-4 sm:mb-6 relative z-10">
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Get Free Estimate</h3>
-                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">Schedule your free consultation today. We'll call you within 24 hours.</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
+                  Get Free Estimate
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                  Schedule your free consultation today. We'll call you within
+                  24 hours.
+                </p>
               </div>
 
-              <div className="space-y-3 sm:space-y-4 relative z-10">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="group">
                     <Label htmlFor="firstName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors">
@@ -273,7 +292,7 @@ export function Hero() {
                     className="mt-0.5 sm:mt-1 border-2 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded shadow-sm hover:border-blue-400 transition-colors bg-gray-800/50"
                   />
                   <Label htmlFor="consent" className="text-[10px] sm:text-xs text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
-                    I agree to receive SMS messages from Gardner Plumbing Co. Message & data rates may apply. View our{" "}
+                    I agree to receive SMS messages from Gardner Plumbing Co.{" "}
                     <a href="/privacy-policy" className="text-blue-400 underline hover:text-blue-300 transition-colors font-medium">
                       privacy policy
                     </a>
@@ -285,9 +304,8 @@ export function Hero() {
                   <Button
                     type="submit"
                     size="lg"
-                    onClick={handleSubmit}
-                    className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-500 focus:ring-4 focus:ring-red-500/30 w-full rounded-xl border-2 border-red-400/20 hover-lift disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
                     disabled={!formData.consent}
+                    className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-500 focus:ring-4 focus:ring-red-500/30 w-full rounded-xl border-2 border-red-400/20 hover-lift disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
                     style={{
                       boxShadow: `
                         0 15px 35px rgba(220, 38, 38, 0.4),
@@ -303,102 +321,9 @@ export function Hero() {
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500" />
                   </Button>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
-        </div>
-
-        {/* Feature cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-12 animate-fade-in">
-          {/* 24/7 Emergency */}
-          <a
-            href="/services/emergency-service"
-            className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 hover-lift group transition-all duration-300"
-            style={{
-              background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,
-              boxShadow: `
-                0 20px 40px rgba(0,0,0,0.3),
-                0 8px 16px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.1),
-                inset 0 -1px 0 rgba(0,0,0,0.2),
-                0 0 0 1px rgba(59,130,246,0.08)
-              `,
-            }}
-            aria-label="Go to Emergency Plumbing service"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-xl sm:rounded-2xl" />
-            <div className="absolute top-2 right-2 w-12 h-12 sm:w-16 sm:h-16 bg-blue-500/8 rounded-full blur-2xl" />
-            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent rounded-lg sm:rounded-xl" />
-                <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-white relative z-10" />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-base sm:text-lg leading-tight group-hover:text-blue-100 transition-colors">24/7 Emergency</h4>
-                <p className="text-gray-300 text-xs sm:text-sm group-hover:text-gray-200 transition-colors">Available Around the Clock</p>
-              </div>
-            </div>
-          </a>
-
-          {/* Licensed & Insured */}
-          <a
-            href="/about-us"
-            className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 hover-lift group transition-all duration-300"
-            style={{
-              background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,
-              boxShadow: `
-                0 20px 40px rgba(0,0,0,0.3),
-                0 8px 16px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.1),
-                inset 0 -1px 0 rgba(0,0,0,0.2),
-                0 0 0 1px rgba(34,197,94,0.08)
-              `,
-            }}
-            aria-label="Learn about our licensing and insurance"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-xl sm:rounded-2xl" />
-            <div className="absolute top-2 right-2 w-12 h-12 sm:w-16 sm:h-16 bg-green-500/8 rounded-full blur-2xl" />
-            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-transparent rounded-lg sm:rounded-xl" />
-                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-white relative z-10" />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-base sm:text-lg leading-tight group-hover:text-green-100 transition-colors">Licensed & Fully Insured</h4>
-                <p className="text-gray-300 text-xs sm:text-sm group-hover:text-gray-200 transition-colors">Professional & Protected</p>
-              </div>
-            </div>
-          </a>
-
-          {/* Local Technicians */}
-          <a
-            href="/reviews"
-            className="relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/20 hover-lift group transition-all duration-300"
-            style={{
-              background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,
-              boxShadow: `
-                0 20px 40px rgba(0,0,0,0.3),
-                0 8px 16px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.1),
-                inset 0 -1px 0 rgba(0,0,0,0.2),
-                0 0 0 1px rgba(168,85,247,0.08)
-              `,
-            }}
-            aria-label="See why local customers recommend us"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-xl sm:rounded-2xl" />
-            <div className="absolute top-2 right-2 w-12 h-12 sm:w-16 sm:h-16 bg-purple-500/8 rounded-full blur-2xl" />
-            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-transparent rounded-lg sm:rounded-xl" />
-                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-white relative z-10" />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-base sm:text-lg leading-tight group-hover:text-purple-100 transition-colors">Background Checked Techs</h4>
-                <p className="text-gray-300 text-xs sm:text-sm group-hover:text-gray-200 transition-colors">Trusted Community Experts</p>
-              </div>
-            </div>
-          </a>
         </div>
       </div>
 

@@ -567,7 +567,7 @@ const services = [
         </div>
       </section>
       {/* Service Areas */}
-      <section className="py-16 sm:py-20 relative overflow-hidden">
+      <section id ="service-area" className="py-16 sm:py-20 relative overflow-hidden">
   <div className="absolute inset-0">
     <div
       className="absolute inset-0"

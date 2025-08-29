@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+import { LeadForm } from "./LeadForm";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
@@ -49,6 +52,8 @@ const cityLinks: Record<string, string> = {
 };
 
 export function WaterFiltration() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+
   const purificationStages = [
     "Stage 1: Sediment Filter",
     "Stage 2: Carbon Filter",
@@ -512,21 +517,21 @@ export function WaterFiltration() {
                 })}
               </div>
 
-              <a href="tel:9512464337">
-              <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
-                <span className="flex items-center justify-center gap-3">
-                  <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get a Free Consultation
-                </span>
-              </Button>
-              </a>
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Consultation
+                  </span>
+                </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Service Areas */}
-      <section id ="service-area" className="py-16 sm:py-20 relative overflow-hidden">
+      <section className="py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div
             className="absolute inset-0"
@@ -827,14 +832,14 @@ export function WaterFiltration() {
                 </span>
               </Button>
                  </a>
-            <a href="/contact-us">
-              <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Estimate
-                </span>
-              </Button>
-               </a>
+            <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Estimate
+                  </span>
+                </Button>
             </div>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
               <div className="flex items-center gap-2">
@@ -853,6 +858,12 @@ export function WaterFiltration() {
           </div>
         </div>
       </section>
+
+{/* ✅ Modal */}
+    <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <LeadForm />
+    </Modal>
+
     </div>
   );
 }

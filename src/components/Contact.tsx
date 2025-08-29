@@ -1,7 +1,9 @@
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Input } from "./ui/input";
+import { Checkbox } from "./ui/checkbox";
 import { Textarea } from "./ui/textarea";
+import { useState, type FormEvent, type ChangeEvent } from "react"; 
 import { Label } from "./ui/label";
 import { 
   Phone, 
@@ -23,11 +25,14 @@ import {
   Tag,
   Gift
 } from "lucide-react";
+
+// --- Component Assets ---
 const gardnercsrepImage = "/GardnerPlumbingCoCSrep.webp";
-const customerServiceImage = "gpcsrep2.webp";
-const gardnerVanImage = "gplumbingtruckguy.webp";
+const customerServiceImage = "/gpcsrep2.webp";
+const gardnerVanImage = "/gplumbingtruckguy.webp";
 
 export function Contact() {
+  // --- Component State and Data ---
   const contactInfo = [
     {
       icon: Phone,
@@ -72,6 +77,70 @@ export function Contact() {
     { icon: Phone, service: "Gas Line Issues", response: "Immediate response" }
   ];
 
+  // State for form data
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    postalCode: "",
+    desiredService: "",
+    consent: false,
+  });
+
+  // State for submission success message
+  const [success, setSuccess] = useState("");
+
+  // --- Event Handlers ---
+
+  const handleInputChange = (field: string, value: string | boolean) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://services.leadconnectorhq.com/hooks/kfDjJzsEadItLomlnfYH/webhook-trigger/bc3b8cb4-2ed4-49b5-85a9-99ba593b29ad",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            postal_code: formData.postalCode,
+            desired_service: formData.desiredService,
+            terms_and_conditions: formData.consent,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        setSuccess("✅ Thanks! Your request has been submitted. We’ll contact you shortly.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          postalCode: "",
+          desiredService: "",
+          consent: false,
+        });
+      } else {
+        setSuccess("❌ There was an error submitting the form. Please try again.");
+      }
+    } catch (err) {
+      console.error("⚡ Submission error:", err);
+      setSuccess("⚡ Submission failed, please check your connection and try again.");
+    }
+  };
+
+  // --- JSX Render ---
   return (
     <div className="min-h-screen">
       {/* Combined Contact Hero & Information Section */}
@@ -132,7 +201,7 @@ export function Contact() {
                   <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 via-transparent to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   
                   {/* Floating badge */}
-                  <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md animate-fade-in bg-black/60 backdrop-blur-md">
+                  <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                         <Phone className="h-4 w-4 text-white" />
@@ -282,179 +351,216 @@ export function Contact() {
         </div>
       </section>
 
-       {/* Contact Form Section */}
+      {/* Contact Form & Offers Section */}
       <section className="py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0"
-            style={{ 
-              background: `
-                radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
-                linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
-              `
-            }}
-          />
+            <div 
+              className="absolute inset-0"
+              style={{ 
+                background: `
+                  radial-gradient(ellipse at center, #1f2937 0%, #111827 50%, #000000 100%),
+                  linear-gradient(135deg, #202020 0%, #374151 50%, #1f2937 100%)
+                `
+              }}
+            />
         </div>
-        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             
             {/* Left Column - Contact Form & Special Offers */}
-            <div className="space-y-8">
+            <div className="space-y-8 animate-fade-in">
               {/* Contact Form */}
-              <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift animate-slide-up">
-                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
-                  background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
+              <div
+                className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 w-full border border-white/20"
+                style={{
+                  background: `linear-gradient(145deg, #202020 0%, #1a1a1a 100%)`,
                   boxShadow: `
-                    inset 0 2px 0 rgba(255, 255, 255, 0.2),
-                    inset 0 -2px 0 rgba(0, 0, 0, 0.2),
-                    0 8px 32px rgba(139, 0, 0, 0.4)
-                  `
-                }}>
-                  <div className="relative flex items-center justify-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
-                      <Send className="h-6 w-6 text-white drop-shadow-sm" />
-                    </div>
-                    <h2 className="text-2xl font-bold text-white drop-shadow-lg">Request Service</h2>
-                  </div>
-                </div>
-                
-                <div className="p-6 sm:p-8">
-                  {/* Professional Technician Image */}
-                  <div className="mb-6">
-                    <div className="relative group">
-                      <div className="relative overflow-hidden rounded-2xl shadow-luxury hover:shadow-2xl transition-all duration-500">
+                    0 25px 50px rgba(0, 0, 0, 0.4),
+                    0 10px 25px rgba(0, 0, 0, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+                    0 0 0 1px rgba(220, 38, 38, 0.1)
+                  `,
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl sm:rounded-3xl" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-red-500/10 rounded-full blur-3xl" />
+
+                <div className="text-center mb-4 sm:mb-6 relative z-10">
+                   <div className="relative group mb-4">
+                      <div className="relative overflow-hidden rounded-2xl shadow-lg">
                         <img 
                           src={customerServiceImage}
-                          alt="Professional Gardner Plumbing Co. customer service representative ready to assist with your service requests" 
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+                          alt="Gardner Plumbing Co. customer service representative" 
+                          className="w-full h-auto object-cover"
                         />
-                        
-                        {/* Premium overlay effects */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        
-                        {/* Floating badge */}
-                        <div className="absolute bottom-4 right-4 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
-                          <div className="flex items-center gap-2">
-                            <div className="w-6 h-6 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                              <Phone className="h-3 w-3 text-white" />
-                            </div>
-                            <div>
-                              <div className="text-white font-bold text-xs">Customer Service</div>
-                            </div>
-                          </div>
-                        </div>
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                         <div className="absolute bottom-4 left-4 text-left">
+                            <h3 className="text-xl font-bold text-white">Request Service</h3>
+                         </div>
                       </div>
+                   </div>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
+                  {/* Name Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="group">
+                      <Label htmlFor="firstName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
+                        First Name*
+                      </Label>
+                      <Input
+                        id="firstName"
+                        type="text"
+                        placeholder="First Name"
+                        value={formData.firstName}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("firstName", e.target.value)}
+                        className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-red-500 focus:ring-red-500/20"
+                        required
+                      />
+                    </div>
+                    <div className="group">
+                      <Label htmlFor="lastName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
+                        Last Name*
+                      </Label>
+                      <Input
+                        id="lastName"
+                        type="text"
+                        placeholder="Last Name"
+                        value={formData.lastName}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("lastName", e.target.value)}
+                        className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-red-500 focus:ring-red-500/20"
+                        required
+                      />
                     </div>
                   </div>
 
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="firstName" className="text-white mb-2 block">First Name</Label>
-                        <Input 
-                          id="firstName" 
-                          placeholder="John" 
-                          className="bg-gray-800/50 border-gray-600/50 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="lastName" className="text-white mb-2 block">Last Name</Label>
-                        <Input 
-                          id="lastName" 
-                          placeholder="Doe" 
-                          className="bg-gray-800/50 border-gray-600/50 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="phone" className="text-white mb-2 block">Phone Number</Label>
-                      <Input 
-                        id="phone" 
-                        type="tel" 
-                        placeholder="(951) 555-0123" 
-                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
+                  {/* Email */}
+                  <div className="group">
+                    <Label htmlFor="email" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
+                      Email*
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
+                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-red-500 focus:ring-red-500/20"
+                      required
+                    />
+                  </div>
+
+                  {/* Phone + ZIP */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="group">
+                      <Label htmlFor="phone" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
+                        Phone*
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="(555) 123-4567"
+                        value={formData.phone}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("phone", e.target.value)}
+                        className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-red-500 focus:ring-red-500/20"
+                        required
                       />
                     </div>
-                    
-                    <div>
-                      <Label htmlFor="email" className="text-white mb-2 block">Email Address</Label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="john@example.com" 
-                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
+                    <div className="group">
+                      <Label htmlFor="postalCode" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
+                        ZIP Code*
+                      </Label>
+                      <Input
+                        id="postalCode"
+                        type="text"
+                        placeholder="92555"
+                        value={formData.postalCode}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => handleInputChange("postalCode", e.target.value)}
+                        className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-red-500 focus:ring-red-500/20"
+                        required
                       />
                     </div>
-                    
-                    <div>
-                      <Label htmlFor="address" className="text-white mb-2 block">Service Address</Label>
-                      <Input 
-                        id="address" 
-                        placeholder="123 Main St, Temecula, CA 92592" 
-                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
-                      />
+                  </div>
+
+                  {/* Desired Service */}
+                  <div className="group relative">
+                    <Label
+                      htmlFor="desiredService"
+                      className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-red-400 transition-colors"
+                    >
+                      Desired Service*
+                    </Label>
+                    <select
+                      id="desiredService"
+                      value={formData.desiredService}
+                      onChange={(e: ChangeEvent<HTMLSelectElement>) => handleInputChange("desiredService", e.target.value)}
+                      className="appearance-none border-2 border-gray-600 bg-gray-800/70 text-white focus:border-red-500 focus:ring-red-500/20 focus:bg-gray-800 h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg shadow-sm hover:border-red-400 hover:bg-gray-800/90 backdrop-blur-sm w-full px-3 pr-8 cursor-pointer"
+                      required
+                    >
+                      <option value="" disabled hidden> Select a service </option>
+                      <option value="Drain Cleaning">Drain Cleaning</option>
+                      <option value="Leak Detection">Leak Detection</option>
+                      <option value="Water Heaters">Water Heaters</option>
+                      <option value="Toilet Repair">Toilet Repair</option>
+                      <option value="Piping & Repiping">Piping & Repiping</option>
+                      <option value="Garbage Disposals">Garbage Disposals</option>
+                      <option value="Commercial Plumbing">Commercial Plumbing</option>
+                      <option value="Hydro Jetting">Hydro Jetting</option>
+                      <option value="Sewer & Septic">Sewer & Septic</option>
+                      <option value="Maintenance Plans">Maintenance Plans</option>
+                      <option value="Emergency Service">Emergency Service</option>
+                      <option value="Moen Flo Installation">Moen Flo Installation</option>
+                      <option value="System Inspections">System Inspections</option>
+                      <option value="Gas Lines">Gas Lines</option>
+                      <option value="Water Filtration">Water Filtration</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 top-7 right-3 flex items-center">
+                      <svg className="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
-                    
-                    <div>
-                      <Label htmlFor="service" className="text-white mb-2 block">Service Needed</Label>
-                      <select 
-                        id="service" 
-                        className="w-full bg-gray-800/50 border border-gray-600/50 text-white rounded-lg px-3 py-2 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="drain-cleaning">Drain Cleaning</option>
-                        <option value="leak-repair">Leak Detection/Repair</option>
-                        <option value="water-heater">Water Heater Service</option>
-                        <option value="bathroom">Bathroom Plumbing</option>
-                        <option value="emergency">Emergency Service</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="message" className="text-white mb-2 block">Message</Label>
-                      <Textarea 
-                        id="message" 
-                        placeholder="Please describe your plumbing issue or service needs..." 
-                        rows={4}
-                        className="bg-gray-800/50 border-gray-600/50 text-white placeholder:text-gray-400 focus:border-red-500 focus:ring-red-500/20 transition-all duration-300"
-                      />
-                    </div>
-                    
-                    <Button className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
-                      <span className="flex items-center justify-center gap-3">
-                        <Send className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                        Send Request
-                      </span>
+                  </div>
+
+                  {/* Consent */}
+                  <div className="flex items-start space-x-2 sm:space-x-3 pt-1 sm:pt-2 group">
+                    <Checkbox
+                      id="consent"
+                      checked={formData.consent}
+                      onCheckedChange={(checked) => handleInputChange("consent", !!checked)}
+                      className="mt-0.5 sm:mt-1 border-2 border-gray-500 data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded shadow-sm hover:border-red-400 transition-colors bg-gray-800/50"
+                    />
+                    <Label htmlFor="consent" className="text-[10px] sm:text-xs text-gray-300 leading-relaxed">
+                      I agree to receive SMS messages from Gardner Plumbing Co.{" "}
+                      <a href="/privacy-policy" className="text-red-400 underline hover:text-red-300">
+                        privacy policy
+                      </a>
+                      . Reply STOP to opt-out.
+                    </Label>
+                  </div>
+
+                  {/* Submit */}
+                  <div className="pt-3 sm:pt-4">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      disabled={!formData.consent}
+                      className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-6 sm:px-8 py-3 text-sm sm:text-base font-bold w-full rounded-xl border-2 border-red-400/20 hover-lift disabled:opacity-50"
+                    >
+                      <Send className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-2" />
+                      SEND REQUEST
                     </Button>
-                  </form>
-                </div>
+                    {success && (
+                      <p className="text-green-400 font-semibold mt-3 text-center text-sm">{success}</p>
+                    )}
+                  </div>
+                </form>
               </div>
               
-              {/* Special Offers */}
+              {/* Special Offers Card */}
               <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift animate-slide-up">
-                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
-                  background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
-                  boxShadow: `
-                    inset 0 2px 0 rgba(255, 255, 255, 0.2),
-                    inset 0 -2px 0 rgba(0, 0, 0, 0.2),
-                    0 8px 32px rgba(139, 0, 0, 0.4)
-                  `
-                }}>
-                  <div 
-                    className="absolute inset-0 opacity-30"
-                    style={{
-                      background: `linear-gradient(135deg, 
-                        transparent 0%, 
-                        rgba(255, 255, 255, 0.1) 25%, 
-                        rgba(255, 255, 255, 0.2) 50%, 
-                        rgba(255, 255, 255, 0.1) 75%, 
-                        transparent 100%
-                      )`
-                    }}
-                  />
+                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`, boxShadow: `inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 8px 32px rgba(139, 0, 0, 0.4)` }}>
                   <div className="relative flex items-center justify-center gap-4">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
                       <Gift className="h-6 w-6 text-white drop-shadow-sm" />
@@ -462,11 +568,8 @@ export function Contact() {
                     <h3 className="text-2xl font-bold text-white drop-shadow-lg">Special Offers</h3>
                   </div>
                 </div>
-                
                 <div className="p-6 sm:p-8">
-                  {/* Special Offers Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                    {/* Financing Available */}
                     <div className="flex flex-col items-center text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-500 rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:scale-110 transition-transform duration-300">
                         <CreditCard className="h-6 w-6 text-white drop-shadow-sm" />
@@ -474,8 +577,6 @@ export function Contact() {
                       <h4 className="text-white font-bold text-sm mb-1 group-hover:text-green-100 transition-colors duration-300">Financing Available</h4>
                       <p className="text-gray-400 text-xs group-hover:text-gray-300 transition-colors duration-300">Easy payment plans</p>
                     </div>
-                    
-                    {/* 0% APR Plans */}
                     <div className="flex flex-col items-center text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
                       <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-500 rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:scale-110 transition-transform duration-300">
                         <Percent className="h-6 w-6 text-white drop-shadow-sm" />
@@ -483,8 +584,6 @@ export function Contact() {
                       <h4 className="text-white font-bold text-sm mb-1 group-hover:text-blue-100 transition-colors duration-300">0% APR Plans</h4>
                       <p className="text-gray-400 text-xs group-hover:text-gray-300 transition-colors duration-300">Qualified customers</p>
                     </div>
-                    
-                    {/* Exclusive Coupons */}
                     <div className="flex flex-col items-center text-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
                       <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-purple-500 rounded-xl flex items-center justify-center shadow-lg mb-3 group-hover:scale-110 transition-transform duration-300">
                         <Tag className="h-6 w-6 text-white drop-shadow-sm" />
@@ -493,30 +592,6 @@ export function Contact() {
                       <p className="text-gray-400 text-xs group-hover:text-gray-300 transition-colors duration-300">Save on services</p>
                     </div>
                   </div>
-
-                  {/* Customer Testimonial */}
-                  <div className="bg-gradient-to-r from-green-600/10 to-blue-600/10 rounded-xl p-4 mb-6 border border-white/10">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Star className="h-5 w-5 text-white" />
-                      </div>
-                      <div>
-                        <p className="text-gray-300 text-sm italic leading-relaxed mb-2">
-                          "The financing option made it possible for us to get our entire plumbing system upgraded. Gardner Plumbing Co. made the process so easy!"
-                        </p>
-                        <p className="text-gray-400 text-xs font-semibold">- Sarah M., Temecula</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Promotional Text */}
-                  <div className="text-center mt-8 mb-12">
-                    <p className="text-gray-300 text-sm mb-2">Don't let plumbing costs hold you back!</p>
-                    <p className="text-gray-400 text-xs mb-4">Flexible financing options and seasonal specials available to qualified customers.</p>
-                    <p className="text-gray-500 text-xs">*Subject to credit approval. Terms and conditions apply.</p>
-                  </div>
-                  
-                  {/* Call-to-Action Button */}
                   <Button className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-4 transition-all duration-300 rounded-xl shadow-lg border border-green-400/20 group">
                     <span className="flex items-center justify-center gap-3">
                       <Gift className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -526,19 +601,12 @@ export function Contact() {
                 </div>
               </div>
             </div>
-            
-            {/* Right Column - Service Areas & Emergency */}
-            <div id ="service-area" className="space-y-8">
-              {/* Service Areas */}
-              <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift animate-slide-up">
-                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
-                  background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
-                  boxShadow: `
-                    inset 0 2px 0 rgba(255, 255, 255, 0.2),
-                    inset 0 -2px 0 rgba(0, 0, 0, 0.2),
-                    0 8px 32px rgba(139, 0, 0, 0.4)
-                  `
-                }}>
+
+            {/* Right Column - Stacked Cards */}
+            <div className="space-y-8 animate-slide-up">
+              {/* Service Areas Card */}
+              <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
+                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`, boxShadow: `inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 8px 32px rgba(139, 0, 0, 0.4)` }}>
                   <div className="relative flex items-center justify-center gap-4">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
                       <MapPin className="h-6 w-6 text-white drop-shadow-sm" />
@@ -546,49 +614,13 @@ export function Contact() {
                     <h3 className="text-2xl font-bold text-white drop-shadow-lg">Service Areas</h3>
                   </div>
                 </div>
-                
                 <div className="p-6 sm:p-8">
-                  {/* Service Area Map */}
-                  <div className="mb-6">
-                    <div className="relative group">
-                      <div className="relative overflow-hidden rounded-2xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-                        {/* Google Maps Embed */}
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d211887.43895276654!2d-117.34485285000001!3d33.5635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80db78de3d6ca8b7%3A0x5a48b1c4c7b0c8a!2sTemecula%2C%20CA!5e0!3m2!1sen!2sus!4v1642000000000!5m2!1sen!2sus"
-                          width="100%"
-                          height="300"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title="Gardner Plumbing Co. Service Area - Riverside County"
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700 rounded-2xl"
-                        />
-                        
-                        {/* Premium overlay effects */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-2xl"></div>
-                        
-                        {/* Floating badge */}
-                        <div className="absolute bottom-4 right-4 glassmorphism-dark rounded-xl p-3 border border-white/20 shadow-luxury pointer-events-none">
-                          <div className="flex items-center gap-2">
-                            <div className="w-6 h-6 bg-gradient-to-br from-green-600 to-green-500 rounded-full flex items-center justify-center">
-                              <CheckCircle className="h-3 w-3 text-white" />
-                            </div>
-                            <div>
-                              <div className="text-white font-bold text-xs">Full Coverage</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Proudly serving Riverside County and surrounding communities with professional plumbing services.
+                  <p className="text-gray-300 mb-6 leading-relaxed text-center">
+                    Proudly serving Riverside County and surrounding communities.
                   </p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {serviceAreas.map((area, index) => (
-                      <div key={index} className="flex items-center gap-2 p-2 hover:bg-white/5 rounded-lg transition-all duration-300 group">
+                    {serviceAreas.map((area) => (
+                      <div key={area} className="flex items-center gap-2 p-2 hover:bg-white/5 rounded-lg transition-all duration-300 group">
                         <CheckCircle className="h-4 w-4 text-green-400 group-hover:text-green-300 transition-colors duration-300" />
                         <span className="text-gray-300 text-sm group-hover:text-gray-200 transition-colors duration-300">{area}</span>
                       </div>
@@ -596,17 +628,10 @@ export function Contact() {
                   </div>
                 </div>
               </div>
-              
-              {/* Emergency Services */}
-              <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift animate-slide-up">
-                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ 
-                  background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`,
-                  boxShadow: `
-                    inset 0 2px 0 rgba(255, 255, 255, 0.2),
-                    inset 0 -2px 0 rgba(0, 0, 0, 0.2),
-                    0 8px 32px rgba(139, 0, 0, 0.4)
-                  `
-                }}>
+
+              {/* 24/7 Emergency Card */}
+              <div className="glassmorphism-dark rounded-3xl backdrop-blur-xl border border-white/10 shadow-luxury overflow-hidden hover-lift">
+                <div className="relative overflow-hidden px-6 sm:px-8 py-6 sm:py-8" style={{ background: `linear-gradient(135deg, #8B0000 0%, #DC2626 50%, #B91C1C 100%)`, boxShadow: `inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 8px 32px rgba(139, 0, 0, 0.4)` }}>
                   <div className="relative flex items-center justify-center gap-4">
                     <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30 shadow-inner">
                       <Shield className="h-6 w-6 text-white drop-shadow-sm" />
@@ -614,44 +639,20 @@ export function Contact() {
                     <h3 className="text-2xl font-bold text-white drop-shadow-lg">24/7 Emergency</h3>
                   </div>
                 </div>
-                
                 <div className="p-6 sm:p-8">
-                  {/* Emergency Vehicle Image */}
-                  <div className="mb-6">
-                    <div className="relative group">
-                      <div className="relative overflow-hidden rounded-2xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-                        <img 
-                          src={gardnerVanImage}
-                          alt="Gardner Plumbing Co. branded service van ready for 24/7 emergency response" 
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        
-                        {/* Premium overlay effects */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        
-                        {/* Floating badge */}
-                        <div className="absolute bottom-4 right-4 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
-                          <div className="flex items-center gap-2">
-                            <div className="w-6 h-6 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
-                              <Shield className="h-3 w-3 text-white" />
-                            </div>
-                            <div>
-                              <div className="text-white font-bold text-xs">Gardner Emergency</div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Plumbing emergencies don't wait for business hours. Our certified technicians are available 24/7 for urgent plumbing issues.
+                  <img 
+                    src={gardnerVanImage}
+                    alt="Gardner Plumbing Co. service van" 
+                    className="w-full h-auto object-cover rounded-2xl mb-6"
+                  />
+                  <p className="text-gray-300 mb-6 leading-relaxed text-center">
+                    Plumbing emergencies don't wait. Our certified technicians are available 24/7 for urgent issues.
                   </p>
                   <div className="space-y-4">
-                    {emergencyServices.map((service, index) => {
+                    {emergencyServices.map((service) => {
                       const IconComponent = service.icon;
                       return (
-                        <div key={index} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                        <div key={service.service} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
                           <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-500 rounded-xl flex items-center justify-center shadow-lg border border-red-400/20">
                             <IconComponent className="h-6 w-6 text-white group-hover:scale-110 transition-transform duration-300" />
                           </div>
@@ -663,14 +664,6 @@ export function Contact() {
                         </div>
                       );
                     })}
-                  </div>
-                  <div className="mt-8 text-center">
-                    <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
-                      <span className="flex items-center justify-center gap-3">
-                        <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                        Call Emergency Line
-                      </span>
-                    </Button>
                   </div>
                 </div>
               </div>

@@ -47,7 +47,8 @@ const cityLinks: Record<string, string> = {
 
 export function MoenFlow() {
   // Using your Moen Flow page data
-  const emergencyReasons = [ // Renamed from leakSources to match original variable name for styling
+
+const emergencyReasons = [ // Renamed from leakSources to match original variable name for styling
     "Burst Pipes & Supply Lines",
     "Leaking Toilets",
     "Faulty Appliances (Washers, etc.)",

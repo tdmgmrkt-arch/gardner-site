@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+import { LeadForm } from "./LeadForm";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
@@ -46,6 +49,9 @@ const cityLinks: Record<string, string> = {
 };
 
 export function Drain() {
+
+const [isModalOpen, setIsModalOpen] = useState(false);
+
 const emergencyReasons = [
   "Complete drain blockage",
   "Multiple drains backing up",
@@ -513,14 +519,16 @@ const services = [
                 })}
               </div>
 
-              <a href="/contact-us">
-                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+              
+                <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Get Free Estimate
                   </span>
                 </Button>
-              </a>
+
             </div>
           </div>
         </div>
@@ -908,6 +916,12 @@ const services = [
           </div>
         </div>
       </section>
+
+{/* ✅ Modal */}
+    <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <LeadForm />
+    </Modal>
+
     </div>
   );
 }

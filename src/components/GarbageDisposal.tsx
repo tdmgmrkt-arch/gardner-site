@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+import { LeadForm } from "./LeadForm";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
@@ -46,6 +49,8 @@ const cityLinks: Record<string, string> = {
 };
 
 export function GarbageDisposal() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+
 const emergencyReasons = [
      "Unit completely jammed or won’t turn on",
     "Grinding noises with no operation",
@@ -899,6 +904,13 @@ const services = [
           </div>
         </div>
       </section>
-    </div>
-  );
-}
+
+
+      {/* ✅ Modal */}
+          <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            <LeadForm />
+          </Modal>
+          
+          </div>
+        );
+      }

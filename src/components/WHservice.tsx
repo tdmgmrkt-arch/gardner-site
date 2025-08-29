@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+import { LeadForm } from "./LeadForm";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
@@ -48,6 +51,8 @@ const cityLinks: Record<string, string> = {
 };
 
 export function WHservice() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+
 const emergencyReasons = [
    "No hot water at all",
     "Water heater leaking",
@@ -344,14 +349,12 @@ const services = [
 
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
                 <a href="tel:9512464337" className="w-full sm:w-auto">
-                <a href="tel:9512464337" className="w-full sm:w-auto">
                 <div className="flex items-center gap-2 bg-black/20 rounded-full px-4 py-2">
                   <Phone className="h-5 w-5 text-red-100" />
                   <span className="text-white font-bold text-lg">
                     (951) 246-4337
                   </span>
                 </div>
-                </a>
                 </a>
                 <span className="text-red-100 font-semibold text-sm sm:text-base">
                   24/7 Service Available
@@ -554,20 +557,20 @@ const services = [
                 })}
               </div>
 
-              <a href="/contact-us">
-                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Get Free Estimate
                   </span>
                 </Button>
-              </a>
             </div>
           </div>
         </div>
       </section>
       {/* Service Areas */}
-      <section id ="service-area" className="py-16 sm:py-20 relative overflow-hidden">
+      <section className="py-16 sm:py-20 relative overflow-hidden">
   <div className="absolute inset-0">
     <div
       className="absolute inset-0"
@@ -629,14 +632,12 @@ const services = [
           confirm service availability.
         </p>
         <a href="tel:9512464337" className="w-full sm:w-auto">
-        <a href="tel:9512464337" className="w-full sm:w-auto">
         <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-xl shadow-lg">
           <span className="flex items-center justify-center gap-3">
             <Phone className="h-5 w-5" />
             Check Service Area
           </span>
         </Button>
-        </a>
         </a>
       </div>
     </div>
@@ -779,7 +780,7 @@ const services = [
                 </Button>
                 </a>
 
-                <a href="/contact-us" className="w-full sm:w-auto">
+                <a href="contact-us" className="w-full sm:w-auto">
                 <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -967,6 +968,12 @@ const services = [
 </div>
         </div>
       </section>
+
+{/* ✅ Modal */}
+    <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <LeadForm />
+    </Modal>
+    
     </div>
   );
 }

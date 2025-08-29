@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "./ui/button";
 import { MapPin, Phone, CheckCircle } from "lucide-react";
 

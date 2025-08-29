@@ -237,7 +237,7 @@ export function Header() {
                       {/* Full-width dropdown */}
                       <div
                         ref={dropdownRef}
-                        className="absolute inset-x-0 top-full w-full shadow-luxury border-t-4 border-red-600 z-50 animate-fade-in"
+                        className="absolute inset-x-0 top-full w-full shadow-luxury border-t-4 border-red-600 z-70 animate-fade-in"
                         style={{
                           background: `
                             radial-gradient(ellipse at top, #1f2937 0%, #111827 50%, #000000 100%),
@@ -390,7 +390,7 @@ export function Header() {
                                         { name: "Water Damage", desc: "Prevention & repair" },
                                         { name: "Gas Lines", desc: "Safe service" },
                                         { name: "Backups", desc: "Sewer & drain" },
-                                        { name: "No Hot Water", desc: "Quick restoration" },
+                                        { name: "No Hot Water", desc: "Water heater" },
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a

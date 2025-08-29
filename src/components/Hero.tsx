@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Checkbox } from "./ui/checkbox";
-import { Phone, Star, Shield, Clock, Users } from "lucide-react";
+import { Phone, Star, Calendar } from "lucide-react";
 import { useState } from "react";
 
 const heroBackground = "/garnderplumbingcoemployeearrival.webp";
@@ -15,8 +15,11 @@ export function Hero() {
     email: "",
     phone: "",
     postalCode: "",
+    desiredService: "", // ✅ new field
     consent: false,
   });
+
+  const [success, setSuccess] = useState("");
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -27,7 +30,7 @@ export function Hero() {
 
     try {
       const response = await fetch(
-        "https://api.leadconnectorhq.com/widget/form/MgXDOYMSfcf6nWP0YjgR",
+        "https://services.leadconnectorhq.com/hooks/kfDjJzsEadItLomlnfYH/webhook-trigger/bc3b8cb4-2ed4-49b5-85a9-99ba593b29ad",
         {
           method: "POST",
           headers: {
@@ -39,29 +42,29 @@ export function Hero() {
             email: formData.email,
             phone: formData.phone,
             postal_code: formData.postalCode,
+            desired_service: formData.desiredService, // ✅ added
             terms_and_conditions: formData.consent ? "true" : "false",
           }),
         }
       );
 
       if (response.ok) {
-        console.log("✅ Sent to GHL:", await response.text());
-        alert("Form submitted successfully!");
+        setSuccess("✅ Thanks! Your request has been submitted. We’ll contact you shortly.");
         setFormData({
           firstName: "",
           lastName: "",
           email: "",
           phone: "",
           postalCode: "",
+          desiredService: "", // reset
           consent: false,
         });
       } else {
-        console.error("❌ Error from GHL:", await response.text());
-        alert("There was an error submitting the form.");
+        setSuccess("❌ There was an error submitting the form. Please try again.");
       }
     } catch (err) {
       console.error("⚡ Submission error:", err);
-      alert("Submission failed, please try again.");
+      setSuccess("⚡ Submission failed, please check your connection and try again.");
     }
   };
 
@@ -166,19 +169,19 @@ export function Hero() {
                   <Phone className="h-4 w-4 mr-2" /> Call Now: (951) 246-4337
                 </Button>
               </a>
-              <a href="/contact" className="w-full">
+              <a href="/contact-us" className="w-full">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full border-2 border-white/30 bg-white/10 hover:bg-white/20 text-white px-4 sm:px-6 py-3 font-bold rounded-xl hover-lift"
+                  className="w-full bg-white/10 backdrop-blur-sm text-white px-6 py-3 font-bold rounded-xl border border-white/30 hover:bg-white hover:text-red-600 hover:border-white hover:shadow-lg transition-all duration-200"
                 >
-                  Get Free Estimate
+                  <Calendar className="h-4 w-4 mr-2" /> Book Online
                 </Button>
               </a>
             </div>
           </div>
 
-           {/* ✅ Right form with preserved styling */}
+          {/* ✅ Right form with preserved styling */}
           <div className="animate-fade-in mt-6 lg:mt-0">
             <div
               className="relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 w-full border border-white/20"
@@ -207,9 +210,10 @@ export function Hero() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
+                {/* Name Row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="group">
-                    <Label htmlFor="firstName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors">
+                    <Label htmlFor="firstName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
                       First Name*
                     </Label>
                     <Input
@@ -218,12 +222,12 @@ export function Hero() {
                       placeholder="First Name"
                       value={formData.firstName}
                       onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:bg-gray-800 h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg shadow-sm hover:border-blue-400 hover:bg-gray-800/70 backdrop-blur-sm"
+                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-blue-500 focus:ring-blue-500/20"
                       required
                     />
                   </div>
                   <div className="group">
-                    <Label htmlFor="lastName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors">
+                    <Label htmlFor="lastName" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
                       Last Name*
                     </Label>
                     <Input
@@ -232,14 +236,15 @@ export function Hero() {
                       placeholder="Last Name"
                       value={formData.lastName}
                       onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:bg-gray-800 h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg shadow-sm hover:border-blue-400 hover:bg-gray-800/70 backdrop-blur-sm"
+                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-blue-500 focus:ring-blue-500/20"
                       required
                     />
                   </div>
                 </div>
 
+                {/* Email */}
                 <div className="group">
-                  <Label htmlFor="email" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors">
+                  <Label htmlFor="email" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
                     Email*
                   </Label>
                   <Input
@@ -248,14 +253,15 @@ export function Hero() {
                     placeholder="your@email.com"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:bg-gray-800 h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg shadow-sm hover:border-blue-400 hover:bg-gray-800/70 backdrop-blur-sm"
+                    className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-blue-500 focus:ring-blue-500/20"
                     required
                   />
                 </div>
 
+                {/* Phone + ZIP */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="group">
-                    <Label htmlFor="phone" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors">
+                    <Label htmlFor="phone" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
                       Phone*
                     </Label>
                     <Input
@@ -264,12 +270,12 @@ export function Hero() {
                       placeholder="(555) 123-4567"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
-                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:bg-gray-800 h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg shadow-sm hover:border-blue-400 hover:bg-gray-800/70 backdrop-blur-sm"
+                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-blue-500 focus:ring-blue-500/20"
                       required
                     />
                   </div>
                   <div className="group">
-                    <Label htmlFor="postalCode" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors">
+                    <Label htmlFor="postalCode" className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm">
                       ZIP Code*
                     </Label>
                     <Input
@@ -278,12 +284,70 @@ export function Hero() {
                       placeholder="92555"
                       value={formData.postalCode}
                       onChange={(e) => handleInputChange("postalCode", e.target.value)}
-                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 focus:border-blue-500 focus:ring-blue-500/20 focus:bg-gray-800 h-10 sm:h-11 text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg shadow-sm hover:border-blue-400 hover:bg-gray-800/70 backdrop-blur-sm"
+                      className="border-2 border-gray-600 bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg focus:border-blue-500 focus:ring-blue-500/20"
                       required
                     />
                   </div>
                 </div>
 
+                {/* ✅ Desired Service */}
+                <div className="group relative">
+                  <Label
+                    htmlFor="desiredService"
+                    className="text-gray-200 font-semibold mb-1.5 sm:mb-2 block text-xs sm:text-sm group-focus-within:text-blue-400 transition-colors"
+                  >
+                    Desired Service*
+                  </Label>
+
+                  <select
+                    id="desiredService"
+                    value={formData.desiredService}
+                    onChange={(e) => handleInputChange("desiredService", e.target.value)}
+                    className="appearance-none border-2 border-gray-600 bg-gray-800/70 text-white 
+                      focus:border-blue-500 focus:ring-blue-500/20 focus:bg-gray-800 h-10 sm:h-11 
+                      text-xs sm:text-sm font-medium transition-all duration-300 rounded-lg 
+                      shadow-sm hover:border-blue-400 hover:bg-gray-800/90 backdrop-blur-sm w-full 
+                      px-3 pr-8 cursor-pointer"
+                    required
+                  >
+                    {/* ✅ placeholder (default, not selectable) */}
+                    <option value="" disabled hidden>
+                      Select a service
+                    </option>
+
+                    <option value="Drain Cleaning">Drain Cleaning</option>
+                    <option value="Leak Detection">Leak Detection</option>
+                    <option value="Water Heaters">Water Heaters</option>
+                    <option value="Toilet Repair">Toilet Repair</option>
+                    <option value="Piping & Repiping">Piping & Repiping</option>
+                    <option value="Garbage Disposals">Garbage Disposals</option>
+                    <option value="Commercial Plumbing">Commercial Plumbing</option>
+                    <option value="Hydro Jetting">Hydro Jetting</option>
+                    <option value="Sewer & Septic">Sewer & Septic</option>
+                    <option value="Maintenance Plans">Maintenance Plans</option>
+                    <option value="Emergency Service">Emergency Service</option>
+                    <option value="Moen Flo Installation">Moen Flo Installation</option>
+                    <option value="System Inspections">System Inspections</option>
+                    <option value="Gas Lines">Gas Lines</option>
+                    <option value="Water Filtration">Water Filtration</option>
+                    <option value="Other">Other</option>
+                  </select>
+
+                  {/* ✅ Custom arrow ONLY */}
+                  <div className="pointer-events-none absolute inset-y-0 top-7 right-3 flex items-center">
+                    <svg
+                      className="h-4 w-4 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Consent */}
                 <div className="flex items-start space-x-2 sm:space-x-3 pt-1 sm:pt-2 group">
                   <Checkbox
                     id="consent"
@@ -291,35 +355,30 @@ export function Hero() {
                     onCheckedChange={(checked) => handleInputChange("consent", checked as boolean)}
                     className="mt-0.5 sm:mt-1 border-2 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded shadow-sm hover:border-blue-400 transition-colors bg-gray-800/50"
                   />
-                  <Label htmlFor="consent" className="text-[10px] sm:text-xs text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors">
+                  <Label htmlFor="consent" className="text-[10px] sm:text-xs text-gray-300 leading-relaxed">
                     I agree to receive SMS messages from Gardner Plumbing Co.{" "}
-                    <a href="/privacy-policy" className="text-blue-400 underline hover:text-blue-300 transition-colors font-medium">
+                    <a href="/privacy-policy" className="text-blue-400 underline hover:text-blue-300">
                       privacy policy
                     </a>
                     . Reply STOP to opt-out.
                   </Label>
                 </div>
 
+                {/* Submit */}
                 <div className="pt-3 sm:pt-4">
                   <Button
                     type="submit"
                     size="lg"
                     disabled={!formData.consent}
-                    className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-6 sm:px-8 py-3 text-sm sm:text-base font-bold transition-all duration-500 focus:ring-4 focus:ring-red-500/30 w-full rounded-xl border-2 border-red-400/20 hover-lift disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
-                    style={{
-                      boxShadow: `
-                        0 15px 35px rgba(220, 38, 38, 0.4),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                        inset 0 -1px 0 rgba(0, 0, 0, 0.1)
-                      `,
-                    }}
+                    className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-700 hover:via-red-600 hover:to-red-700 text-white px-6 sm:px-8 py-3 text-sm sm:text-base font-bold w-full rounded-xl border-2 border-red-400/20 hover-lift disabled:opacity-50"
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2">
-                      <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:scale-110" />
-                      GET FREE ESTIMATE
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500" />
+                    <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-2" />
+                    GET FREE ESTIMATE
                   </Button>
+
+                  {success && (
+                    <p className="text-green-400 font-semibold mt-3 text-center">{success}</p>
+                  )}
                 </div>
               </form>
             </div>

@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+import { LeadForm } from "./LeadForm";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import {
@@ -47,7 +50,9 @@ const cityLinks: Record<string, string> = {
 };
 
 export function ToiletRep() {
-  const emergencyReasons = [
+const [isModalOpen, setIsModalOpen] = useState(false);
+
+const emergencyReasons = [
     "Overflowing toilet that won’t stop",
     "Severe clog with sewage backup",
     "Cracked bowl or tank",
@@ -546,14 +551,14 @@ export function ToiletRep() {
                 })}
               </div>
 
-              <a href="/contact-us">
-                <Button className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Get Free Estimate
                   </span>
                 </Button>
-              </a>
             </div>
           </div>
         </div>
@@ -909,14 +914,14 @@ export function ToiletRep() {
                   </span>
                 </Button>
               </a>
-              <a href="/contact-us" className="flex-1">
-                <Button className="w-full border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
-                  <span className="flex items-center justify-center gap-2">
-                    <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Get Free Estimate
                   </span>
                 </Button>
-              </a>
             </div>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-center text-sm max-w-2xl mx-auto">
               <div className="flex items-center gap-2">
@@ -935,6 +940,12 @@ export function ToiletRep() {
           </div>
         </div>
       </section>
-    </div>
-  );
-}
+      
+    {/* ✅ Modal */}
+        <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <LeadForm />
+        </Modal>
+        
+        </div>
+      );
+    }

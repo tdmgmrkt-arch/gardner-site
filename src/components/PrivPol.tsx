@@ -1,5 +1,8 @@
 import { 
-  Shield, FileText, Database, Eye, Lock, Cookie, Phone, Mail, MapPin, Users, Clock, Scale, Info, Calendar 
+  Shield, FileText, Database, Eye, Lock, Cookie, Phone, Mail, MapPin, Users, Clock, Scale, Info, Calendar, 
+  OptionIcon,
+  DoorOpen,
+  List
 } from "lucide-react";
 
 export function PrivPol() {
@@ -55,47 +58,52 @@ export function PrivPol() {
               <Database className="h-6 w-6 text-red-500" /> 1. Information We Collect
             </h2>
             <p className="text-gray-300 mb-3">
-              We collect personal information that you voluntarily provide, such as:
+              We may collect the following types of information when you interact with us:
             </p>
             <ul className="list-disc pl-6 text-gray-400 space-y-1">
-              <li>Name, phone number, and email</li>
-              <li>Property address and service history</li>
-              <li>Payment and billing details</li>
-              <li>Communications with our team</li>
+              <li><b>Personal Information:</b>Name, phone number, email address, service address, and payment information.</li>
+              <li><b>Service Information:</b> Details about your service requests, appointments, and communications with us.</li>
+              <li><b>Messaging Information:</b>  If you opt in to receive SMS or mobile communications, we may collect your mobile number and messaging preferences.</li>
             </ul>
           </div>
 
           {/* 2. How We Use Your Information */}
           <div>
             <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Eye className="h-6 w-6 text-red-500" /> 2. How We Use Your Information
+              <Mail className="h-6 w-6 text-red-500" /> 2. How We Use Collected Information
             </h2>
             <ul className="list-disc pl-6 text-gray-400 space-y-1">
-              <li>Provide and manage plumbing services</li>
-              <li>Schedule appointments and process payments</li>
-              <li>Communicate about services and follow-ups</li>
-              <li>Comply with legal requirements</li>
+              <li>Responding to service requests and providing plumbing services.</li>
+              <li>Scheduling, confirming, and updating appointments.</li>
+              <li>Sending important service updates, reminders, and customer support messages.</li>
+              <li>Improving our services and customer experience.</li>
+              <li><b>*VERY IMPORTANT – MOBILE/MESSAGING OPT-IN DATA</b> 
+              - We explicitly assure you that your mobile phone number, SMS consent, and messaging opt-in data will NOT be shared, sold, or disclosed to any third parties for their marketing purposes.</li>
             </ul>
           </div>
 
           {/* 3. Information Sharing */}
           <div>
             <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Users className="h-6 w-6 text-red-500" /> 3. Information Sharing
+              <Shield className="h-6 w-6 text-red-500" /> 3. Data Protection
             </h2>
             <p className="text-gray-300">
-              We never sell your data. Information may be shared only with service providers, 
-              insurers, or when required by law.
+              We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
             </p>
           </div>
 
           {/* 4. Data Security */}
           <div>
             <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Lock className="h-6 w-6 text-red-500" /> 4. Data Security
+              <List className="h-6 w-6 text-red-500" /> 4. Opt-Out Instructions
             </h2>
             <p className="text-gray-300">
-              We use secure storage, encryption, and access restrictions to protect your data.
+              
+                You are in control of your data. You may opt out of receiving messages or data usage at any time by doing one of the following:
+                Reply STOP to any SMS message you receive from us.
+                Contact us directly at:<br></br><br></br>
+                <b>Phone:</b>  (951) 246-4337<br></br>
+                <b>Email:</b>  gardnerplumbingco@gmail.com
             </p>
           </div>
 
@@ -109,54 +117,10 @@ export function PrivPol() {
             </p>
           </div>
 
-          {/* 6. Your Privacy Rights */}
+          {/* 6. Changes */}
           <div>
             <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Shield className="h-6 w-6 text-red-500" /> 6. Your Privacy Rights
-            </h2>
-            <p className="text-gray-300 mb-3">You have the right to:</p>
-            <ul className="list-disc pl-6 text-gray-400 space-y-1">
-              <li>Access and review your data</li>
-              <li>Request corrections or deletion</li>
-              <li>Opt out of marketing communications</li>
-            </ul>
-          </div>
-
-          {/* 7. Cookies */}
-          <div>
-            <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Cookie className="h-6 w-6 text-red-500" /> 7. Cookies
-            </h2>
-            <p className="text-gray-300">
-              Our site may use cookies for functionality, analytics, and performance.
-              You can disable them in your browser.
-            </p>
-          </div>
-
-          {/* 8. Third-Party Links */}
-          <div>
-            <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <FileText className="h-6 w-6 text-red-500" /> 8. Third-Party Links
-            </h2>
-            <p className="text-gray-300">
-              Our website may contain links to third-party sites. We are not responsible for their practices.
-            </p>
-          </div>
-
-          {/* 9. Children's Privacy */}
-          <div>
-            <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Users className="h-6 w-6 text-red-500" /> 9. Children’s Privacy
-            </h2>
-            <p className="text-gray-300">
-              Our services are not directed to children under 13. We do not knowingly collect data from them.
-            </p>
-          </div>
-
-          {/* 10. Changes */}
-          <div>
-            <h2 className="text-2xl font-semibold flex items-center gap-2 mb-2">
-              <Scale className="h-6 w-6 text-red-500" /> 10. Changes to This Policy
+              <Scale className="h-6 w-6 text-red-500" /> 6. Changes to This Policy
             </h2>
             <p className="text-gray-300">
               We may update this Privacy Policy from time to time. Updates will be posted on this page.
@@ -173,7 +137,7 @@ export function PrivPol() {
                 <Phone className="h-4 w-4 text-red-500" /> (951) 246-4337
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-red-500" /> privacy@gardnerplumbing.com
+                <Mail className="h-4 w-4 text-red-500" /> gardnerplumbingco@gmail.com
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-red-500" /> Riverside County, CA

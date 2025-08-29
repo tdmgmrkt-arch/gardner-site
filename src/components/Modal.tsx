@@ -23,8 +23,8 @@ export function Modal({ open, onClose, children }: ModalProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm animate-fadeIn">
-      <div className="relative bg-gray-900 rounded-xl shadow-2xl max-w-2xl w-full mx-4 overflow-hidden animate-scaleIn">
+    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center bg-black/70 backdrop-blur-sm animate-fadeIn overflow-y-auto">
+      <div className="relative bg-gray-900 rounded-xl shadow-2xl max-w-2xl w-full mx-4 mt-10 sm:mt-0 max-h-[90vh] overflow-y-auto animate-scaleIn">
         {/* 🔥 Gradient strip */}
         <div className="w-full h-1.5 bg-gradient-to-r from-red-600 via-red-500 to-blue-500"></div>
 
@@ -38,7 +38,7 @@ export function Modal({ open, onClose, children }: ModalProps) {
         </button>
 
         {/* Modal content */}
-        <div className="p-6 sm:p-8">{children}</div>
+        <div className="p-4 sm:p-8">{children}</div>
       </div>
     </div>
   );

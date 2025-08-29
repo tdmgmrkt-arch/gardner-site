@@ -1,3 +1,4 @@
+import { SchedulerModal } from "./SchedulerModal";
 import { useState } from "react";
 import { Modal } from "./Modal";
 import { LeadForm } from "./LeadForm";
@@ -227,18 +228,13 @@ const services = [
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
+                <Button size="lg" className="min-w-[220px] bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
                   </span>
                 </Button>
-                <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl shadow-lg transition-all duration-300 group bg-transparent">
-                  <span className="flex items-center justify-center gap-3">
-                    <Calendar className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                    Schedule Service
-                  </span>
-                </Button>
+                <SchedulerModal/>
               </div>
             </div>
 
@@ -736,18 +732,22 @@ const services = [
                 Can't find what you're looking for? Our drain cleaning and repair experts are standing by to answer your questions and schedule your professional drain cleaning service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+                <a href = "/frequently-asked-questions">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-blue-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <HelpCircle className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
                     View Full FAQ
                   </span>
                 </Button>
+                </a>
+                <a href = "/contact-us">
                 <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-3 sm:py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-300" />
                     Contact Us
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -885,13 +885,16 @@ const services = [
                 Three decades of trusted service. Contact us for expert drain cleaning and repair.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
-              <Button size="lg" className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group flex-1">
-                <span className="flex items-center justify-center gap-2">
-                  <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
-                  Call (951) 246-4337
-                </span>
-              </Button>
+           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 max-w-xl mx-auto">
+              <a href="tel:9512464337" className="flex-1">
+                <Button size="lg" className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-6 py-3 rounded-xl shadow-lg border border-red-400/20 group">
+                  <span className="flex items-center justify-center gap-2">
+                    <Phone className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                    Call (951) 246-4337
+                  </span>
+                </Button>
+              </a>
+
               <Button size="lg" className="border-2 border-white/60 text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-xl shadow-lg transition-all duration-300 group bg-transparent flex-1">
                 <span className="flex items-center justify-center gap-2">
                   <Mail className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />

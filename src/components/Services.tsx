@@ -59,7 +59,7 @@ export function Services() {
       description:
         "Complete bathroom plumbing solutions from fixture repairs to full bathroom remodels.",
       features: ["Toilet Repair", "Shower/Tub Installation", "Fixture Upgrades", "Pipe Relocation"],
-      link: "/services/bathroom-plumbing",
+      link: "/services/toilet-installation-and-repair",
     },
   ];
 

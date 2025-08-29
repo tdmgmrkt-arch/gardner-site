@@ -219,7 +219,7 @@ export function LeadForm() {
                     <option value="Maintenance Plans">Maintenance Plans</option>
                     <option value="Emergency Service">Emergency Service</option>
                     <option value="Moen Flo Installation">Moen Flo Installation</option>
-                    <option value="System Inspections">System Inspections</option>
+                    <option value="System Inspection">System Inspection</option>
                     <option value="Gas Lines">Gas Lines</option>
                     <option value="Water Filtration">Water Filtration</option>
                     <option value="Other">Other</option>

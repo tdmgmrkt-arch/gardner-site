@@ -19,6 +19,8 @@ import {
   Mail,
   Zap
 } from "lucide-react";
+const IntroImage = "/gardnervanready.webp";
+const WhyChooseUsImage = "/GardnerEmployeeArrival.webp"
 
 export function MaintenanceAgreement() {
   const maintenanceFeatures = [
@@ -147,14 +149,11 @@ export function MaintenanceAgreement() {
             {/* Right Column - Hero Image */}
             <div className="relative group animate-slide-up">
               <div className="relative overflow-hidden rounded-3xl shadow-luxury hover:shadow-2xl transition-all duration-500">
-                {/* Placeholder Image */}
-                <div className="w-full h-[400px] lg:h-[500px] bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border border-white/10 rounded-3xl">
-                  <div className="text-center text-gray-400">
-                    <Shield className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg font-semibold mb-2">HERO IMAGE PLACEHOLDER</p>
-                    <p className="text-sm max-w-xs">Professional plumber performing maintenance inspection - showing preventative care and expertise</p>
-                  </div>
-                </div>
+                <img
+                  src={IntroImage}
+                  alt="Professional plumbers using hydro-jetting equipment to clear drain"
+                  className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
+                />
                 
                 {/* Premium overlay effects */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl pointer-events-none -z-10"></div>
@@ -547,16 +546,16 @@ export function MaintenanceAgreement() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left Column - Image */}
             <div className="relative group">
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 h-96 rounded-3xl border border-white/10 flex items-center justify-center shadow-luxury group-hover:shadow-2xl transition-all duration-500">
-                <div className="text-center text-gray-400">
-                  <Award className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-semibold mb-2">COMPANY IMAGE PLACEHOLDER</p>
-                  <p className="text-sm max-w-xs">Gardner Plumbing Co. team showing professionalism and reliability with 30+ years of experience</p>
+              <div className="relative overflow-hidden rounded-3xl shadow-luxury group-hover:shadow-2xl transition-all duration-500">
+                <img
+                  src={WhyChooseUsImage}
+                  alt="Professional Gardner Plumbing Co. technician with hydro-jetting equipment"
+                  className="w-full h-96 object-cover rounded-3xl"
+                />
                 </div>
-              </div>
               
               {/* Floating Achievement Badge */}
-              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+              <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                     <Award className="h-4 w-4 text-white" />

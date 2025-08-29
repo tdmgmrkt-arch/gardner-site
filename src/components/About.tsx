@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Modal } from "./Modal";
+import { LeadForm } from "./LeadForm"
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { 
@@ -25,6 +28,8 @@ const gardneraboutusImage2 = "/GardnerTechVanTools.webp";
 const gardnerVanImage = "gplumbingtruckguy.webp";
 
 export function About() {
+const [isModalOpen, setIsModalOpen] = useState(false);
+
   const stats = [
     { icon: Calendar, number: "30+", text: "Years in Business", subtext: "Trusted Experience" },
     { icon: Users, number: "5,000+", text: "Happy Customers", subtext: "Satisfied Clients" },
@@ -654,12 +659,14 @@ export function About() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href = "tel:9512464337">
                 <Button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 transition-all duration-300 rounded-xl shadow-lg group">
                   <span className="flex items-center justify-center gap-3">
                     <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                     Call (951) 246-4337
                   </span>
                 </Button>
+                </a>
               </div>
             </div>
             
@@ -728,18 +735,22 @@ export function About() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+              <a href = "tel:9512464337">
               <Button className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white px-8 py-4 transition-all duration-300 rounded-xl shadow-lg border border-red-400/20 group">
                 <span className="flex items-center justify-center gap-3">
                   <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   Call (951) 246-4337
                 </span>
               </Button>
-              <Button className="bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white border border-gray-500/30 hover:border-gray-400/50 px-8 py-4 transition-all duration-300 rounded-xl shadow-lg group">
-                <span className="flex items-center justify-center gap-3">
-                  <Mail className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Get Free Estimate
-                </span>
-              </Button>
+              </a>
+              <Button 
+                onClick={() => setIsModalOpen(true)}
+                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-8 py-3 rounded-xl shadow-lg border border-green-400/20 group">
+                  <span className="flex items-center justify-center gap-3">
+                    <Phone className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                    Get Free Estimate
+                  </span>
+                </Button>
             </div>
             
             {/* CTA Footer - OPTIMIZED */}
@@ -760,6 +771,13 @@ export function About() {
           </div>
         </div>
       </section>
-    </div>
+
+{/* ✅ Modal */}
+        <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <LeadForm />
+        </Modal>
+        
+        </div>
+    
   );
 }

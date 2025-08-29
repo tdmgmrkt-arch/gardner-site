@@ -1,3 +1,4 @@
+import { SchedulerModal } from "./SchedulerModal";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -9,6 +10,9 @@ const heroBackground = "/garnderplumbingcoemployeearrival.webp";
 const mobileHeroBackground = "/gpmobilehero.webp";
 
 export function Hero() {
+
+const [schedulerOpen, setSchedulerOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -128,9 +132,9 @@ export function Hero() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 mt-6 mb-6 sm:mb-8">
               {/* Google */}
-              <a href="/reviews" className="flex items-center gap-2 sm:gap-3 group hover-lift">
+              <a href="/reviews#customer-testimonials" className="flex items-center gap-2 sm:gap-3 group hover-lift">
                 <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-lg border border-white/20">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500/20 backdrop-blur-sm rounded flex items-center justify-center border border-blue-400/30">
                     <span className="text-xs sm:text-sm font-bold text-blue-200">G</span>
@@ -144,7 +148,7 @@ export function Hero() {
                 </div>
               </a>
               {/* Yelp */}
-              <a href="/reviews" className="flex items-center gap-2 sm:gap-3 group hover-lift">
+              <a href="/reviews#customer-testimonials" className="flex items-center gap-2 sm:gap-3 group hover-lift">
                 <div className="flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm text-white px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg shadow-lg border border-white/20">
                   <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-500/20 backdrop-blur-sm rounded flex items-center justify-center border border-red-400/30">
                     <span className="text-xs sm:text-sm font-bold text-red-200">Y</span>
@@ -169,15 +173,7 @@ export function Hero() {
                   <Phone className="h-4 w-4 mr-2" /> Call Now: (951) 246-4337
                 </Button>
               </a>
-              <a href="/contact-us" className="w-full">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full bg-white/10 backdrop-blur-sm text-white px-6 py-3 font-bold rounded-xl border border-white/30 hover:bg-white hover:text-red-600 hover:border-white hover:shadow-lg transition-all duration-200"
-                >
-                  <Calendar className="h-4 w-4 mr-2" /> Book Online
-                </Button>
-              </a>
+              <SchedulerModal/>
             </div>
           </div>
 
@@ -348,21 +344,32 @@ export function Hero() {
                 </div>
 
                 {/* Consent */}
-                <div className="flex items-start space-x-2 sm:space-x-3 pt-1 sm:pt-2 group">
+                <div className="flex items-start space-x-2 sm:space-x-3 pt-3">
                   <Checkbox
                     id="consent"
                     checked={formData.consent}
-                    onCheckedChange={(checked) => handleInputChange("consent", checked as boolean)}
-                    className="mt-0.5 sm:mt-1 border-2 border-gray-500 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600 w-3.5 h-3.5 sm:w-4 sm:h-4 rounded shadow-sm hover:border-blue-400 transition-colors bg-gray-800/50"
+                    onCheckedChange={(checked) =>
+                      handleInputChange("consent", checked as boolean)
+                    }
+                    className="mt-1 border-2 border-gray-500 data-[state=checked]:bg-blue-600 
+                              data-[state=checked]:border-blue-600 w-4 h-4 rounded-sm 
+                              hover:border-blue-400 transition-colors bg-gray-800/40"
                   />
-                  <Label htmlFor="consent" className="text-[10px] sm:text-xs text-gray-300 leading-relaxed">
+                  <Label
+                    htmlFor="consent"
+                    className="text-[10px] sm:text-sm text-gray-300 leading-snug"
+                  >
                     I agree to receive SMS messages from Gardner Plumbing Co.{" "}
-                    <a href="/privacy-policy" className="text-blue-400 underline hover:text-blue-300">
-                      privacy policy
+                    <span className="text-gray-400">Reply STOP to opt-out.</span>
+                    <a
+                      href="/privacy-policy"
+                      className="text-blue-400 underline hover:text-blue-300"
+                    >
+                      Privacy Policy
                     </a>
-                    . Reply STOP to opt-out.
                   </Label>
                 </div>
+
 
                 {/* Submit */}
                 <div className="pt-3 sm:pt-4">
@@ -390,5 +397,7 @@ export function Hero() {
       <div className="absolute top-1/4 left-10 w-32 h-32 bg-red-500/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-10 w-40 h-40 bg-red-500/5 rounded-full blur-3xl" />
     </section>
+
+
   );
 }

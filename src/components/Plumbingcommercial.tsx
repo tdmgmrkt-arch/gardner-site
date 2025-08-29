@@ -32,9 +32,9 @@ import {
   Zap,
 } from "lucide-react";
 
-const heroImg = "/images/commercial-hero.jpg";      // swap with your image
-const crewImg = "/images/commercial-crew.jpg";      // swap with your image
-const workImg = "/images/commercial-work.jpg";      // swap with your image
+const heroImg = "/gardnercrewarrival.webp";      // swap with your image
+const crewImg = "/gardnerteammembersunloading.webp";      // swap with your image
+const workImg = "/gardnerteammembersunloading.webp";      // swap with your image
 
 const cityLinks: Record<string, string> = {
   Temecula: "https://temeculaca.gov",
@@ -238,7 +238,7 @@ export function Plumbingcommercial() {
                   className="w-full h-[400px] lg:h-[500px] object-cover rounded-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
-                <div className="absolute bottom-6 left-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury">
+                <div className="absolute bottom-6 right-6 glassmorphism-dark rounded-2xl p-4 border border-white/20 shadow-luxury animate-fade-in bg-black/60 backdrop-blur-md">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-red-600 to-red-500 rounded-full flex items-center justify-center">
                       <Truck className="h-4 w-4 text-white" />

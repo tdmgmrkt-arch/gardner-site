@@ -1,3 +1,4 @@
+import { SchedulerModal } from "./SchedulerModal";
 import { Button } from "./ui/button";
 import { Phone, Mail, Menu, MapPin, ChevronDown, Clock, Star, X,Wrench, Home, User, Facebook, Instagram, Calendar } from "lucide-react";
 import { useState, useCallback, useRef, useEffect } from "react";
@@ -21,12 +22,12 @@ export function Header() {
     "Toilet Repair": "/services/toilet-installation-and-repair",
     "Piping & Repiping": "/services/piping-and-repiping",
     "Garbage Disposals": "/services/garbage-disposal-service",
-    "Commercial Plumbing": "/services#commercial-services",
+    "Commercial Plumbing": "/services/commercial-plumbing",
     "Hydro Jetting": "/services/hydro-jetting",
     "Sewer & Septic": "/services/sewer-and-septic",
     "Maintenance Plans": "/services/maintenance-plans",
     "Emergency Service": "/services/emergency-service",
-    "Moen Flo Installation" : "services/moen-flo-installation",
+    "Moen Flo Installation" : "/services/moen-flo-installation",
     "System Inspections": "/services/65-point-inspection",
     "Gas Lines": "/services/gas-lines",
     "Water Filtration": "/services/water-filtration-system",
@@ -48,19 +49,19 @@ export function Header() {
     "Toilet Repair": "/services/toilet-installation-and-repair",
     "Piping & Repiping": "/services/piping-and-repiping",
     "Garbage Disposals": "/services/garbage-disposal-service",
-    "Commercial Plumbing": "/services#commercial-services",
+    "Commercial Plumbing": "/services/commercial-plumbing",
     "Hydro Jetting": "/services/hydro-jetting",
     "Sewer & Septic": "/services/sewer-and-septic",
     "Maintenance Plans": "/services/maintenance-plans",
     "Emergency Service": "/services/emergency-service",
-    "Moen Flo Installation" : "services/moen-flo-installation",
+    "Moen Flo Installation" : "/services/moen-flo-installation",
     "System Inspections": "/services/65-point-inspection",
     "Gas Lines": "/services/gas-lines",
     "Water Filtration": "/services/water-filtration-system",
   };
 
   const commercialLinks: Record<string, string> = {
-    "Commercial Plumbing": "/services#commercial-services",
+    "Commercial Plumbing": "/services/commercial-plumbing",
     "Hydro Jetting": "/services/hydro-jetting",
     "Sewer & Septic": "/services/sewer-and-septic",
     "Maintenance Plans": "/services/maintenance-plans",
@@ -361,7 +362,7 @@ export function Header() {
                                       ].map((service) => (
                                         <li key={service.name}>
                                           <a
-                                            href={residentialLinks[service.name] ?? "/services#commercial-plumbing"}
+                                            href={residentialLinks[service.name] ?? "/services/commercial-plumbing"}
                                             className="group block p-2 rounded-lg hover:bg-white/3 transition-all duration-300"
                                           >
                                             <div className="nav-dropdown-service-name hover:text-red-500 font-medium transition-colors duration-300 drop-shadow-sm">
@@ -498,19 +499,23 @@ export function Header() {
 
                     {/* CTA Buttons at top */}
                     <div className="flex gap-3 p-4 border-b border-white/10 bg-[#111827]">
-                      <a
-                        href="/contact-us"
-                        className="flex-1 bg-gradient-to-r from-red-600 to-red-500 text-white text-center py-3 rounded-lg font-semibold shadow-md hover:from-red-700 hover:to-red-600 transition"
-                      >
-                        Book Online
-                      </a>
+                      {/* Call Us button */}
                       <a
                         href="tel:9512464337"
-                        className="flex-1 bg-[#1f2937] text-white text-center py-3 rounded-lg font-semibold shadow-md hover:bg-[#2d3748] transition"
+                        className="w-full justify-center sm:w-auto bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-bold py-1 rounded-xl shadow-lg border border-red-400/20 flex items-center gap-2 transition group"
                       >
-                        Call Us
+                        <span>📞</span>
+                        <span>Call Us</span>
                       </a>
+
+                      {/* Book Online button via SchedulerModal */}
+                      <div className="flex-1">
+                        <SchedulerModal />
+                      </div>
                     </div>
+
+
+
 
                     {/* Nav */}
                     <nav className="flex flex-col p-4 space-y-3 bg-[#111827] overflow-y-auto max-h-[calc(100vh-220px)]">
@@ -538,13 +543,13 @@ export function Header() {
                               </button>
 
                               {isMobileServicesOpen && (
-                                <ul className="mt-3 grid grid-cols-2 gap-2 bg-[#111827] p-3 rounded-lg border border-white/10 shadow-md">
+                                <ul className="mt-3 grid grid-cols-2 gap-2 bg-[#111827] p-1rounded-lg border border-white/10 shadow-md">
                                   {Object.entries(serviceLinks).map(([name, href]) => (
                                     <li key={name}>
                                       <a
                                         href={href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="flex items-center justify-center px-3 py-2 text-sm font-small text-gray-200 rounded-md bg-gradient-to-br from-[#1f2937] to-[#111827] border border-white/5 hover:from-red-600 hover:to-red-500 hover:text-white transition-all duration-300"
+                                        className="flex items-center justify-center px-1 py-1 text-sm font-small text-gray-200 rounded-md bg-gradient-to-br from-[#1f2937] to-[#111827] border border-white/5 hover:from-red-600 hover:to-red-500 hover:text-white transition-all duration-300"
                                       >
                                         {name}
                                       </a>

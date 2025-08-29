@@ -277,12 +277,14 @@ export function Reviews() {
                   Get Your Free Quote
                 </span>
               </Button>
+              <a href = "/review">
               <Button className="w-full sm:w-auto bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-800 hover:to-gray-700 text-white border border-gray-500/30 hover:border-gray-400/50 px-6 sm:px-8 py-3 sm:py-3 lg:py-4 transition-all duration-300 rounded-lg sm:rounded-xl shadow-lg text-sm sm:text-base group">
                 <span className="flex items-center justify-center gap-2 sm:gap-3">
                   <FileText className="h-4 w-4 sm:h-4 sm:w-4 lg:h-5 lg:w-5 group-hover:scale-110 transition-transform duration-300" />
                   Read More Reviews
                 </span>
               </Button>
+              </a>
             </div>
           </div>
         </div>
